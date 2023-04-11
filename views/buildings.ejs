@@ -12,6 +12,7 @@
     <script src='../js/index.js'></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            /* SEARCH FUNCTIONALITY */
             let searchBar = document.getElementsByClassName('search-bar')[0];
             let toSearch = Array.from(document.getElementsByClassName('cards')[0].children);
             searchBar.addEventListener('input', (e) => {
@@ -23,6 +24,8 @@
                     }
                 })
             });
+            
+            /* FETCHING BUILDINGS */
             let url = 'http://localhost:5001/backend-buildings/';
 
             fetch(url).then(response => response.json()).then(data => {
@@ -35,11 +38,6 @@
             })
         })
     </script>
-
-    <script>
-
-    
-    </script>
 </head>
 <body>
     <div class="nav-fill">h</div>
@@ -50,12 +48,6 @@
     <input class="search-bar" placeholder="Search buildings here"/>
     <hr>
     <div class="cards">
-
-
-        <div class="building green" style="background-image: url('https://lh3.googleusercontent.com/p/AF1QipMPIyMkCk7Wt0RdV_-T4PzExqFwMiA37ZrChVVt=s680-w680-h510');">
-            <h2 class="searchable">Integrated Learning Center</h2>
-            <p>High availability right now.</p>
-        </div>
         
     </div>
 </body>
