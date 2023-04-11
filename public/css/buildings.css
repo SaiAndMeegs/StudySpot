@@ -1,20 +1,15 @@
 .cards {
     display: grid;
-    /* gap: 1em; */
     grid-template-columns: calc(100%/3) calc(100%/3) calc(100%/3);
-    /* align-items: stretch; */
-    /* justify-content: space-between; */
-    /* flex-wrap: wrap; */
-    /* overflow-x: hidden; */
 }
 
 .building {
     aspect-ratio: 2/1;
     position: relative;
     /* flex: 0 1 auto; */
-    margin: 15px;
+    margin: 1vw;
     padding: 5% 10%;
-    border-radius: 50px;
+    border-radius: 3vw;
     transform: translate(0px, 0px);
     transition: transform .3s, box-shadow .3s;
     cursor: pointer;

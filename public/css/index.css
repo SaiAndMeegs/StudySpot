@@ -6,14 +6,16 @@ body{
     padding: 2% 5%;
     margin: 0px;
 }
-a{
+a {
+    margin: 0;
+    padding: 0;
+    outline: 0;
     color: inherit;
-    font-style: inherit;
-    margin: 0px;
     text-decoration: none;
-
+    cursor: pointer;
+    display: block;
 }
-a:hover{
+a:hover {
     color:inherit
 }
 .centered {
@@ -25,7 +27,6 @@ a:hover{
     height: 100vh;
 }
 .logo {
-    font-size: 25px;
     font-family: 'Pacifico', cursive;
     cursor: pointer;
     position: absolute;
@@ -33,22 +34,18 @@ a:hover{
     left: 2%;
     height: 90%;
 }
-.logo-home {
-    position: absolute;
-    top: 20px;
-}
 .title {
     float: right;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 2vw;
 }
 .nav-fill {
     width: 1%;
-    padding: 20px 35px;
+    padding: 3vh 2vw;
     position: relative;
     opacity: 0;
     pointer-events: none;
-    font-size: 25px;
+    font-size: 2vw;
 }
 nav {
     margin: none;
@@ -57,9 +54,8 @@ nav {
     top: 0;
     width: 100%;
     color: white;
-    padding: 20px 35px;
+    padding: 3vh 2vw;
     align-items: center;
-    font-size: 20px;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
@@ -69,15 +65,15 @@ nav > * {
 }
 h1 {
     position: absolute;
-    transform: translate(50px, -120%);
+    transform: translate(3vw, -120%);
     font-weight: bold;
-    font-size: 80px;
+    font-size: 4.5vw;
 }
 #school-search {
-    font-size: 30px;
-    padding: 20px 50px;
+    font-size: 2vw;
+    padding: 1.5vw 3vw;
     width: 100%;
-    border-radius: 50px;
+    border-radius: 4vw;
     border: 2px solid white;
     color: black;
     outline: none;
@@ -95,19 +91,19 @@ h1 {
 .search-icon {
     position: absolute;
     top: 50%;
-    transform: translate(-180%, -50%);
+    transform: translate(-200%, -50%);
     color: black;
     float: right;
-    font-size: 40px !important;
+    font-size: 2.75vw !important;
     transition: all .3s;
     cursor: pointer;
 }
 .search-bar {
     width: 100%;
     display: flex;
-    font-size: 16px;
-    padding: 15px 25px;
-    border-radius: 23px;
+    font-size: 1.2vw;
+    padding: 1.1vw 1.8vw;
+    border-radius: 1.7vw;
     margin: 10px 0;
     border: 0;
     outline: 0;
