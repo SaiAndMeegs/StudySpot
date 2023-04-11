@@ -33,17 +33,17 @@ app.get('', (req, res) => {
     //res.render('Rooms')
 })
 
-app.get('/search-results/', (req, res) => {
-    res.render('search-results')
+app.get('/rooms/', (req, res) => {
+    res.render('rooms')
 })
 
-app.get('/search-results/:id/:name', (req, res) => {
+app.get('/rooms/:id/:name', (req, res) => {
     param_id = req.params.id
     param_name = req.params.name
-    res.render('search-results', {id: param_id, name: param_name})
+    res.render('rooms', {id: param_id, name: param_name})
 })
 
-app.get('/buildings', (req, res) => {
+app.get('/buildings/', (req, res) => {
     res.render('buildings')
 })
 
