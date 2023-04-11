@@ -52,6 +52,7 @@
     "node": "^19.8.1",
     "node-bin-setup": "^1.1.3",
     "node-localstorage": "^2.2.1",
+    "nodemon": "^2.0.22",
     "object-assign": "^4.1.1",
     "object-inspect": "^1.12.3",
     "on-finished": "^2.4.1",
