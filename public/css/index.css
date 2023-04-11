@@ -6,6 +6,15 @@ body{
     padding: 2% 5%;
     margin: 0px;
 }
+a{
+    color: inherit;
+    font-style: inherit;
+    margin: 0px;
+
+}
+a:hover{
+    color:inherit
+}
 .centered {
     display: flex;
     align-items: center;
