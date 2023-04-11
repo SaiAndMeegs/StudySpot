@@ -1,4 +1,4 @@
-#cards {
+.cards {
     display: grid;
     /* gap: 1em; */
     grid-template-columns: calc(100%/3) calc(100%/3) calc(100%/3);
