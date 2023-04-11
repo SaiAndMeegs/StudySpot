@@ -8,17 +8,19 @@ colors = ['red', 'orange', 'green'];
  * @param {int} availability - the availability in the building: 0 = low, 1 = medium, 2 = high
  * @param {string} imageURL - the URL of an image of the building
  */
-function makeBuilding(name, availability, imageURL) {
+function makeBuilding(building, availability, imageURL) {
     let cards = document.getElementsByClassName('cards')[0];
-    let elem = document.createElement('div');
+    let elem = document.createElement('a');
     elem.className = `building ${colors[availability]}`;
     avails = ['Low', 'Medium', 'High']
     let content = `${avails[availability]} availability right now.`;
-    elem.innerHTML = `<h2 class="searchable">${name}</h2>
+    
+    elem.href = '../../rooms/' + + building.building_id + "/" + building.building_name;
+    elem.innerHTML = `<h2 class="searchable">${building.building_name}</h2>
     <p>${content}</p>`;
     if(imageURL) elem.style.backgroundImage = `url('${imageURL}')`;
     else {
-        getBuildingImage(name, '').then((img) => {
+        getBuildingImage(building.building_name, '').then((img) => {
             elem.style.backgroundImage = `url('${img}')`;
         });
     }
@@ -65,7 +67,7 @@ function makeTimeBlock(start, length, day, availability, description) {
  */
 function makeRoom(name, availability) {
     let rooms = document.getElementsByClassName('rooms')[0];
-    let elem = document.createElement('div');
+    let elem = document.createElement('a');
     elem.className = 'result';
 
     avails = ['Low', 'Medium', 'High']
