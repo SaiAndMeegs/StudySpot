@@ -1,0 +1,13 @@
+I think selecting a school should work a bit like logging in:
+- Once you select a school you are now searching for that school only.
+- If you select the home button, you are brought to the building selection page for your school
+- From there, you can choose to "logout" of your school to select another one
+- School could be stored in cookies
+- This will make it easy to start with just UMass, as the homepage will be UMass's homepage
+
+
+We probably want to prevent people from booking multiple rooms. This implies a few things:
+1. People should be able to "sign out" of rooms in case they decide to leave early but still want to sign in to another rooms
+2. Does this mean that people need to sign in? In order to prevent people from booking twice on incognito or something.
+3. I think it makes sense to prevent people from booking unless they log in but anyone can view.
+4. We could also use Captcha I suppose.

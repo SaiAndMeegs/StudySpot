@@ -1,0 +1,159 @@
+.week {
+    display: flex;
+    background: repeating-linear-gradient(
+        0deg,
+        #fff,
+        #fff 60px,
+        #ccc 60px,
+        #ccc 120px
+    );
+    height: 1080px;
+    position: relative;
+    margin: 80px 50px;
+}
+.week:before {
+    content: '6:00am 7:00am 8:00am 9:00am 10:00am 11:00am 12:00pm 1:00pm 2:00pm 3:00pm 4:00pm 5:00pm 6:00pm 7:00pm 8:00pm 9:00pm 10:00pm 11:00pm 12:00am';
+    overflow: wrap;
+    width: 80px;
+    padding-right: 10px;
+    position: absolute;
+    text-align: right;
+    line-height: 60px;
+    transform: translate(-100%, -30px);
+}
+.day {
+    height: 100%;
+    width: 20%;
+    position: relative;
+}
+.current {
+    background: #8cf6 !important;
+}
+.current:before {
+    background: inherit;
+    border-radius: 30px 30px 0 0;
+}
+.day:nth-child(2n) {
+    background: #fff6;
+}
+.day:nth-child(2n+1) {
+    background: #ccc6;;
+}
+.day:before {
+    position: absolute;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    height: 60px;
+    transform: translateY(-100%);
+}
+.day:nth-child(1):before {
+    content: 'Monday';
+}
+.day:nth-child(2):before {
+    content: 'Tuesday';
+}
+.day:nth-child(3):before {
+    content: 'Wednesday';
+}
+.day:nth-child(4):before {
+    content: 'Thursday';
+}
+.day:nth-child(5):before {
+    content: 'Friday';
+}
+.day:nth-child(6):before {
+    content: 'Saturday';
+}
+.day:nth-child(7):before {
+    content: 'Sunday';
+}
+.line {
+    width: 100%;
+    height: 2px;
+    background: #48f;
+    position: absolute;
+    left: 0;
+    z-index: 100000;
+}
+.line:before {
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: inherit;
+    transform: translate(-100%, calc(-50% + 1px));
+}
+.block {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.block:after {
+    content: '';
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    border-radius: 10px;
+    box-shadow: 0 0 0 0 #8cfa, inset 0 0 0 0 #8cfa;
+    transition: z-index 2s, width 0.1s linear, height 0.1s linear;
+    z-index: 100;
+}
+.block:hover:after {
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+}
+.green:after {
+    background: green;
+}
+.orange:after {
+    background: orange;
+}
+.red:after {
+    background: red;
+}
+.activate {
+    opacity: 0;
+    top: 0;
+    pointer-events: none;
+    position: sticky;
+}
+.desc {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    background: white;
+    padding-left: calc(20% + 5px);
+    z-index: 100;
+    left: 0;
+    transition: left .3s, z-index .2s, opacity .3s;
+    cursor: default;
+    height: auto;
+    width: calc(80% - 8px);
+    border-radius: 0 10px 10px 0;
+    top: 4px;
+    padding: 15px 5px 15px calc(20% + 5px);
+    transform: translateX
+}
+.activate:focus + .block:after {
+    transition: z-index 0s, width 0.1s linear, height 0.1s linear;
+    /* box-shadow: 0 0 0 4px #8cfa, inset 0 0 0 4px #8cfa; */
+    z-index: 1000;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    pointer-events: none;
+}
+.activate:focus + .block {
+    cursor: default;
+}
+.activate:focus + .block > .desc {
+    left: 80%;
+    opacity: 100;
+    z-index: 101;
+    pointer-events: all;
+}

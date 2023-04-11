@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/search-results.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/gradient-bg.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let searchBar = document.getElementsByClassName('search-bar')[0];
+            let toSearch = Array.from(document.getElementsByClassName('rooms')[0].children);
+            searchBar.addEventListener('input', (e) => {
+                toSearch.forEach(elem => {
+                    let name = elem.getElementsByClassName('searchable')[0].innerHTML.toLowerCase();
+                    elem.classList.remove('invisible');
+                    if(name.indexOf(e.target.value.toLowerCase()) !== 0) {
+                        elem.classList.add('invisible');
+                    }
+                })
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="nav-fill">h</div>
+    <nav class="gradient">
+        <img class="logo" src="spot.png" />
+        <div class="title">
+            Classrooms @ Integrated Learning Center
+        </div>
+    </nav>    
+    <input class="search-bar" placeholder="Search rooms here"/>
+    <hr>
+    <div class="rooms">
+        <div class="result">
+            <div class="dot green"></div>
+            <p class="searchable">ILC Room N111</p>
+            <p>No classes for the rest of the day!</p>
+        </div>
+        <div class="result">
+            <div class="dot orange"></div>
+            <p class="searchable">ILC Room N112</p>
+            <p>Next class at 4:30PM</p>
+        </div>
+        <div class="result">
+            <div class="dot red"></div>
+            <p class="searchable">ILC Room N114</p>
+            <p>Available after 5:45PM</p>
+        </div>
+        <div class="result">
+            <div class="dot green"></div>
+            <p class="searchable">ILC Room N111</p>
+            <p>No classes for the rest of the day!</p>
+        </div>
+        <div class="result">
+            <div class="dot orange"></div>
+            <p class="searchable">ILC Room N112</p>
+            <p>Next class at 4:30PM</p>
+        </div>
+        <div class="result">
+            <div class="dot red"></div>
+            <p class="searchable">ILC Room N114</p>
+            <p>Available after 5:45PM</p>
+        </div>
+        <div class="result">
+            <div class="dot green"></div>
+            <p class="searchable">ILC Room N111</p>
+            <p>No classes for the rest of the day!</p>
+        </div>
+        <div class="result">
+            <div class="dot orange"></div>
+            <p class="searchable">ILC Room N112</p>
+            <p>Next class at 4:30PM</p>
+        </div>
+        <div class="result">
+            <div class="dot red"></div>
+            <p class="searchable">ILC Room N114</p>
+            <p>Available after 5:45PM</p>
+        </div>
+        <div class="result">
+            <div class="dot green"></div>
+            <p class="searchable">ILC Room N111</p>
+            <p>No classes for the rest of the day!</p>
+        </div>
+        <div class="result">
+            <div class="dot orange"></div>
+            <p class="searchable">ILC Room N112</p>
+            <p>Next class at 4:30PM</p>
+        </div>
+        <div class="result">
+            <div class="dot red"></div>
+            <p class="searchable">ILC Room N114</p>
+            <p>Available after 5:45PM</p>
+        </div>
+    </div>
+</body>
+</html>

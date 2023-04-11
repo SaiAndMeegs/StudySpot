@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="room-schedule.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="gradient-bg.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let days = document.getElementsByClassName('day');
+            let timeLine = document.getElementById('currentTime');
+            function updateTime() {
+                let time = new Date();
+                let top = 60 * (time.getHours() - 6) + time.getMinutes();
+                timeLine.style.top = top + 'px';
+                for(i = 0; i < 7; i++) {
+                    days[i].classList.remove('current');
+                    if(i === (time.getDay() + 6) % 7) days[i].classList.add('current');
+                }
+            }
+            updateTime();
+            setInterval(updateTime, 60000);
+        })
+    </script>
+</head>
+<body>
+    <div class="nav-fill">h</div>
+    <nav class="gradient">
+        <img class="logo" src="spot.png" />
+        <div class="title">ILC Room N111</div>
+    </nav>
+    <div class="week">
+        <div class="day">
+            <input type="text" id="b1" class="activate">
+            <label for="b1" class="block green" style="top: 120px; height: 180px">
+                <div class='desc'>This room is free!</div>
+            </label>
+            <div class="block orange" style="top: 300px; height: 360px"></div>
+            <div class="block red" style="top: 660px; height: 120px"></div>
+        </div>
+        <div class="day">
+            <div class="block orange" style="top: 120px; height: 360px"></div>
+            <div class="block red" style="top: 480px; height: 300px"></div>
+        </div>
+        <div class="day">
+            <div class="block green" style="top: 120px; height: 180px"></div>
+            <div class="block orange" style="top: 300px; height: 360px"></div>
+            <div class="block red" style="top: 660px; height: 120px"></div>
+        </div>
+        <div class="day">
+            <div class="block orange" style="top: 120px; height: 360px"></div>
+            <div class="block red" style="top: 480px; height: 300px"></div>
+        </div>
+        <div class="day">
+            <div class="block green" style="top: 120px; height: 660px"></div>
+        </div>
+        <div class="day"></div>
+        <div class="day"></div>
+        <div class="line" id="currentTime"></div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+.result {
+    width: auto;
+    border-radius: 20px;
+    padding: 20px;
+    background: #fff;
+    position: relative;
+    display: block;
+    margin: -8px;
+    transition: all .3s;
+    cursor: pointer;
+    /* box-shadow: 0px 4px 1px #ddd;  */
+}
+.result:hover {
+    background: #eee;
+    margin: -8px -8px 14px -8px;
+}
+.result > h2 {
+    font-size: 20px;
+    margin: 0px;
+    display: inline-block
+}
+.result > p {
+    float: right;
+    font-size: 20px;
+    margin: 0px;
+    transform: translateX(-100px);
+}
+.result::after {
+    content: '';
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 0 17px 17px 0;
+}
+.result.red {
+    outline: 3px solid red;
+}
+.result.red::after {
+    background: red;
+}
+.result.orange {
+    outline: 3px solid orange;
+}
+.result.orange::after {
+    background: orange;
+}
+.result.green {
+    outline: 3px solid green;
+}
+.result.green::after {
+    background: green;
+}
