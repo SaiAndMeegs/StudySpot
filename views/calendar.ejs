@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/calendar.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="gradient-bg.css">
+    <link rel="stylesheet" href="/css/calendar.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/gradient-bg.css">
+
+    <script src='/js/index.js'></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             let days = document.getElementsByClassName('day');
@@ -24,12 +26,28 @@
             updateTime();
             setInterval(updateTime, 60000);
         })
+        
+        let url = 'http://localhost:5001/course_meetings/' + localStorage.getItem('building_room_id')
+
+        fetch(url).then(response => response.json()).then(data => {
+            console.log(data)
+            data.forEach(course_meeting => {
+                console.log(course_meeting)
+                let start = Math.round((parseInt(course_meeting.start_time.substring(0,2)) - 6) * 60)
+                let length = parseInt(course_meeting.end_time.substring(0, 2)) - parseInt(course_meeting.start_time.substring(0,2)) * 60
+                
+                //make a time block for each day that the course_meeting has
+                makeTimeBlock(start, length, course_meeting.days[0], 2, course_meeting.description)
+            })
+        })
+        .catch(err => console.error(err))
+
     </script>
 </head>
 <body>
     <div class="nav-fill">h</div>
     <nav class="gradient">
-        <img class="logo" src="spot.png" />
+        <img class="logo" src="../spot.png" />
         <div class="title">ILC Room N111</div>
     </nav>
     <div class="week">
@@ -38,21 +56,12 @@
             <label for="b1" class="block green" style="top: 120px; height: 180px">
                 <div class='desc'>This room is free!</div>
             </label>
-            <div class="block orange" style="top: 300px; height: 360px"></div>
-            <div class="block red" style="top: 660px; height: 120px"></div>
         </div>
         <div class="day">
-            <div class="block orange" style="top: 120px; height: 360px"></div>
-            <div class="block red" style="top: 480px; height: 300px"></div>
         </div>
         <div class="day">
-            <div class="block green" style="top: 120px; height: 180px"></div>
-            <div class="block orange" style="top: 300px; height: 360px"></div>
-            <div class="block red" style="top: 660px; height: 120px"></div>
         </div>
         <div class="day">
-            <div class="block orange" style="top: 120px; height: 360px"></div>
-            <div class="block red" style="top: 480px; height: 300px"></div>
         </div>
         <div class="day">
             <div class="block green" style="top: 120px; height: 660px"></div>
