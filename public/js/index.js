@@ -27,7 +27,7 @@ function makeBuilding(building, availability, imageURL) {
     }
     */
    elem.style.backgroundImage = `url('${building.image_url}')`
-    elem.onclick = () => {localStorage.setItem('building_id', building.building_id)}
+    elem.onclick = () => {localStorage.setItem('building_id', building.building_id); localStorage.setItem('building_name', building.building_name)}
 
     cards.appendChild(elem);
 }
