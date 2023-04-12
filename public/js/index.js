@@ -34,7 +34,7 @@ function makeBuilding(building, availability, imageURL) {
  */
 function makeTimeBlock(start, length, day, availability, description) {
     if(typeof day === 'string') {
-        days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+        days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
         day = days.indexOf(day.toLowerCase());
     }
     day = document.getElementsByClassName('day')[day];

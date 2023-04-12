@@ -51,25 +51,25 @@
     transform: translateY(-100%);
 }
 .day:nth-child(1):before {
-    content: 'Monday';
+    content: 'Sunday';
 }
 .day:nth-child(2):before {
-    content: 'Tuesday';
+    content: 'Monday';
 }
 .day:nth-child(3):before {
-    content: 'Wednesday';
+    content: 'Tuesday';
 }
 .day:nth-child(4):before {
-    content: 'Thursday';
+    content: 'Wednesday';
 }
 .day:nth-child(5):before {
-    content: 'Friday';
+    content: 'Thursday';
 }
 .day:nth-child(6):before {
-    content: 'Saturday';
+    content: 'Friday';
 }
 .day:nth-child(7):before {
-    content: 'Sunday';
+    content: 'Saturday';
 }
 .line {
     width: 100%;
