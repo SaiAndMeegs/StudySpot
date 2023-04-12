@@ -18,12 +18,15 @@ function makeBuilding(building, availability, imageURL) {
     elem.href = '/rooms/' + + building.building_id + "/" + building.building_name;
     elem.innerHTML = `<h2 class="searchable">${building.building_name}</h2>
     <p>${content}</p>`;
+    /*
     if(imageURL) elem.style.backgroundImage = `url('${imageURL}')`;
     else {
         getBuildingImage(building.building_name, '').then((img) => {
             elem.style.backgroundImage = `url('${img}')`;
         });
     }
+    */
+   elem.style.backgroundImage = `url('${building.image_url}')`
     elem.onclick = () => {localStorage.setItem('building_id', building.building_id)}
 
     cards.appendChild(elem);
@@ -84,7 +87,9 @@ function makeRoom(building_room, availability) {
 }
 
 function getTopImage(search) {
-    return fetch(`https://serpapi.com/search.json?q=${search}&tbm=isch&ijn=0`)
+    let url = 'http://localhost:5001/building_image/' + search
+    
+    return fetch(url)
     .then((res) => res.json())
     .then((data) => {
         return data['images_results'][0]['thumbnail'];
