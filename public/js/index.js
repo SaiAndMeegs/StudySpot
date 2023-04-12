@@ -44,7 +44,8 @@ function makeTimeBlock(start, length, day, availability, description) {
     }
     day = document.getElementsByClassName('day')[day];
 
-    let id = genRandomId();
+    //use genRandomID() here instead of 10
+    let id = 10;
     let elem = document.createElement('label');
     elem.for = id;
     elem.className = `block ${colors[availability]}`;
