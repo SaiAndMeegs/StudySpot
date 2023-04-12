@@ -13,8 +13,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             let searchBar = document.getElementsByClassName('search-bar')[0];
-            searchBar.addEventListener('input', (e) => {
             let toSearch = Array.from(document.getElementsByClassName('rooms')[0].children);
+            searchBar.addEventListener('input', (e) => {
                 toSearch.forEach(elem => {
                     let name = elem.getElementsByClassName('searchable')[0].innerHTML.toLowerCase();
                     elem.classList.remove('invisible');
@@ -30,6 +30,7 @@
                 data.forEach(building_room => {
                     makeRoom(building_room, 2)                    
                 })
+                toSearch = Array.from(document.getElementsByClassName('rooms')[0].children);
                 
             })
             .catch(err => console.error(err))
