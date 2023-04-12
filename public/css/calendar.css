@@ -77,7 +77,7 @@
     background: #48f;
     position: absolute;
     left: 0;
-    z-index: 100000;
+    z-index: 500;
 }
 .line:before {
     content: '';
@@ -102,7 +102,7 @@
     height: calc(100% - 8px);
     border-radius: 10px;
     box-shadow: 0 0 0 0 #8cfa, inset 0 0 0 0 #8cfa;
-    transition: z-index 2s, width 0.1s, height 0.1s;
+    transition: z-index 0s, width 0.1s, height 0.1s;
     z-index: 100;
 }
 .block:hover:after {
@@ -120,26 +120,26 @@
 }
 .activate {
     opacity: 0;
-    top: 0;
+    top: 50%;
     pointer-events: none;
     position: sticky;
     height: 0px;
+    border: 0;
+    outline: 0;
 }
 .desc {
     opacity: 0;
     pointer-events: none;
     position: absolute;
     background: white;
-    padding-left: calc(20% + 5px);
     z-index: 100;
     left: 0;
-    transition: left .3s, z-index .2s, opacity .3s;
+    transition: left .3s, z-index 0s, opacity .3s;
     cursor: default;
     height: auto;
-    width: calc(80% - 8px);
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 10px 10px 10px;
     top: 4px;
-    padding: 15px 5px 15px calc(20% + 5px);
+    padding: 15px 15px 15px calc(18px + 15px);
     transform: translateX
 }
 .activate:focus + .block:after {
@@ -149,13 +149,15 @@
     width: calc(100% - 4px);
     height: calc(100% - 4px);
     pointer-events: none;
+    border: 0;
+    outline: 0;
 }
 .activate:focus + .block {
     cursor: default;
 }
 .activate:focus + .block > .desc {
-    left: 80%;
+    left: calc(100% - 18px);
     opacity: 100;
-    z-index: 101;
+    z-index: 999;
     pointer-events: all;
 }

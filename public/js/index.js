@@ -39,10 +39,9 @@ function makeTimeBlock(start, length, day, availability, description) {
     }
     day = document.getElementsByClassName('day')[day];
 
-    //use genRandomID() here instead of 10
-    let id = 10;
+    let id = genRandomId();
     let elem = document.createElement('label');
-    elem.for = id;
+    elem.htmlFor = id;
     elem.className = `block ${colors[availability]}`;
     elem.style.top = start + 'px';
     elem.style.height = length + 'px';
@@ -95,7 +94,7 @@ function getBuildingImage(school, building) {
 function genRandomId(digits) {
     let p = digits ? Math.pow(10, p) : 10000;
     let id = Math.floor(Math.random() * p);
-    while(document.getElementById('id-' + id).length > 0) {
+    while(document.getElementById('id-' + id)) {
         id = Math.floor(Math.random() * p);
     }
     return 'id-' + id;

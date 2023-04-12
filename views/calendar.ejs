@@ -51,7 +51,7 @@
                     
                     let start = (parseInt(course_meeting.start_time.substring(0,2)) - 6) * 60 + (parseInt(course_meeting.start_time.substring(3,5)))
                     let length = (time_end - time_start) / 60000
-                    makeTimeBlock(start, length, day, 0, course_meeting.description)
+                    makeTimeBlock(start, length, day, 0, course_meeting.course_title);
                 })
                 //make a time block for each day that the course_meeting has
             })
