@@ -1,19 +1,25 @@
 .cards {
     display: grid;
-    grid-template-columns: calc(100%/3) calc(100%/3) calc(100%/3);
+    /* grid-template-columns: calc(100%/3) calc(100%/3) calc(100%/3); */
+    /* grid-auto-rows: auto; */
+    
+    /* grid-auto-flow: column; */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5vw 2vw;
 }
 
 .building {
-    aspect-ratio: 2/1;
+    /* aspect-ratio: 2/1; */
     position: relative;
     /* flex: 0 1 auto; */
-    margin: 1vw;
+    /* margin: 1vw; */
     padding: 5% 10%;
     border-radius: 3vw;
     transform: translate(0px, 0px);
     transition: transform .3s, box-shadow .3s;
     cursor: pointer;
     background-size: cover;
+    height: 100%;
 }
 .building:hover {
     transform: translate(-4px, -4px);
