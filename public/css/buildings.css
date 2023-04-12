@@ -18,12 +18,18 @@
 .building:hover {
     transform: translate(-4px, -4px);
 }
+.building:active {
+    transform: translate(0px, 0px) !important;
+}
 .green {
     outline: 2px solid green;
     box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.75), 0px 0px green;
 }
 .green:hover {
     box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.75), 8px 8px green;
+}
+.green:active {
+    box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.75), 0px 0px green;
 }
 .orange {
     outline: 2px solid orange;
@@ -32,10 +38,16 @@
 .orange:hover {
     box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.75), 8px 8px orange;
 }
+.orange:active {
+    box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.75), 0px 0px orange;
+}
 .red {
     outline: 2px solid red;
     box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.75), 0px 0px red;
 }
 .red:hover {
     box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.75), 8px 8px red;
+}
+.red:hover {
+    box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.75), 0px 0px red;
 }
