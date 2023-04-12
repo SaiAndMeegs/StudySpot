@@ -14,8 +14,8 @@
         document.addEventListener('DOMContentLoaded', () => {
             /* SEARCH FUNCTIONALITY */
             let searchBar = document.getElementsByClassName('search-bar')[0];
-            let toSearch = Array.from(document.getElementsByClassName('cards')[0].children);
             searchBar.addEventListener('input', (e) => {
+                let toSearch = Array.from(document.getElementsByClassName('cards')[0].children);
                 toSearch.forEach(elem => {
                     let name = elem.getElementsByClassName('searchable')[0].innerHTML.toLowerCase();
                     elem.classList.remove('invisible');

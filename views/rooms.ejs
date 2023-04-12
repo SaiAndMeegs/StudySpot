@@ -13,8 +13,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             let searchBar = document.getElementsByClassName('search-bar')[0];
-            let toSearch = Array.from(document.getElementsByClassName('rooms')[0].children);
             searchBar.addEventListener('input', (e) => {
+            let toSearch = Array.from(document.getElementsByClassName('rooms')[0].children);
                 toSearch.forEach(elem => {
                     let name = elem.getElementsByClassName('searchable')[0].innerHTML.toLowerCase();
                     elem.classList.remove('invisible');
@@ -39,7 +39,7 @@
 <body>
     <div class="nav-fill">h</div>
     <nav class="gradient">
-        <img class="logo" src="/spot.png" />
+        <img class="logo" src="../spot.png" />
         <div class="title">
             Classrooms @ Integrated Learning Center
         </div>
