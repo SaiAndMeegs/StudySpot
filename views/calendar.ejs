@@ -20,7 +20,7 @@
                 timeLine.style.top = top + 'px';
                 for(i = 0; i < 7; i++) {
                     days[i].classList.remove('current');
-                    if(i === (time.getDay() + 6) % 7) days[i].classList.add('current');
+                    if(i === (time.getDay()) % 7) days[i].classList.add('current');
                 }
             }
             updateTime();
