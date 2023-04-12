@@ -63,6 +63,14 @@ app.get('/backend-buildings/', cors(), (req, res) => {
 
 })
 
+/*
+app.get('/building_image/:search', cors(), (req, res) => {
+    let url = "https://serpapi.com/search.json?q=${'umass " + req.params.search + "}&tbm=isch&ijn=0"
+    axios.get(url).then((resp) => console.log(resp))
+    
+})
+*/
+
 app.get('/building_rooms/:key', cors(), (req, res) => {
 
     search_query = req.params.key;
