@@ -4,8 +4,9 @@
     /* grid-auto-rows: auto; */
     
     /* grid-auto-flow: column; */
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5vw 2vw;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: repeat(auto-fill,minmax(min(100%, 300px),1fr));
+    gap: 3vh 2vw;
 }
 
 .building {
@@ -20,6 +21,9 @@
     cursor: pointer;
     background-size: cover;
     height: 100%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
 }
 .building:hover {
     transform: translate(-4px, -4px);
