@@ -12,26 +12,41 @@
     <script src='/js/index.js'></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            function order(elems) {
+                for(let i = 0; i < elems.length; i++) {
+                    let elem = elems[i];
+                    elem.style.transform = `translateY(${i * 100}%)`;
+                }
+            }
+
             let searchBar = document.getElementsByClassName('search-bar')[0];
             let toSearch = Array.from(document.getElementsByClassName('rooms')[0].children);
             searchBar.addEventListener('input', (e) => {
-                toSearch.forEach(elem => {
-                    let name = elem.getElementsByClassName('searchable')[0].innerHTML.toLowerCase();
-                    elem.classList.remove('invisible');
-                    if(name.indexOf(e.target.value.toLowerCase()) !== 0) {
-                        elem.classList.add('invisible');
-                    }
-                })
+                order(
+                    toSearch.reduce((acc, val) => {
+                        let name = val.getElementsByClassName('searchable')[0].innerHTML.toLowerCase();
+                        val.classList.remove('invisible');
+                        let index = name.indexOf(e.target.value.toLowerCase());
+                        if(index === -1) {
+                            val.classList.add('invisible');
+                        } else {
+                            acc.push([val, index]);
+                        }
+                        return acc;
+                    }, [])
+                    .sort((v1,v2) => v1[1] - v2[1])
+                    .map(x => x[0])
+                );
             });
 
             let url = 'http://localhost:5001/building_rooms/' + localStorage.getItem('building_id');
 
             fetch(url).then(response => response.json()).then(data => {
                 data.forEach(building_room => {
-                    makeRoom(building_room, 2)                    
+                    makeRoom(building_room, 2);
                 })
                 toSearch = Array.from(document.getElementsByClassName('rooms')[0].children);
-                
+                order(toSearch);
             })
             .catch(err => console.error(err))
         })
