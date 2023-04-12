@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/calendar.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="gradient-bg.css">
+    <link rel="stylesheet" href="/css/calendar.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/gradient-bg.css">
+
+    <script src='/js/index.js'></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             let days = document.getElementsByClassName('day');
@@ -24,38 +26,57 @@
             updateTime();
             setInterval(updateTime, 60000);
         })
+        
+        let url = 'http://localhost:5001/course_meetings/' + localStorage.getItem('building_room_id')
+
+        fetch(url).then(response => response.json()).then(data => {
+            console.log(data)
+            data.forEach(course_meeting => {
+                course_meeting.days.forEach(day => {
+                    console.log(course_meeting)
+
+                    
+                    //calculate the time difference between start and end time of the course_meeting
+                    let time_start = new Date();
+                    let time_end = new Date();
+                    let value_start = course_meeting.start_time.split(':');
+                    let value_end = course_meeting.end_time.split(':');
+                    time_start.setHours(value_start[0], value_start[1], value_start[2], 0)
+                    time_end.setHours(value_end[0], value_end[1], value_end[2], 0)
+
+                    console.log(value_start)
+                    console.log(value_end)
+                    console.log((time_end - time_start) / 60000)
+                    
+                    
+                    let start = (parseInt(course_meeting.start_time.substring(0,2)) - 6) * 60 + (parseInt(course_meeting.start_time.substring(3,5)))
+                    let length = (time_end - time_start) / 60000
+                    makeTimeBlock(start, length, day, 0, course_meeting.description)
+                })
+                //make a time block for each day that the course_meeting has
+            })
+        })
+        .catch(err => console.error(err))
+
     </script>
 </head>
 <body>
     <div class="nav-fill">h</div>
     <nav class="gradient">
-        <img class="logo" src="spot.png" />
-        <div class="title">ILC Room N111</div>
+        <img class="logo" src="../spot.png" />
+        <div class="title">Calendar</div>
     </nav>
     <div class="week">
         <div class="day">
-            <input type="text" id="b1" class="activate">
-            <label for="b1" class="block green" style="top: 120px; height: 180px">
-                <div class='desc'>This room is free!</div>
-            </label>
-            <div class="block orange" style="top: 300px; height: 360px"></div>
-            <div class="block red" style="top: 660px; height: 120px"></div>
+            
         </div>
         <div class="day">
-            <div class="block orange" style="top: 120px; height: 360px"></div>
-            <div class="block red" style="top: 480px; height: 300px"></div>
         </div>
         <div class="day">
-            <div class="block green" style="top: 120px; height: 180px"></div>
-            <div class="block orange" style="top: 300px; height: 360px"></div>
-            <div class="block red" style="top: 660px; height: 120px"></div>
         </div>
         <div class="day">
-            <div class="block orange" style="top: 120px; height: 360px"></div>
-            <div class="block red" style="top: 480px; height: 300px"></div>
         </div>
         <div class="day">
-            <div class="block green" style="top: 120px; height: 660px"></div>
         </div>
         <div class="day"></div>
         <div class="day"></div>

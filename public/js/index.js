@@ -15,7 +15,7 @@ function makeBuilding(building, availability, imageURL) {
     avails = ['Low', 'Medium', 'High']
     let content = `${avails[availability]} availability right now.`;
     
-    elem.href = '../../rooms/' + + building.building_id + "/" + building.building_name;
+    elem.href = '/rooms/' + + building.building_id + "/" + building.building_name;
     elem.innerHTML = `<h2 class="searchable">${building.building_name}</h2>
     <p>${content}</p>`;
     if(imageURL) elem.style.backgroundImage = `url('${imageURL}')`;
@@ -24,6 +24,8 @@ function makeBuilding(building, availability, imageURL) {
             elem.style.backgroundImage = `url('${img}')`;
         });
     }
+    elem.onclick = () => {localStorage.setItem('building_id', building.building_id)}
+
     cards.appendChild(elem);
 }
 
@@ -42,7 +44,8 @@ function makeTimeBlock(start, length, day, availability, description) {
     }
     day = document.getElementsByClassName('day')[day];
 
-    let id = genRandomId();
+    //use genRandomID() here instead of 10
+    let id = 10;
     let elem = document.createElement('label');
     elem.for = id;
     elem.className = `block ${colors[availability]}`;
@@ -65,7 +68,7 @@ function makeTimeBlock(start, length, day, availability, description) {
  * @todo In the future, may want to change to show time of next class.
  * @todo Perhaps put 5 dots on the right that fill up based on the availability.
  */
-function makeRoom(name, availability) {
+function makeRoom(building_room, availability) {
     let rooms = document.getElementsByClassName('rooms')[0];
     let elem = document.createElement('a');
     elem.className = 'result';
@@ -73,11 +76,12 @@ function makeRoom(name, availability) {
     avails = ['Low', 'Medium', 'High']
     let content = `${avails[availability]} availability right now.`;
     elem.innerHTML = `<div class="dot ${colors[availability]}"></div>
-    <p class="searchable">${name}</p>
+    <p class="searchable">${building_room.building_room_name}</p>
     <p>${content}</p>`;
+    elem.href = '../../calendar/' + building_room.building_room_id;
+    elem.onclick = () => localStorage.setItem('building_room_id', building_room.building_room_id)
     rooms.appendChild(elem);
 }
-
 
 function getTopImage(search) {
     return fetch(`https://serpapi.com/search.json?q=${search}&tbm=isch&ijn=0`)

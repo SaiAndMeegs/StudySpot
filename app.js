@@ -47,6 +47,10 @@ app.get('/buildings/', (req, res) => {
     res.render('buildings')
 })
 
+app.get('/calendar/:building_room_id', (req, res) => {
+    res.render('calendar')
+})
+
 app.get('/backend-buildings/', cors(), (req, res) => {
     pool.connect();
 
