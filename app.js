@@ -7,6 +7,8 @@ const PORT = process.env.PORT || 5001;
 const axios = require('axios')
 const {Pool} = require('pg')
 
+app.use(cors());
+
 const pool = new Pool({
     user: "kiyeotntjhtpfw",
     host: "ec2-34-202-127-5.compute-1.amazonaws.com",
@@ -50,6 +52,10 @@ app.get('/buildings/', (req, res) => {
 app.get('/calendar/:building_room_id', (req, res) => {
     res.render('calendar')
 })
+
+//pool.connect() likely returning a promise asynchronously => might just have to wait for the promise (might just use await) => might not be connected by the time you hit the query
+//look into when to connect to the pool, whether this is a promise
+//every user has connection object in the pool
 
 app.get('/backend-buildings/', cors(), (req, res) => {
     pool.connect();
