@@ -12,6 +12,7 @@
     <script src='/js/index.js'></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            /* UPDATE TIME ON CALENDAR */
             let days = document.getElementsByClassName('day');
             let timeLine = document.getElementById('currentTime');
             function updateTime() {
@@ -25,47 +26,58 @@
             }
             updateTime();
             setInterval(updateTime, 60000);
+
+            /* FETCH CLASSROOM DATA */            
+            let url = 'http://localhost:5001/course_meetings/' + localStorage.getItem('building_room_id')
+
+            fetch(url).then(response => response.json()).then(data => {
+                console.log(data)
+                data.forEach(course_meeting => {
+                    course_meeting.days.forEach(day => {
+                        console.log(course_meeting)
+
+                        
+                        //calculate the time difference between start and end time of the course_meeting
+                        let time_start = new Date();
+                        let time_end = new Date();
+                        let value_start = course_meeting.start_time.split(':');
+                        let value_end = course_meeting.end_time.split(':');
+                        time_start.setHours(value_start[0], value_start[1], value_start[2], 0)
+                        time_end.setHours(value_end[0], value_end[1], value_end[2], 0)
+
+                        console.log(value_start)
+                        console.log(value_end)
+                        console.log((time_end - time_start) / 60000)
+                        
+                        
+                        let start = (parseInt(course_meeting.start_time.substring(0,2)) - 6) * 60 + (parseInt(course_meeting.start_time.substring(3,5)))
+                        let length = (time_end - time_start) / 60000
+                        makeTimeBlock(start, length, day, 0, course_meeting.course_title);
+                    })
+                    //make a time block for each day that the course_meeting has
+                })
+            })
+            .catch(err => console.error(err))
         })
         
-        let url = 'http://localhost:5001/course_meetings/' + localStorage.getItem('building_room_id')
-
-        fetch(url).then(response => response.json()).then(data => {
-            console.log(data)
-            data.forEach(course_meeting => {
-                course_meeting.days.forEach(day => {
-                    console.log(course_meeting)
-
-                    
-                    //calculate the time difference between start and end time of the course_meeting
-                    let time_start = new Date();
-                    let time_end = new Date();
-                    let value_start = course_meeting.start_time.split(':');
-                    let value_end = course_meeting.end_time.split(':');
-                    time_start.setHours(value_start[0], value_start[1], value_start[2], 0)
-                    time_end.setHours(value_end[0], value_end[1], value_end[2], 0)
-
-                    console.log(value_start)
-                    console.log(value_end)
-                    console.log((time_end - time_start) / 60000)
-                    
-                    
-                    let start = (parseInt(course_meeting.start_time.substring(0,2)) - 6) * 60 + (parseInt(course_meeting.start_time.substring(3,5)))
-                    let length = (time_end - time_start) / 60000
-                    makeTimeBlock(start, length, day, 0, course_meeting.course_title);
-                })
-                //make a time block for each day that the course_meeting has
-            })
-        })
-        .catch(err => console.error(err))
+        
 
     </script>
 </head>
 <body>
     <div class="nav-fill">h</div>
     <nav class="gradient">
-        <a href="/buildings"><img class="logo" src="/spot.png" /></a>
+        <a href="/buildings" class="logo-container">
+            <img class="logo" src="/spot.png" />
+            <div class="logo-text">Study Spot</div>
+        </a>
         <div class="title">Calendar</div>
     </nav>
+    <div class="cal-nav">
+        <div title="See last week" class="last cb">&lt;</div>
+        <div title="See next week" class="next cb">&gt;</div>
+        <div title="Book time block" class="add cb">+</div>
+    </div>
     <div class="week">
         <div class="day">
         </div>
