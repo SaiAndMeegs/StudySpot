@@ -4,7 +4,7 @@ colors = ['red', 'orange', 'green'];
 
 /**
  * Create a building element
- * @param {string} name - the name of the building
+ * @param {object} building - a building object
  * @param {int} availability - the availability in the building: 0 = low, 1 = medium, 2 = high
  * @param {string} imageURL - the URL of an image of the building
  */
@@ -15,7 +15,7 @@ function makeBuilding(building, availability, imageURL) {
     avails = ['Low', 'Medium', 'High']
     let content = `${avails[availability]} availability right now.`;
     
-    elem.href = '/rooms/' + + building.building_id + "/" + building.building_name;
+    elem.href = '/rooms/' + building.building_id + "/" + building.building_name;
     elem.innerHTML = `<h2 class="searchable">${building.building_name}</h2>
     <p>${content}</p>`;
     elem.style.backgroundImage = `url('${building.image_url}')`
@@ -39,19 +39,23 @@ function makeTimeBlock(start, length, day, availability, description) {
     }
     day = document.getElementsByClassName('day')[day];
 
+    let timeStringStart = ((Math.floor(start / 60) + 6) % 12) + ':' + (start % 60).toString().padStart(2, '0');
+    let timeStringEnd = ((Math.floor((start + length) / 60) + 6) % 12) + ':' + ((start + length) % 60).toString().padStart(2, '0');
+    let timeString = timeStringStart + ' - ' + timeStringEnd;
     let id = genRandomId();
     let elem = document.createElement('label');
     elem.htmlFor = id;
     elem.className = `block ${colors[availability]}`;
     elem.style.top = start + 'px';
     elem.style.height = length + 'px';
-    elem.innerHTML = `<div class='desc'>${description}</div>`;
+    elem.innerHTML = description + '<br>' + timeString;
+    // elem.innerHTML = `<div class='desc'>${description}</div>`;
 
     let activator = document.createElement('input');
     activator.id = id;
     activator.className = 'activate';
     activator.type = 'text';
-    day.appendChild(activator); 
+    // day.appendChild(activator); 
     day.appendChild(elem);
 }
 
@@ -108,3 +112,10 @@ function search(string, elements) {
         return match.indexOf(string) === 0;
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    let spot = document.getElementsByClassName('logo')[0];
+    console.log(spot);
+    setTimeout(() => {spot.style.bottom = '-6px'}, 400);
+
+})

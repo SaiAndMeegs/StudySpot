@@ -29,11 +29,20 @@
             let url = 'http://localhost:5001/backend-buildings/';
 
             fetch(url).then(response => response.json()).then(data => {
-                    
+                let buildings = '';
+                let addresses = '';
                 data.forEach(building => {
-                    console.log(building)
+                    console.log(building.building_address);
+                    if(building.building_address !== null) {
+                        buildings += `${building.building_name} 
+                        `;
+                        addresses += `${building.building_address} 
+                        `;
+                    }
                     makeBuilding(building, 2)
                 })
+                console.log(buildings)
+                console.log(addresses)
                 toSearch =  Array.from(document.getElementsByClassName('cards')[0].children);
             })
         })
@@ -41,8 +50,11 @@
 </head>
 <body>
     <div class="nav-fill">h</div>
-    <nav class="gradient">
-        <img class="logo" src="/spot.png" />
+    <nav class="gradient">        
+        <a href="/buildings" class="logo-container">
+            <img class="logo" src="/spot.png" />
+            <div class="logo-text">Study Spot</div>
+        </a>
         <div class="title">Buildings @ University of Massachusetts, Amherst</div>
     </nav>
     <input class="search-bar" placeholder="Search buildings here"/>

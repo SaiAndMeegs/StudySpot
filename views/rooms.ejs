@@ -16,6 +16,8 @@
                 for(let i = 0; i < elems.length; i++) {
                     let elem = elems[i];
                     elem.style.transform = `translateY(${i * 100}%)`;
+                    elem.classList.remove('dark');
+                    if(i % 2 === 0) elem.classList.add('dark');
                 }
             }
 
@@ -46,6 +48,8 @@
                     makeRoom(building_room, 2);
                 })
                 toSearch = Array.from(document.getElementsByClassName('rooms')[0].children);
+                toSearch.sort((a,b) => a.innerHTML.length - b.innerHTML.length);
+                console.log(toSearch);
                 order(toSearch);
             })
             .catch(err => console.error(err))
@@ -55,7 +59,10 @@
 <body>
     <div class="nav-fill">h</div>
     <nav class="gradient">
-        <a href="/buildings"><img class="logo" src="/spot.png" /></a>
+        <a href="/buildings" class="logo-container">
+            <img class="logo" src="/spot.png" />
+            <div class="logo-text">Study Spot</div>
+        </a>
         <div class="title">
             Classrooms 
         </div>

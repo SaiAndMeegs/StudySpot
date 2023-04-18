@@ -5,26 +5,34 @@
     
     /* grid-auto-flow: column; */
     /* grid-template-columns: repeat(3, 1fr); */
-    grid-template-columns: repeat(auto-fill,minmax(min(100%, 300px),1fr));
+    grid-template-columns: repeat(auto-fill,minmax(min(100%, 250px),1fr));
     gap: 3vh 2vw;
 }
-
 .building {
+    /* font-size: 15px; */
     /* aspect-ratio: 2/1; */
     position: relative;
     /* flex: 0 1 auto; */
     /* margin: 1vw; */
-    padding: 5% 10%;
-    border-radius: 3vw;
+    padding: 2% 10%;
+    filter: saturate(1.5);
+    /* border-radius: 10px; */
+    border-radius: 30px;
     transform: translate(0px, 0px);
     transition: transform .3s, box-shadow .3s;
     cursor: pointer;
     background-size: cover;
-    height: 100%;
+    /* height: 100%; */
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
+    overflow: hidden;
 }
+/* .building > p {
+    background: #fffb;
+    padding: 10px;
+    box-shadow: 0px 100px 0px 100px #fffb;
+} */
 .building:hover {
     transform: translate(-4px, -4px);
 }
@@ -32,32 +40,35 @@
     transform: translate(0px, 0px) !important;
 }
 .green {
+    color: #000c;
     outline: 2px solid green;
     box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.75), 0px 0px green;
 }
 .green:hover {
-    box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.75), 8px 8px green;
+    box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.6), 8px 8px green;
 }
 .green:active {
-    box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.75), 0px 0px green;
+    box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.6), 0px 0px green;
 }
 .orange {
+    color: #000c;
     outline: 2px solid orange;
     box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.75), 0px 0px orange;
 }
 .orange:hover {
-    box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.75), 8px 8px orange;
+    box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.6), 8px 8px orange;
 }
 .orange:active {
-    box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.75), 0px 0px orange;
+    box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.6), 0px 0px orange;
 }
 .red {
+    color: #000c;
     outline: 2px solid red;
     box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.75), 0px 0px red;
 }
 .red:hover {
-    box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.75), 8px 8px red;
+    box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.6), 8px 8px red;
 }
-.red:hover {
-    box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.75), 0px 0px red;
+.red:active {
+    box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.6), 0px 0px red;
 }
