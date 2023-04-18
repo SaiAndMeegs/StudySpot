@@ -39,8 +39,8 @@ function makeTimeBlock(start, length, day, availability, description) {
     }
     day = document.getElementsByClassName('day')[day];
 
-    let timeStringStart = ((Math.floor(start / 60) + 6) % 12) + ':' + (start % 60).toString().padStart(2, '0');
-    let timeStringEnd = ((Math.floor((start + length) / 60) + 6) % 12) + ':' + ((start + length) % 60).toString().padStart(2, '0');
+    let timeStringStart = (((Math.floor(start / 60) + 5) % 12) + 1) + ':' + (start % 60).toString().padStart(2, '0');
+    let timeStringEnd = (((Math.floor((start + length) / 60) + 5) % 12) + 1) + ':' + ((start + length) % 60).toString().padStart(2, '0');
     let timeString = timeStringStart + ' - ' + timeStringEnd;
     let id = genRandomId();
     let elem = document.createElement('label');
