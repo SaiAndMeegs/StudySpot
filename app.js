@@ -25,6 +25,11 @@ app.use(express.static('public'))
 app.use('/css', express.static(__dirname + 'public/css'))
 app.use('/js', express.static(__dirname + 'public/js'))
 
+//  Listen
+app.listen(PORT, () => {
+    console.log('Listening on port ${PORT}')
+})
+
 // Set Views
 app.set('views', './views')
 app.set('view engine', 'ejs')
@@ -53,10 +58,13 @@ app.get('/calendar/:building_room_id', (req, res) => {
     res.render('calendar')
 })
 
+// Endpoints
+
 //pool.connect() likely returning a promise asynchronously => might just have to wait for the promise (might just use await) => might not be connected by the time you hit the query
 //look into when to connect to the pool, whether this is a promise
 //every user has connection object in the pool
 
+//buildings endpoints
 app.get('/backend-buildings/', cors(), (req, res) => {
 
     pool.query("SELECT * FROM building", (err, result) => {
@@ -76,6 +84,7 @@ app.get('/building_image/:search', cors(), (req, res) => {
 })
 */
 
+//building_rooms endpoints
 app.get('/building_rooms/:key', cors(), (req, res) => {
 
     search_query = req.params.key;
@@ -89,6 +98,7 @@ app.get('/building_rooms/:key', cors(), (req, res) => {
 
 })
 
+//course_meetings endpoints
 app.get('/course_meetings/:key', cors(), (req, res) => {
     search_query = req.params.key;
 
@@ -101,7 +111,15 @@ app.get('/course_meetings/:key', cors(), (req, res) => {
 
 })
 
-//  Listen
-app.listen(PORT, () => {
-    console.log('Listening on port ${PORT}')
+app.get('/course_meetings/:id', cors(), (req, res) => {
+    id = req.params.id;
+
+    pool.query("SELECT * FROM course_meeting WHERE id=" + id, (err, result) => {
+        if (err) throw err
+        res.status(200).json(result.rows)
+  
+        pool.end;
+    })
+
 })
+
