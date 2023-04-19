@@ -5,7 +5,7 @@ const fs = require('fs');
 const app = express();
 const PORT = process.env.PORT || 5001;
 const axios = require('axios')
-const {Pool} = require('pg')
+const Pool = require('pg').Pool
 
 app.use(cors());
 
@@ -58,7 +58,6 @@ app.get('/calendar/:building_room_id', (req, res) => {
 //every user has connection object in the pool
 
 app.get('/backend-buildings/', cors(), (req, res) => {
-    pool.connect();
 
     pool.query("SELECT * FROM building", (err, result) => {
         if (err) throw err
@@ -81,8 +80,6 @@ app.get('/building_rooms/:key', cors(), (req, res) => {
 
     search_query = req.params.key;
 
-    pool.connect();
-
     pool.query("SELECT * FROM building_room WHERE building_id=" + search_query, (err, result) => {
         if (err) throw err
         res.status(200).json(result.rows)
@@ -94,8 +91,6 @@ app.get('/building_rooms/:key', cors(), (req, res) => {
 
 app.get('/course_meetings/:key', cors(), (req, res) => {
     search_query = req.params.key;
-
-    pool.connect();
 
     pool.query("SELECT * FROM course_meeting WHERE building_room_id=" + search_query, (err, result) => {
         if (err) throw err
