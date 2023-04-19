@@ -28,7 +28,7 @@
             setInterval(updateTime, 60000);
 
             /* FETCH CLASSROOM DATA */            
-            let url = 'http://localhost:5001/course_meetings/' + localStorage.getItem('building_room_id')
+            let url = 'http://localhost:5001/course_meetings/building_room_id/' + localStorage.getItem('building_room_id')
 
             fetch(url).then(response => response.json()).then(data => {
                 console.log(data)

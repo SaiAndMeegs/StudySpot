@@ -99,7 +99,7 @@ app.get('/building_rooms/:key', cors(), (req, res) => {
 })
 
 //course_meetings endpoints
-app.get('/course_meetings/:key', cors(), (req, res) => {
+app.get('/course_meetings/building_room_id/:key', cors(), (req, res) => {
     search_query = req.params.key;
 
     pool.query("SELECT * FROM course_meeting WHERE building_room_id=" + search_query, (err, result) => {
@@ -111,7 +111,7 @@ app.get('/course_meetings/:key', cors(), (req, res) => {
 
 })
 
-app.get('/course_meetings/:id', cors(), (req, res) => {
+app.get('/course_meetings/id/:id', cors(), (req, res) => {
     id = req.params.id;
 
     pool.query("SELECT * FROM course_meeting WHERE id=" + id, (err, result) => {
@@ -122,4 +122,5 @@ app.get('/course_meetings/:id', cors(), (req, res) => {
     })
 
 })
+
 
