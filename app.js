@@ -26,8 +26,8 @@ app.use('/css', express.static(__dirname + 'public/css'))
 app.use('/js', express.static(__dirname + 'public/js'))
 
 //  Listen
-app.listen(process.env.PORT || PORT, () => {
-    console.log('Listening on port ${process.env.PORT}')
+app.listen(PORT, () => {
+    console.log('Listening on port ${PORT}')
 })
 
 // Set Views
