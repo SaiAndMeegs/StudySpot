@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "engines": {
-    "node": "v19.3.0"
+    "node": "v19.3.0",
+    "npm": "9.6.5"
   },
   "main": "app.js",
   "dependencies": {
@@ -96,8 +97,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "serve -s build",
-    "build": "nodemon app.js"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
