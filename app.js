@@ -36,7 +36,7 @@ app.set('view engine', 'ejs')
 
 app.get('', (req, res) => {
     //res.sendFile(__dirname + '/views/index.html')
-    res.render('index')
+    res.render('buildings')
     //res.render('Rooms')
 })
 
