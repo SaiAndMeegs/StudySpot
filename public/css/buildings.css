@@ -20,6 +20,7 @@
     border-radius: 30px;
     transform: translate(0px, 0px);
     transition: transform .3s, box-shadow .3s;
+    -webkit-transition: transform .3s, box-shadow .3s;
     cursor: pointer;
     background-size: cover;
     /* height: 100%; */

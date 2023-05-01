@@ -39,24 +39,84 @@ function makeTimeBlock(start, length, day, availability, description) {
     }
     day = document.getElementsByClassName('day')[day];
 
-    let timeStringStart = ((Math.floor(start / 60) + 6) % 12) + ':' + (start % 60).toString().padStart(2, '0');
-    let timeStringEnd = ((Math.floor((start + length) / 60) + 6) % 12) + ':' + ((start + length) % 60).toString().padStart(2, '0');
+    let timeStringStart = (((Math.floor(start / 60) + 5) % 12) + 1) + ':' + (start % 60).toString().padStart(2, '0');
+    let timeStringEnd = (((Math.floor((start + length) / 60) + 5) % 12) + 1) + ':' + ((start + length) % 60).toString().padStart(2, '0');
     let timeString = timeStringStart + ' - ' + timeStringEnd;
-    let id = genRandomId();
-    let elem = document.createElement('label');
-    elem.htmlFor = id;
+
+    let elem = document.createElement('div');
     elem.className = `block ${colors[availability]}`;
     elem.style.top = start + 'px';
     elem.style.height = length + 'px';
     elem.innerHTML = description + '<br>' + timeString;
-    // elem.innerHTML = `<div class='desc'>${description}</div>`;
 
-    let activator = document.createElement('input');
-    activator.id = id;
-    activator.className = 'activate';
-    activator.type = 'text';
-    // day.appendChild(activator); 
-    day.appendChild(elem);
+    let blocks = day.getElementsByClassName('block');
+    for(let i = 0; i < blocks.length; i++) {
+        let block = blocks[i];
+        let t = start;
+        let h = length;
+        let bt = parseFloat(block.style.top);
+        let bh = parseFloat(block.style.height);
+    
+        if((t <= bt && t + h > bt) || (t < bt + bh && t + h >= bt + bh)) {
+            let wrapper;
+            if(block.parentNode.className === 'block-bundle') {
+                wrapper = block.parentNode;
+                Array.from(wrapper.children).forEach(e => {
+                    e.style.maxWidth = `calc(100% - ${(wrapper.children.length) * 10}px)`;
+                    e.classList.remove('closed');
+                    e.classList.add('closed');
+                })
+                wrapper.appendChild(elem);
+            } else {
+                wrapper = document.createElement('div');
+                wrapper.className = 'block-bundle';
+                wrap(block, wrapper);
+                block.dataset.transform = 0;
+                block.style.maxWidth = `calc(100% - ${(wrapper.children.length) * 10}px)`;
+                block.classList.add('closed');
+                wrapper.appendChild(elem);
+                wrapper.addEventListener('mouseover', (e) => {
+                    let hov = e.target;
+                    for(let i = 0; i < wrapper.children.length; i++) {
+                        let elem = wrapper.children[i];
+                        elem.classList.remove('closed');
+                        elem.style.transform = `translateX(${elem.dataset.transform}px)`
+                        if(elem !== hov) {
+                            elem.classList.add('closed');
+                        }
+                        if(parseInt(elem.dataset.transform) > parseInt(hov.dataset.transform)) {
+                            let shift = `calc(${document.getElementsByClassName('day')[0].getBoundingClientRect().width}px - ${((wrapper.children.length) * 10) - parseInt(elem.dataset.transform)}px)`;
+                            console.log(shift);
+                            console.log(((wrapper.children.length - 1) * 10) + parseInt(elem.dataset.transform));
+                            elem.style.transform = 'translateX(' + shift + ')';
+                        }
+                    }
+                })
+                // wrapper.addEventListener('mouseout', () => {
+                //     for(let i = 0; i < wrapper.children.length; i++) {
+                //         let elem = wrapper.children[i];
+                //         elem.classList.remove('closed');
+                //         if(i !== wrapper.children.length - 1) elem.classList.add('closed');
+                //         elem.style.transform = `translateX(${elem.dataset.transform}px)`
+                        
+                //     }
+                // })
+            }
+            elem.style.maxWidth = `calc(100% - ${(wrapper.children.length - 1) * 10}px)`;
+            elem.style.transform = `translateX(${(wrapper.children.length - 1) * 10}px)`;
+            elem.dataset.transform = (wrapper.children.length - 1) * 10;
+            break;
+        }
+    }
+
+    if(!elem.parentNode) {
+        day.appendChild(elem);
+    }
+}
+
+function wrap(el, wrapper) {
+    el.parentNode.insertBefore(wrapper, el);
+    wrapper.appendChild(el);
 }
 
 /**
@@ -113,9 +173,26 @@ function search(string, elements) {
     });
 }
 
+function makePopup(string) {
+    let oldP = document.getElementsByClassName('popup')
+    if(oldP.length) {
+        oldP[0].remove();
+    }
+    let popup = document.createElement('div');
+    popup.className = 'popup';
+    let loc = document.getElementsByTagName('nav')[0].getBoundingClientRect()
+    let top = loc.height + 20;
+    popup.innerHTML = string + '<i class="fa fa-close popup-close"></i>';
+    document.body.appendChild(popup);
+    popup.style.top = top + 'px';
+    popup.addEventListener('click', () => {
+        popup.remove();
+    })
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     let spot = document.getElementsByClassName('logo')[0];
     console.log(spot);
-    setTimeout(() => {spot.style.bottom = '-6px'}, 400);
+    setTimeout(() => {spot.style.transform = 'translateY(15%)'}, 400);
 
 })

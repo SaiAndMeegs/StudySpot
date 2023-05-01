@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/calendar.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/gradient-bg.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='/js/index.js'></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -64,6 +64,225 @@
         
 
     </script>
+    <script>
+        // BOOKING TOOL
+        document.addEventListener('DOMContentLoaded', () => {
+            let cover = document.getElementsByClassName('c1')[0];
+            document.getElementsByClassName('add')[0].onclick = () => {
+                cover.classList.remove('invisible');
+                makePopup('Click and drag on the calendar to select a time block.');
+                startBookingFunctions();
+            };
+            cover.onclick = () => {
+                cover.classList.remove('invisible');
+                cover.classList.add('invisible');
+                endBookingFunctions()
+            };
+            let blockDetails = document.getElementsByClassName('block-details')[0];
+            let cover2 = document.getElementsByClassName('details-close')[0];
+            cover2.onclick = () => {
+                // cover2.classList.remove('invisible');
+                // cover2.classList.add('invisible');
+                blockDetails.classList.remove('invisible');
+                blockDetails.classList.add('invisible');
+            };
+            let newBlock = document.getElementsByClassName('new-block')[0];
+            let intervalV = 30;
+            let bounds = [];
+            let center = 0;
+            
+            let setBounds = (day) => {
+                let loc = day.getBoundingClientRect();
+                bounds[0] = loc.top + window.scrollY;
+                bounds[1] = loc.top + loc.height + window.scrollY;
+                /* TODO: OPTIMIZE BY SELECTING FROM CURRENT DAY!!! */
+                Array.from(day.getElementsByClassName('block red')).forEach(block => {
+                    // if(block.parentElement.className === 'block-bundle') block = block.parentElement;
+                    let bLoc = block.getBoundingClientRect();
+                    let nbLoc = newBlock.getBoundingClientRect();
+                    if(Math.abs(nbLoc.left - bLoc.left) < 1) {
+                        if(bLoc.top + window.scrollY > center) {
+                            if(bLoc.top + window.scrollY < bounds[1]) {
+                                bounds[1] = bLoc.top + window.scrollY;
+                            }
+                        } else {
+                            if(bLoc.top + bLoc.height + window.scrollY > bounds[0]) {
+                                bounds[0] = bLoc.top + bLoc.height + window.scrollY;
+                            }
+                        }
+                    }
+                }) 
+            }
+            let setPosition = (day, e) => {
+                let y;
+                if(e.type == 'touchstart' || e.type == 'touchmove' || e.type == 'touchend' || e.type == 'touchcancel'){
+                    var evt = (typeof e.originalEvent === 'undefined') ? e : e.originalEvent;
+                    var touch = evt.touches[0] || evt.changedTouches[0];
+                    y = touch.pageY - window.scrollY;
+                } else if (e.type == 'mousedown' || e.type == 'mouseup' || e.type == 'mousemove' || e.type == 'mouseover'|| e.type=='mouseout' || e.type=='mouseenter' || e.type=='mouseleave') {
+                    y = e.clientY;
+                }
+                let loc = day.getBoundingClientRect();
+                let left = loc.x;
+                let top = Math.floor((y - loc.y) / intervalV) * intervalV + loc.y + window.scrollY;
+                newBlock.classList.remove('invisible');
+                if(Math.floor((y - loc.y) / intervalV) * intervalV < 0 ||
+                day.className === 'block red') {
+                    newBlock.classList.add('invisible');
+                }
+                newBlock.style.top = top + 'px';
+                newBlock.style.left = left + 'px';
+                newBlock.style.width = loc.width + 'px';
+            }
+            let setSize = (day, e) => {
+                let y;
+                if(e.type == 'touchstart' || e.type == 'touchmove' || e.type == 'touchend' || e.type == 'touchcancel'){
+                    var evt = (typeof e.originalEvent === 'undefined') ? e : e.originalEvent;
+                    var touch = evt.touches[0] || evt.changedTouches[0];
+                    y = touch.pageY - window.scrollY;
+                } else if (e.type == 'mousedown' || e.type == 'mouseup' || e.type == 'mousemove' || e.type == 'mouseover'|| e.type=='mouseout' || e.type=='mouseenter' || e.type=='mouseleave') {
+                    y = e.clientY;
+                }
+                let loc = day.getBoundingClientRect();
+                let mouseY = Math.floor((y - loc.y) / intervalV) * intervalV + loc.y + window.scrollY;
+                let height = mouseY - center;
+                let t, h;
+                if(height >= 0) {
+                    t = center;
+                    h = height + intervalV
+                } else {
+                    t = mouseY;
+                    h = Math.abs(height) + intervalV;
+                }
+                if(t < bounds[0]) {
+                    let d = bounds[0] - t;
+                    t = bounds[0];
+                    h -= d;
+                }
+                if(t + h > bounds[1]) h = bounds[1] - t;
+                newBlock.style.top = t + 'px';
+                newBlock.style.height = h + 'px';
+            }
+            let makeForm = (day) => {
+                let loc = day.getBoundingClientRect();
+                let bLoc = newBlock.getBoundingClientRect();
+                let start = Math.round(bLoc.top - loc.top);
+                let end = Math.round(start + bLoc.height);
+                start = ((Math.floor(start / 60) + 5 % 24) + 1).toString().padStart(2, '0') + ':' + (start % 60).toString().padStart(2, '0');
+                end = ((Math.floor(end / 60) + 5 % 24) + 1).toString().padStart(2, '0') + ':' + (end % 60).toString().padStart(2, '0');
+                
+                let startElem = document.getElementById('start');
+                startElem.value = start;
+                let endElem = document.getElementById('end');
+                endElem.value = end;
+                blockDetails.classList.remove('invisible');
+                // cover2.classList.remove('invisible');
+
+                window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+            }
+            // MOUSE
+            let mHeld = false;
+            let mEnter = () => { 
+                newBlock.classList.remove('mobile');
+                newBlock.classList.remove('invisible'); 
+            }
+            let mMove = (e) => {
+                let day = e.target;
+                if(mHeld) {
+                    setSize(day, e);
+                } else {
+                    setPosition(day, e);
+                }
+                
+            }
+            let mDown = (e) => {
+                let day = e.target;
+                mHeld = true;
+                // newBlock.style.height = 'auto';
+                center = parseFloat(newBlock.style.top);
+                // newBlock.style.bottom = center + 30 + 'px';
+
+                setBounds(day);
+            }
+            let mUp = (e) => {
+                let day = e.target;
+                mHeld = false;
+                if(!newBlock.classList.contains('invisible')) {
+                    makeForm(day);
+                }
+                
+                newBlock.style.height = intervalV + 'px';
+            }
+            let mLeave = () => {
+                newBlock.classList.remove('invisible');
+                newBlock.classList.add('invisible');
+            }
+            
+            // TOUCH
+            let tHeld = false;
+            let tWait = false;
+            let tDown = (e) => {
+                newBlock.classList.remove('mobile');
+                newBlock.classList.add('mobile');
+                let day = e.target;
+                tWait = true;
+                setTimeout(() => {
+                    if(tWait) {
+                        console.log('hi!');
+                        tHeld = true;
+                        mEnter();
+                        setPosition(day, e);
+                        center = parseFloat(newBlock.style.top);
+                        setBounds(day);
+                    }
+                }, 500);
+            }
+            let tMove = (e) => {
+                tWait = false;
+                if(tHeld) {
+                    e.preventDefault();
+                    setSize(e.target, e);
+                }
+            }
+            let tUp = (e) => {
+                tWait = false;
+                tHeld = false;
+                if(!newBlock.classList.contains('invisible')) {
+                    makeForm(e.target);
+                }
+                mLeave();
+                newBlock.style.height = intervalV + 'px';
+            }
+
+            function startBookingFunctions() {
+                Array.from(document.getElementsByClassName('day')).forEach((day) => {
+                    // MOUSE EVENTS
+                    day.addEventListener('mouseenter', mEnter);
+                    day.addEventListener('mousemove', mMove);
+                    day.addEventListener('mousedown', mDown);
+                    day.addEventListener('mouseup', mUp);
+                    day.addEventListener('mouseleave', mLeave);
+                    // TOUCH EVENTS
+                    day.addEventListener('touchstart', tDown);
+                    day.addEventListener('touchmove', tMove);
+                    day.addEventListener('touchend', tUp);
+                })
+            }
+            function endBookingFunctions() {
+                Array.from(document.getElementsByClassName('day')).forEach((day) => {
+                    // MOUSE EVENTS
+                    day.removeEventListener('mouseenter', mEnter);
+                    day.removeEventListener('mousemove', mMove);
+                    day.removeEventListener('mousedown', mDown);
+                    day.removeEventListener('mouseup', mUp);
+                    day.removeEventListener('mouseleave', mLeave);
+                    // TOUCH EVENTS
+
+                })
+            }
+            
+        })
+    </script>
 </head>
 <body>
     <div class="nav-fill">h</div>
@@ -76,22 +295,52 @@
             Schedule @ <%= name %>
         </div>
     </nav>
+
     <div class="cal-nav">
-        <div title="See last week" class="last cb">&lt;</div>
-        <div title="See next week" class="next cb">&gt;</div>
-        <div title="Book time block" class="add cb">+</div>
+        <div class='cal-week'>Week of 4/16/2023</div>
+        <div title="View last week" class="last cb">&lt;</div>
+        <div title="View next week" class="next cb">&gt;</div>
+        <div title="Book a time block" class="add cb">+</div>
+    </div>
+    <div class="cover c1 invisible">
+        <i class="fa fa-close cover-close"></i>
+        <div class="new-block invisible"></div>
+    </div>
+    <!-- <div style='z-index: 10000' class="cover c2 invisible">
+        <i class="fa fa-close cover-close"></i>
+    </div> -->
+    <!-- INSTEAD OF A SECOND COVER, NEST block-details IN COVER 1 AND GIVE IT AN x IN THE TOP RIGHT CORNER -->
+    <div class="block-details invisible">
+        <div class="details">
+            <p class="details-head">Create a block for this time</p>
+            <p>By booking this block, you are letting other <strong>Study Spot</strong> users know that you will be here for the allotted time. Note that you will not have exclusive access to this room during this block.</p>
+            <p>Study Spot is in no way liable for what you do while in this classroom. We ask that you please be respectful of the room and those around you.</p>
+        </div>
+        <form>
+            <label for="date">Date:</label>
+            <input id="date" type="date">
+            <label for="start">Start Time:</label>
+            <input id="start" type="time">
+            <label for="end">End Time:</label>
+            <input id="end" type="time">
+            <label for="type">Type:</label>
+            <select id="type">
+                <option value="Open study">Open study</option>
+                <option value="Open study">Quiet study</option>
+                <option value="Open study">Group project</option>
+            </select>
+            <div class="submit">
+                <input type="submit">
+            </div>
+            <i class="fa fa-close details-close"></i>
+        </form>
     </div>
     <div class="week">
-        <div class="day">
-        </div>
-        <div class="day">
-        </div>
-        <div class="day">
-        </div>
-        <div class="day">
-        </div>
-        <div class="day">
-        </div>
+        <div class="day"></div>
+        <div class="day"></div>
+        <div class="day"></div>
+        <div class="day"></div>
+        <div class="day"></div>
         <div class="day"></div>
         <div class="day"></div>
         <div class="line" id="currentTime"></div>
