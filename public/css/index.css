@@ -22,6 +22,7 @@ body{
     padding: 3% 15%;
     margin: 0px;
     background: #2a26eb05;
+    overflow-x: hidden;
 }
 a {
     margin: 0;
@@ -50,21 +51,25 @@ h2 {
 .logo-container {
     font-weight: lighter;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 .logo-text {
-    position: absolute;
     font-family: 'Pacifico', cursive;
     font-size: 30px;
-    left: calc(70px + 5%);
-    top: 50%;
-    transform: translateY(-50%);
+    margin-left: 3vw;
 }
 .logo {
-    position: absolute;
-    bottom: -100%;
-    left: 4%;
+    transform: translateY(120%);
     height: 90%;
     transition: all 400ms cubic-bezier(.47,1.64,.41,.8);
+    -webkit-transition: all 400ms cubic-bezier(.47,1.64,.41,.8);
+    margin-left: 1.5vw;
 }
 .title {
     float: right;
@@ -116,6 +121,7 @@ h1 {
     outline: none;
     box-shadow: 0px 0px 0px 0px #aaa;
     transition: .3s all;
+    -webkit-transition: .3s all;
     transform: translate(0px, 0px)
 }
 #school-search:focus {
@@ -133,6 +139,7 @@ h1 {
     float: right;
     font-size: 2.75vw !important;
     transition: all .3s;
+    -webkit-transition: all .3s;
     cursor: pointer;
 }
 .search-bar {
@@ -151,10 +158,13 @@ h1 {
     box-sizing: border-box;         /* Opera/IE 8+ */
     box-shadow: 0px 0px 0 #aaa;
     transition: all .3s;
+    -webkit-transition: all .3s;
 }
-.search-bar:focus {
+.search-bar:focus/*,  .search-bar:hover */ {
     box-shadow: 4px 4px 0 #aaa;
     transform: translate(-2px, -2px);
+    /* box-shadow: 0px 4px 0 #aaa;
+    transform: translate(0px, -4px); */
 }
 hr {
     height: 1px;
@@ -172,4 +182,39 @@ hr {
 }
 .cards > .invisible {
     position: absolute;   
+}
+.block-details.invisible {
+    transform: translateY(20px);
+}
+
+.popup {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    z-index: 10000000000000;
+    cursor: pointer;
+    background: white;
+    animation: pop-up .2s cubic-bezier(.47,1.64,.41,.8);
+    box-shadow: 0 0 3px 2px #0001;
+}
+.popup-close {
+    margin-left: 10px;
+    font-size: 16px;
+}
+@keyframes pop-up {
+    0% {
+        opacity: 0%;
+        transform: translate(-50%, 100%);
+    }
+    /* 80% {
+        opacity: 80%;
+        transform: translate(-50%, -20%);
+    } */
+    100% {
+        opacity: 100%;
+        transform: translate(-50%, 0%);
+    }
 }

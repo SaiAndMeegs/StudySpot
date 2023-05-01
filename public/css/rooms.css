@@ -8,7 +8,7 @@
     .result { 
         grid-template-columns: calc(2*(6px + 4vw)) 1fr !important;
         text-align: center !important;
-        background: white !important;
+        background: #fff0 !important;
         border-bottom: 1px solid #eee; 
     }
     .rooms {
@@ -30,8 +30,10 @@
     cursor: pointer;
     grid-template-columns: calc((6px + 4vw)) 1fr 1fr;
     transition: all .5s;
+    -webkit-transition: all .5s;
     color: black;
     overflow: hidden;
+    white-space: nowrap;
 }
 .result.dark {
     background: #ddd;
@@ -40,6 +42,7 @@
     height: 25%;
     aspect-ratio: 1;
     transition: all .5s;
+    -webkit-transition: all .5s;
     border-radius: 50%;
     transform: translate(135%, 0) scale(1) !important;
 }
