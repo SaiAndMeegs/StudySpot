@@ -45,17 +45,15 @@ app.get('/rooms/', (req, res) => {
 })
 
 app.get('/rooms/:id/:name', (req, res) => {
-    param_id = req.params.id
-    param_name = req.params.name
-    res.render('rooms', {id: param_id, name: param_name})
+    res.render('rooms', {id: req.params.id, name: req.params.name})
 })
 
 app.get('/buildings/', (req, res) => {
     res.render('buildings')
 })
 
-app.get('/calendar/:building_room_id', (req, res) => {
-    res.render('calendar')
+app.get('/calendar/:id/:name', (req, res) => {
+    res.render('calendar', {id: req.params.id, name: req.params.name})
 })
 
 // Endpoints
