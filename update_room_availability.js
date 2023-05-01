@@ -18,21 +18,22 @@ const pool = new Pool({
       }
 })
 
-//Set appropriate time zone
+//Set appropriate time zone, make all classes available, then make classrooms with classes in session unavailable
 pool.query(
-    `SET time zone 'America/Montreal'`);
+    `SET time zone 'America/Montreal';
 
+    UPDATE building_room SET curr_availability = 2;
+    
+    UPDATE building_room SET curr_availability = 0
+        WHERE building_room_id IN 
+        (SELECT course.building_room_id FROM course_meeting course 
+            WHERE array_to_string(course.days, ',') LIKE '%' || TRIM(INITCAP(to_char(now(), 'day'))) || '%' AND
+            TO_TIMESTAMP(to_char(now(), 'HH24:MI:SS'), 'HH24:MI:SS') BETWEEN TO_TIMESTAMP(course.start_time, 'HH24:MI:SS') AND 
+            TO_TIMESTAMP(course.end_time, 'HH24:MI:SS'))'`);
+/*
 //Make classrooms without classes in session as available
 pool.query(
-    `UPDATE building_room SET curr_availability = 2
-    WHERE building_room_id IN 
-    (SELECT course.building_room_id FROM course_meeting course 
-    WHERE 
-	array_to_string(course.days, ',') NOT LIKE '%' || TRIM(INITCAP(to_char(now(), 'day'))) || '%'
-	OR 
-	array_to_string(course.days, ',') LIKE '%' || TRIM(INITCAP(to_char(now(), 'day'))) || '%' AND NOT
-    TO_TIMESTAMP(to_char(now(), 'HH24:MI:SS'), 'HH24:MI:SS') BETWEEN TO_TIMESTAMP(course.start_time, 'HH24:MI:SS') AND 
-    TO_TIMESTAMP(course.end_time, 'HH24:MI:SS'))`);
+    `UPDATE building_room SET curr_availability = 2`);
 
 //Make classrooms with classes in session as unavailable
 pool.query(
@@ -42,3 +43,4 @@ pool.query(
         WHERE array_to_string(course.days, ',') LIKE '%' || TRIM(INITCAP(to_char(now(), 'day'))) || '%' AND
         TO_TIMESTAMP(to_char(now(), 'HH24:MI:SS'), 'HH24:MI:SS') BETWEEN TO_TIMESTAMP(course.start_time, 'HH24:MI:SS') AND 
         TO_TIMESTAMP(course.end_time, 'HH24:MI:SS'))`);
+*/
