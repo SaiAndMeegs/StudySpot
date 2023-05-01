@@ -32,23 +32,34 @@
                         if(index === -1) {
                             val.classList.add('invisible');
                         } else {
-                            acc.push([val, index]);
+                            acc.push(val);
                         }
                         return acc;
                     }, [])
-                    .sort((v1,v2) => v1[1] - v2[1])
-                    .map(x => x[0])
+                    .sort(sortAlphaColor)
                 );
             });
             let url = 'https://study-spot-ms.herokuapp.com/';
             url += 'building_rooms/' + localStorage.getItem('building_id');
+
+            function sortAlphaColor(a,b) {
+                let ad = a.getElementsByClassName('dot')[0].classList.contains('green')
+                let bd = b.getElementsByClassName('dot')[0].classList.contains('green')
+                if(ad === bd) {
+                    let at = a.getElementsByClassName('searchable')[0].innerHTML
+                    let bt = b.getElementsByClassName('searchable')[0].innerHTML
+                    return bt > at ? -1 : 1;
+                } else {
+                    return ad ? -1 : 1;
+                }
+            }
 
             fetch(url).then(response => response.json()).then(data => {
                 data.forEach(building_room => {
                     makeRoom(building_room, building_room.curr_availability);
                 })
                 toSearch = Array.from(document.getElementsByClassName('rooms')[0].children);
-                toSearch.sort((a,b) => a.innerHTML.length - b.innerHTML.length);
+                toSearch.sort(sortAlphaColor);
                 console.log(toSearch);
                 order(toSearch);
             })
