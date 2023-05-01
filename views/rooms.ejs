@@ -40,8 +40,8 @@
                     .map(x => x[0])
                 );
             });
-
-            let url = 'http://localhost:5001/building_rooms/' + localStorage.getItem('building_id');
+            let url = 'https://study-spot-ms.herokuapp.com/';
+            url += 'building_rooms/' + localStorage.getItem('building_id');
 
             fetch(url).then(response => response.json()).then(data => {
                 data.forEach(building_room => {
