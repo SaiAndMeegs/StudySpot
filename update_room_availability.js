@@ -18,6 +18,10 @@ const pool = new Pool({
       }
 })
 
+//Set appropriate time zone
+pool.query(
+    `SET time zone 'America/Montreal'`);
+
 //Make classrooms without classes in session as available
 pool.query(
     `UPDATE building_room SET curr_availability = 2
