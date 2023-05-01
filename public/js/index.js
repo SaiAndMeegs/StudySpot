@@ -132,11 +132,11 @@ function makeRoom(building_room, availability) {
     elem.className = 'result';
 
     avails = ['Low', 'Medium', 'High']
-    let content = `${avails[availability]} availability right now.`;
+    let content = availability == 0 ? `Class in session.` : `${avails[availability]} availability right now.`;
     elem.innerHTML = `<div class="dot ${colors[availability]}"></div>
     <p class="searchable">${building_room.building_room_name}</p>
     <p>${content}</p>`;
-    elem.href = '../../calendar/' + building_room.building_room_id;
+    elem.href = '../../calendar/' + building_room.building_room_id + "/" + building_room.building_room_name;
     elem.onclick = () => localStorage.setItem('building_room_id', building_room.building_room_id)
     rooms.appendChild(elem);
 }

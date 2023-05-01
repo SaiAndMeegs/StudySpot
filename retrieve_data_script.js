@@ -69,8 +69,6 @@ const delay = (delayInms) => {
 
 //GET REST APIS
 
-
-
 //INSERT BUILDINGS
 /*
 for(let i = 1; i < 6; i++){
@@ -89,6 +87,11 @@ for(let i = 1; i < 6; i++){
     })
 }
 */
+
+axios.get("http://spire-api.melanson.dev/sections/?page=" + 1).then((resp) => {
+    console.log(resp);
+
+})
 
 //INSERT COURSE_MEETINGS
 //axios.get("http://spire-api.melanson.dev/sections/?page=" + 1).then((resp) => {
@@ -228,3 +231,4 @@ axios.get("http://spire-api.melanson.dev/buildings/").then(async (resp) => {
     //}
 
     //insertCourse(course.spire_id, course.offering.course.title, course.meeting_information[0].instructors[0].name, course.description, 123)
+

@@ -26,7 +26,8 @@
             });
             
             /* FETCHING BUILDINGS */
-            let url = 'http://localhost:5001/backend-buildings/';
+            let url = 'https://study-spot-ms.herokuapp.com/';
+            url += 'backend-buildings/';
 
             fetch(url).then(response => response.json()).then(data => {
                 let buildings = '';

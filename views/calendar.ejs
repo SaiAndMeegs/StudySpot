@@ -28,7 +28,8 @@
             setInterval(updateTime, 60000);
 
             /* FETCH CLASSROOM DATA */            
-            let url = 'http://localhost:5001/course_meetings/' + localStorage.getItem('building_room_id')
+            let url = 'https://study-spot-ms.herokuapp.com/';
+            url += 'course_meetings/building_room_id/' + localStorage.getItem('building_room_id')
 
             fetch(url).then(response => response.json()).then(data => {
                 console.log(data)
@@ -290,7 +291,9 @@
             <img class="logo" src="/spot.png" />
             <div class="logo-text">Study Spot</div>
         </a>
-        <div class="title">Calendar</div>
+        <div class="title">
+            Schedule @ <%= name %>
+        </div>
     </nav>
 
     <div class="cal-nav">
