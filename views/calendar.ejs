@@ -28,7 +28,7 @@
             setInterval(updateTime, 60000);
             
             let curr = new Date();
-            console.log(curr);
+            //console.log(curr);
             let firstday = new Date();
             firstday.setDate(curr.getDate() - curr.getDay());
             let lastday = new Date();
@@ -49,7 +49,7 @@
             document.getElementsByClassName('next')[0].onclick = () => {
                 firstday.setDate(firstday.getDate() + 7);
                 lastday.setDate(lastday.getDate() + 7);
-                console.log(firstday);
+                //console.log(firstday);
                 updateWeek();
                 getClasses();
             }
@@ -70,10 +70,10 @@
 
                 // Here we will use the date object to request data from a certain week.
                 fetch(url).then(response => response.json()).then(data => {
-                    console.log(data)
+                    //console.log(data)
                     data.forEach(course_meeting => {
                         course_meeting.days.forEach(day => {
-                            console.log(course_meeting)
+                            //console.log(course_meeting)
 
                             
                             //calculate the time difference between start and end time of the course_meeting
@@ -84,10 +84,9 @@
                             time_start.setHours(value_start[0], value_start[1], value_start[2], 0)
                             time_end.setHours(value_end[0], value_end[1], value_end[2], 0)
 
-                            console.log(value_start)
-                            console.log(value_end)
-                            console.log((time_end - time_start) / 60000)
-                            
+                            //console.log(value_start)
+                            //console.log(value_end)
+                            //console.log((time_end - time_start) / 60000)
                             
                             let start = (parseInt(course_meeting.start_time.substring(0,2)) - 6) * 60 + (parseInt(course_meeting.start_time.substring(3,5)))
                             let length = (time_end - time_start) / 60000
