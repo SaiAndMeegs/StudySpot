@@ -26,11 +26,18 @@
             }
             updateTime();
             setInterval(updateTime, 60000);
+            
+            let currentWeek = new Date();
+            let weekString = (currentWeek.getMonth() + 1) + '/' + currentWeek.getDate() + '/' + currentWeek.getFullYear()
+            let weekElement = document.getElementsByClassName('cal-week')[0];
+            weekElement.innerHTML = `Week of ${weekString}`;
+
 
             /* FETCH CLASSROOM DATA */            
             let url = 'https://study-spot-ms.herokuapp.com/';
             url += 'course_meetings/building_room_id/' + localStorage.getItem('building_room_id')
 
+            // Here we will use the date object to request data from a certain week.
             fetch(url).then(response => response.json()).then(data => {
                 console.log(data)
                 data.forEach(course_meeting => {
@@ -297,7 +304,7 @@
     </nav>
 
     <div class="cal-nav">
-        <div class='cal-week'>Week of 4/16/2023</div>
+        <div class='cal-week'></div>
         <div title="View last week" class="last cb">&lt;</div>
         <div title="View next week" class="next cb">&gt;</div>
         <div title="Book a time block" class="add cb">+</div>
@@ -327,7 +334,7 @@
             <select id="type">
                 <option value="Open study">Open study</option>
                 <option value="Open study">Quiet study</option>
-                <option value="Open study">Group project</option>
+                <option value="Open study" disabled>Coming Soon...</option>
             </select>
             <div class="submit">
                 <input type="submit">
