@@ -61,6 +61,15 @@
             .catch(err => console.error(err))
         })
         
+        let curr = new Date;
+        let firstday = new Date(curr.setDate(curr.getDate() - curr.getDay()));
+        let lastday = new Date(curr.setDate(curr.getDate() - curr.getDay()+6));
+        
+        firstday_string = firstday.getMonth() + '/' + firstday.getDate();
+        lastday_string = lastday.getMonth() + '/' + lastday.getDate();
+
+        console.log('firstday: ' + firstday_string)
+        console.log('lastday: ' + lastday_string)
         
 
     </script>
@@ -297,7 +306,9 @@
     </nav>
 
     <div class="cal-nav">
-        <div class='cal-week'>Week of 4/16/2023</div>
+        <div class='cal-week'>Week of <script type="text/javascript">
+            document.write(firstday_string + ' - ' + lastday_string) 
+          </script></div>
         <div title="View last week" class="last cb">&lt;</div>
         <div title="View next week" class="next cb">&gt;</div>
         <div title="Book a time block" class="add cb">+</div>
