@@ -13,7 +13,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             /* UPDATE TIME ON CALENDAR */
-            let days = document.getElementsByClassName('day');
+            let days = Array.from(document.getElementsByClassName('day'));
             let timeLine = document.getElementById('currentTime');
             function updateTime() {
                 let time = new Date();
@@ -27,62 +27,81 @@
             updateTime();
             setInterval(updateTime, 60000);
             
-            let currentWeek = new Date();
-            let weekString = (currentWeek.getMonth() + 1) + '/' + currentWeek.getDate() + '/' + currentWeek.getFullYear()
-            let weekElement = document.getElementsByClassName('cal-week')[0];
-            weekElement.innerHTML = `Week of ${weekString}`;
+            let curr = new Date();
+            console.log(curr);
+            let firstday = new Date();
+            firstday.setDate(curr.getDate() - curr.getDay());
+            let lastday = new Date();
+            lastday.setDate(curr.getDate() - curr.getDay()+6);
+            
+            function updateWeek() {
+                let firstday_string = (firstday.getMonth() + 1) + '/' + firstday.getDate();
+                let lastday_string = (lastday.getMonth() + 1) + '/' + lastday.getDate();
+                let weekElement = document.getElementsByClassName('cal-week')[0];
+                if(firstday_string === lastday_string) {
+                    weekElement.innerHTML = firstday_string;
+                } else {
+                    weekElement.innerHTML = `Week of ${firstday_string} - ${lastday_string}`;
+                }
+            }
+            updateWeek();
 
+            document.getElementsByClassName('next')[0].onclick = () => {
+                firstday.setDate(firstday.getDate() + 7);
+                lastday.setDate(lastday.getDate() + 7);
+                console.log(firstday);
+                updateWeek();
+                getClasses();
+            }
+            document.getElementsByClassName('last')[0].onclick = () => {
+                firstday.setDate(firstday.getDate() - 7);
+                lastday.setDate(lastday.getDate() - 7);
+                updateWeek();
+                getClasses();
+            }
 
-            /* FETCH CLASSROOM DATA */            
-            let url = 'https://study-spot-ms.herokuapp.com/';
-            url += 'course_meetings/building_room_id/' + localStorage.getItem('building_room_id')
-
-            // Here we will use the date object to request data from a certain week.
-            fetch(url).then(response => response.json()).then(data => {
-                console.log(data)
-                data.forEach(course_meeting => {
-                    course_meeting.days.forEach(day => {
-                        console.log(course_meeting)
-
-                        
-                        //calculate the time difference between start and end time of the course_meeting
-                        let time_start = new Date();
-                        let time_end = new Date();
-                        let value_start = course_meeting.start_time.split(':');
-                        let value_end = course_meeting.end_time.split(':');
-                        time_start.setHours(value_start[0], value_start[1], value_start[2], 0)
-                        time_end.setHours(value_end[0], value_end[1], value_end[2], 0)
-
-                        console.log(value_start)
-                        console.log(value_end)
-                        console.log((time_end - time_start) / 60000)
-                        
-                        
-                        let start = (parseInt(course_meeting.start_time.substring(0,2)) - 6) * 60 + (parseInt(course_meeting.start_time.substring(3,5)))
-                        let length = (time_end - time_start) / 60000
-                        makeTimeBlock(start, length, day, 0, course_meeting.course_title);
-                    })
-                    //make a time block for each day that the course_meeting has
+            /* FETCH CLASSROOM DATA */     
+            function getClasses() {
+                Array.from(document.getElementsByClassName('block')).forEach(elem => {
+                    elem.remove();
                 })
-            })
-            .catch(err => console.error(err))
-        })
-        
-        let curr = new Date;
-        let firstday = new Date(curr.setDate(curr.getDate() - curr.getDay()));
-        let lastday = new Date(curr.setDate(curr.getDate() - curr.getDay()+6));
-        
-        firstday_string = firstday.getMonth() + '/' + firstday.getDate();
-        lastday_string = lastday.getMonth() + '/' + lastday.getDate();
+                let url = 'https://study-spot-ms.herokuapp.com/';
+                url += 'course_meetings/building_room_id/' + localStorage.getItem('building_room_id') // + something informing of the week.
 
-        console.log('firstday: ' + firstday_string)
-        console.log('lastday: ' + lastday_string)
-        
+                // Here we will use the date object to request data from a certain week.
+                fetch(url).then(response => response.json()).then(data => {
+                    console.log(data)
+                    data.forEach(course_meeting => {
+                        course_meeting.days.forEach(day => {
+                            console.log(course_meeting)
 
-    </script>
-    <script>
-        // BOOKING TOOL
-        document.addEventListener('DOMContentLoaded', () => {
+                            
+                            //calculate the time difference between start and end time of the course_meeting
+                            let time_start = new Date();
+                            let time_end = new Date();
+                            let value_start = course_meeting.start_time.split(':');
+                            let value_end = course_meeting.end_time.split(':');
+                            time_start.setHours(value_start[0], value_start[1], value_start[2], 0)
+                            time_end.setHours(value_end[0], value_end[1], value_end[2], 0)
+
+                            console.log(value_start)
+                            console.log(value_end)
+                            console.log((time_end - time_start) / 60000)
+                            
+                            
+                            let start = (parseInt(course_meeting.start_time.substring(0,2)) - 6) * 60 + (parseInt(course_meeting.start_time.substring(3,5)))
+                            let length = (time_end - time_start) / 60000
+                            makeTimeBlock(start, length, day, 0, course_meeting.course_title);
+                        })
+                        //make a time block for each day that the course_meeting has
+                    })
+                })
+                .catch(err => console.error(err))
+            }       
+            getClasses();
+            
+            // BOOKING TOOL
+
             let cover = document.getElementsByClassName('c1')[0];
             document.getElementsByClassName('add')[0].onclick = () => {
                 cover.classList.remove('invisible');
@@ -116,17 +135,17 @@
                     // if(block.parentElement.className === 'block-bundle') block = block.parentElement;
                     let bLoc = block.getBoundingClientRect();
                     let nbLoc = newBlock.getBoundingClientRect();
-                    if(Math.abs(nbLoc.left - bLoc.left) < 1) {
-                        if(bLoc.top + window.scrollY > center) {
-                            if(bLoc.top + window.scrollY < bounds[1]) {
-                                bounds[1] = bLoc.top + window.scrollY;
-                            }
-                        } else {
-                            if(bLoc.top + bLoc.height + window.scrollY > bounds[0]) {
-                                bounds[0] = bLoc.top + bLoc.height + window.scrollY;
-                            }
+                    // if(Math.abs(nbLoc.left - bLoc.left) < 1) {
+                    if(bLoc.top + window.scrollY > center) {
+                        if(bLoc.top + window.scrollY < bounds[1]) {
+                            bounds[1] = bLoc.top + window.scrollY;
+                        }
+                    } else {
+                        if(bLoc.top + bLoc.height + window.scrollY > bounds[0]) {
+                            bounds[0] = bLoc.top + bLoc.height + window.scrollY;
                         }
                     }
+                    // }
                 }) 
             }
             let setPosition = (day, e) => {
@@ -180,6 +199,20 @@
                 newBlock.style.height = h + 'px';
             }
             let makeForm = (day) => {
+                // if(!day.classList.contains('day')) {
+                //     day = day.parentElement;
+                // }
+
+                // UNTIL THERE IS A BETTER WAY TO GET THE DAY ELEMENT THAT THE BLOCK IS IN:
+                for(let i = 0; i < days.length; i++) {
+                    let l1 = days[i].getBoundingClientRect().left;
+                    let l2 = newBlock.getBoundingClientRect().left;
+                    if(Math.abs(l2 - l1) < 5) {
+                        day = days[i];
+                    }
+                }
+
+                let dayIndex = days.indexOf(day);
                 let loc = day.getBoundingClientRect();
                 let bLoc = newBlock.getBoundingClientRect();
                 let start = Math.round(bLoc.top - loc.top);
@@ -191,6 +224,10 @@
                 startElem.value = start;
                 let endElem = document.getElementById('end');
                 endElem.value = end;
+                let dateElem = document.getElementById('date');
+                let selectedDate = new Date(firstday.valueOf());
+                selectedDate.setDate(selectedDate.getDate() + dayIndex);
+                dateElem.valueAsDate = selectedDate;
                 blockDetails.classList.remove('invisible');
                 // cover2.classList.remove('invisible');
 
@@ -296,8 +333,9 @@
 
                 })
             }
-            
+
         })
+
     </script>
 </head>
 <body>
@@ -313,9 +351,7 @@
     </nav>
 
     <div class="cal-nav">
-        <div class='cal-week'>Week of <script type="text/javascript">
-            document.write(firstday_string + ' - ' + lastday_string) 
-          </script></div>
+        <div class='cal-week'></div>
         <div title="View last week" class="last cb">&lt;</div>
         <div title="View next week" class="next cb">&gt;</div>
         <div title="Book a time block" class="add cb">+</div>
