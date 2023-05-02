@@ -23,12 +23,12 @@
 
             let searchBar = document.getElementsByClassName('search-bar')[0];
             let toSearch = Array.from(document.getElementsByClassName('rooms')[0].children);
-            searchBar.addEventListener('input', (e) => {
+            function updateSearchResults(e) {
                 order(
                     toSearch.reduce((acc, val) => {
                         let name = val.getElementsByClassName('searchable')[0].innerHTML.toLowerCase();
                         val.classList.remove('invisible');
-                        let index = name.indexOf(e.target.value.toLowerCase());
+                        let index = name.indexOf(searchBar.value.toLowerCase());
                         if(index === -1) {
                             val.classList.add('invisible');
                         } else {
@@ -38,7 +38,8 @@
                     }, [])
                     .sort(sortAlphaColor)
                 );
-            });
+            }
+            searchBar.addEventListener('input', updateSearchResults);
             let url = 'https://study-spot-ms.herokuapp.com/';
             url += 'building_rooms/' + localStorage.getItem('building_id');
 
@@ -61,7 +62,7 @@
                 toSearch = Array.from(document.getElementsByClassName('rooms')[0].children);
                 toSearch.sort(sortAlphaColor);
                 console.log(toSearch);
-                order(toSearch);
+                updateSearchResults();
             })
             .catch(err => console.error(err))
         })
