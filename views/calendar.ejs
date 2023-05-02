@@ -28,7 +28,7 @@
             setInterval(updateTime, 60000);
 
             /* FETCH CLASSROOM DATA */            
-            let url = 'https://study-spot-ms.herokuapp.com/';
+            let url = 'https://www.study-spot.com/';
             url += 'course_meetings/building_room_id/' + localStorage.getItem('building_room_id')
 
             fetch(url).then(response => response.json()).then(data => {
@@ -59,6 +59,8 @@
                 })
             })
             .catch(err => console.error(err))
+
+            
         })
         
         let curr = new Date;
@@ -70,6 +72,24 @@
 
         console.log('firstday: ' + firstday_string)
         console.log('lastday: ' + lastday_string)
+
+        let onSubmit = () => {
+            let startElem = document.getElementById('start');
+            let endElem = document.getElementById('end');
+            let type = document.getElementById('type');
+
+            let student_event = {
+                'date': null,
+                'start': startElem.value,
+                'end': endElem.value,
+                'type': type.value,
+            }
+
+            let url = 'https://www.study-spot.com/';
+            url += 'student-events/';
+            fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(student_event) }).then(data => console.log(data))
+            
+        }
         
 
     </script>
@@ -338,10 +358,10 @@
             <select id="type">
                 <option value="Open study">Open study</option>
                 <option value="Open study">Quiet study</option>
-                <option value="Open study">Group project</option>
+                <option value="Open study">Coming soon...</option>
             </select>
             <div class="submit">
-                <input type="submit">
+                <input type="submit" onclick = "onSubmit">
             </div>
             <i class="fa fa-close details-close"></i>
         </form>

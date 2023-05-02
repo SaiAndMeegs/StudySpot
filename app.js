@@ -27,7 +27,7 @@ app.use('/js', express.static(__dirname + 'public/js'))
 
 //  Listen
 app.listen(PORT, () => {
-    console.log('Listening on port ${PORT}')
+    console.log(`Listening on port ${PORT}`)
 })
 
 // Set Views
@@ -115,6 +115,17 @@ app.get('/course_meetings/id/:id', cors(), (req, res) => {
     pool.query("SELECT * FROM course_meeting WHERE id=" + id, (err, result) => {
         if (err) throw err
         res.status(200).json(result.rows)
+  
+        pool.end;
+    })
+
+})
+
+app.post('/student_events/', cors(), (req, res) => {
+    const values = [ req.body.date, req.body.start, req.body.end, req.body.type]
+    pool.query("INSERT INTO student_event (date, start_time, end_time, study_type) VALUES ($1, $2, $3, $4)", values, (error, results) => {
+        if (err) throw err
+        res.status(200).send("")
   
         pool.end;
     })
