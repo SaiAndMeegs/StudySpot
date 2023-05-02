@@ -9,7 +9,7 @@ const client = new Client({
 
 client.connect();
 
-client.query(`SET time zone 'America/Montreal;
+client.query(`SET time zone 'America/Montreal';
 
     UPDATE building_room SET curr_availability = 2;
     
