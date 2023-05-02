@@ -16,6 +16,9 @@
         padding: 3% 5% !important;
     }
 }
+* {
+    user-select: none;
+}
 body{
     position: relative;
     font-family: 'Poppins', sans-serif;
