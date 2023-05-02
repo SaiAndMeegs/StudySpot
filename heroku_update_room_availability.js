@@ -20,8 +20,6 @@ client.query(`SET time zone 'America/Montreal';
                     TO_TIMESTAMP(to_char(now(), 'HH24:MI:SS'), 'HH24:MI:SS') BETWEEN TO_TIMESTAMP(course.start_time, 'HH24:MI:SS') AND 
                     TO_TIMESTAMP(course.end_time, 'HH24:MI:SS'))`, (err, res) => {
   if (err) throw err;
-  for (let row of res.rows) {
-    console.log(JSON.stringify(row));
-  }
+
   client.end();
 });
