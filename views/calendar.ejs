@@ -66,7 +66,7 @@
                     elem.remove();
                 })
                 let url = 'https://www.study-spot.com/';
-                url += 'course_meetings/building_room_id/' + localStorage.getItem('building_room_id') // + something informing of the week.
+                url += 'course_meetings/building_room_id/' + '<%- id %>' // + something informing of the week.
 
                 // Here we will use the date object to request data from a certain week.
                 fetch(url).then(response => response.json()).then(data => {
@@ -374,7 +374,7 @@
             <p>By booking this block, you are letting other <strong>Study Spot</strong> users know that you will be here for the allotted time. Note that you will not have exclusive access to this room during this block.</p>
             <p>Study Spot is in no way liable for what you do while in this classroom. We ask that you please be respectful of the room and those around you.</p>
         </div>
-        <form onsubmit="onSubmit();">
+        <form>
             <label for="date">Date:</label>
             <input id="date" type="date">
             <label for="start">Start Time:</label>
@@ -388,13 +388,13 @@
                 <option value="Open study" disabled>Coming Soon...</option>
             </select>
             <div class="submit">
-                <input type="submit">
+                <button type="button" onClick={onSubmit()}>Submit</button>
             </div>
             <i class="fa fa-close details-close"></i>
         </form>
 
         <script>
-            function onSubmit() {
+            const onSubmit = async () => {
                 /*
                 event = {
                     'date': null,
@@ -419,11 +419,12 @@
                     'date': document.getElementById('date').value,
                     'start': document.getElementById('start').value,
                     'end': document.getElementById('end').value,
-                    'type': document.getElementById('type').value
+                    'type': document.getElementById('type').value,
+                    'building_room_id': '<%- id %>'
                 }));
                 
 
-                let url = 'https://study-spot-ms.herokuapp.com/';
+                let url = 'http://localhost:5001/';
                 url += 'student_events';
 
                 fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
@@ -431,10 +432,12 @@
                     'start': document.getElementById('start').value,
                     'end': document.getElementById('end').value,
                     'type': document.getElementById('type').value,
-                    'building_room_id': localStorage.getItem('building_room_id')
+                    'building_room_id': '<%- id %>'
                 }) }).then(data => console.log(data))
 
                 console.log('submitted')
+
+                window.location.reload()
 
             }
         </script>

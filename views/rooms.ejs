@@ -41,7 +41,7 @@
             }
             searchBar.addEventListener('input', updateSearchResults);
             let url = 'https://www.study-spot.com/';
-            url += 'building_rooms/' + localStorage.getItem('building_id');
+            url += 'building_rooms/' + '<%- id %>';
 
             function sortAlphaColor(a,b) {
                 let ad = a.getElementsByClassName('dot')[0].classList.contains('green')
