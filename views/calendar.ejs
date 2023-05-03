@@ -419,10 +419,10 @@
                 url += 'student_events';
                 
                 fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
-                    date: document.getElementById('date').value,
-                    start: document.getElementById('start').value,
-                    end: document.getElementById('end').value,
-                    type: document.getElementById('type').value
+                    'date': document.getElementById('date').value,
+                    'start': document.getElementById('start').value,
+                    'end': document.getElementById('end').value,
+                    'type': document.getElementById('type').value
                 }) }).then(data => console.log(data))
 
                 console.log('submitted')
