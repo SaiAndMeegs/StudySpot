@@ -369,7 +369,7 @@
             <p>By booking this block, you are letting other <strong>Study Spot</strong> users know that you will be here for the allotted time. Note that you will not have exclusive access to this room during this block.</p>
             <p>Study Spot is in no way liable for what you do while in this classroom. We ask that you please be respectful of the room and those around you.</p>
         </div>
-        <form>
+        <form onsubmit="onSubmit();">
             <label for="date">Date:</label>
             <input id="date" type="date">
             <label for="start">Start Time:</label>
@@ -378,15 +378,57 @@
             <input id="end" type="time">
             <label for="type">Type:</label>
             <select id="type">
-                <option value="Open study">Open study</option>
                 <option value="Open study">Quiet study</option>
+                <option value="Open study">Open study</option>
                 <option value="Open study" disabled>Coming Soon...</option>
             </select>
             <div class="submit">
-                <input type="submit" onclick = "onSubmit">
+                <input type="submit">
             </div>
             <i class="fa fa-close details-close"></i>
         </form>
+
+        <script>
+            function onSubmit() {
+                /*
+                event = {
+                    'date': null,
+                    'start': null,
+                    'end': null,
+                    'type': null
+                }
+
+                event.date = document.getElementById('date').value;
+                event.start = document.getElementById('start').value;
+                event.end = document.getElementById('end').value;
+                event.type = document.getElementById('type').value;
+                */
+
+                //console.log(event)
+
+                console.log('submitted');
+
+                alert(JSON.stringify({
+                    'date': document.getElementById('date').value,
+                    'start': document.getElementById('start').value,
+                    'end': document.getElementById('end').value,
+                    'type': document.getElementById('type').value
+                }));
+
+                let url = 'https://www.study-spot.com/';
+                url += 'student_events';
+                
+                fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
+                    date: document.getElementById('date').value,
+                    start: document.getElementById('start').value,
+                    end: document.getElementById('end').value,
+                    type: document.getElementById('type').value
+                }) }).then(data => console.log(data))
+
+                console.log('submitted')
+
+            }
+        </script>
     </div>
     <div class="week">
         <div class="day"></div>

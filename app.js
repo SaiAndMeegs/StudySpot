@@ -45,6 +45,7 @@ app.get('/rooms/', (req, res) => {
 })
 
 app.get('/rooms/:id/:name', (req, res) => {
+    //console.log('rooms')
     res.render('rooms', {id: req.params.id, name: req.params.name})
 })
 
@@ -121,14 +122,19 @@ app.get('/course_meetings/id/:id', cors(), (req, res) => {
 
 })
 
-app.post('/student_events/', cors(), (req, res) => {
-    const values = [ req.body.date, req.body.start, req.body.end, req.body.type]
+app.post('/student_events', cors(), (req, res) => {
+    console.log('backend student events');
+
+    /*
+    const values = [req.body.date, req.body.start, req.body.end, req.body.type]
+    
     pool.query("INSERT INTO student_event (date, start_time, end_time, study_type) VALUES ($1, $2, $3, $4)", values, (error, results) => {
         if (err) throw err
-        res.status(200).send("")
+        results.status(200).send("")
   
         pool.end;
     })
+    */
 
 })
 
