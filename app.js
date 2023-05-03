@@ -140,7 +140,7 @@ app.get('/course_meetings/range_of_days/:building_room_id/:start_date/:end_date'
 })
 
 app.post('/student_events', bodyParser.json(), (req, res) => {
-    
+
     console.log('backend student events');
 
     //res.status(200).send("hi"); 
@@ -156,7 +156,24 @@ app.post('/student_events', bodyParser.json(), (req, res) => {
         pool.end;
     })
     
+})
+
+app.options('/student_events', bodyParser.json(), (req, res) => {
     
+    console.log('backend student events');
+
+    //res.status(200).send("hi"); 
+    console.log(req.body);
+
+    const values = [req.body.date, req.body.start, req.body.end, req.body.type, req.body.building_room_id]
+    
+    
+    pool.query("INSERT INTO student_event (date, start_time, end_time, study_type, building_room_id) VALUES ($1, $2, $3, $4, $5)", values, (error, results) => {
+        if (error) throw error
+        res.status(200).send("")
+  
+        pool.end;
+    }) 
 
 })
 
