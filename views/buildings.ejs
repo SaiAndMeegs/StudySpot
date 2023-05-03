@@ -26,14 +26,14 @@
             });
             
             /* FETCHING BUILDINGS */
-            let url = 'https://study-spot-ms.herokuapp.com/';
+            let url = 'https://www.study-spot.com/';
             url += 'backend-buildings/';
 
             fetch(url).then(response => response.json()).then(data => {
                 let buildings = '';
                 let addresses = '';
                 data.forEach(building => {
-                    console.log(building.building_address);
+                    //console.log(building.building_address);
                     if(building.building_address !== null) {
                         buildings += `${building.building_name} 
                         `;
@@ -42,8 +42,8 @@
                     }
                     makeBuilding(building, 2)
                 })
-                console.log(buildings)
-                console.log(addresses)
+                //console.log(buildings)
+                //console.log(addresses)
                 toSearch =  Array.from(document.getElementsByClassName('cards')[0].children);
             })
         })

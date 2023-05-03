@@ -6,6 +6,8 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 const axios = require('axios')
 const Pool = require('pg').Pool
+const bodyParser = require('body-parser');
+
 
 app.use(cors());
 
@@ -27,7 +29,7 @@ app.use('/js', express.static(__dirname + 'public/js'))
 
 //  Listen
 app.listen(PORT, () => {
-    console.log('Listening on port ${PORT}')
+    console.log(`Listening on port ${PORT}`)
 })
 
 // Set Views
@@ -45,6 +47,7 @@ app.get('/rooms/', (req, res) => {
 })
 
 app.get('/rooms/:id/:name', (req, res) => {
+    //console.log('rooms')
     res.render('rooms', {id: req.params.id, name: req.params.name})
 })
 
@@ -120,5 +123,58 @@ app.get('/course_meetings/id/:id', cors(), (req, res) => {
     })
 
 })
+
+//student_event endpoints
+
+app.get('/course_meetings/range_of_days/:building_room_id/:start_date/:end_date', cors(), (req, res) => {
+    let building_room_id = req.params.building_room_id;
+    let start_date = req.params.start_date;
+    let end_date = req.params.end_date;
+
+    pool.query("SELECT * FROM student_event WHERE date" + search_query, (err, result) => {
+        if (err) throw err
+        res.status(200).json(result.rows)
+  
+        pool.end;
+    })
+})
+
+app.post('/student_events', bodyParser.json(), (req, res) => {
+
+    console.log('backend student events');
+
+    //res.status(200).send("hi"); 
+    console.log(req.body);
+
+    const values = [req.body.date, req.body.start, req.body.end, req.body.type, req.body.building_room_id]
+    
+    
+    pool.query("INSERT INTO student_event (date, start_time, end_time, study_type, building_room_id) VALUES ($1, $2, $3, $4, $5)", values, (error, results) => {
+        if (error) throw error
+        res.status(200).send("")
+  
+        pool.end;
+    })
+    
+})
+
+app.options('/student_events', bodyParser.json(), (req, res) => {
+    
+    console.log('backend student events');
+
+    //res.status(200).send("hi"); 
+    console.log(req.body);
+
+    const values = [req.body.date, req.body.start, req.body.end, req.body.type, req.body.building_room_id]
+    
+    
+    pool.query("INSERT INTO student_event (date, start_time, end_time, study_type, building_room_id) VALUES ($1, $2, $3, $4, $5)", values, (error, results) => {
+        if (error) throw error
+        res.status(200).send("")
+  
+        pool.end;
+    }) 
+})
+
 
 

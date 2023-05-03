@@ -28,7 +28,7 @@
             setInterval(updateTime, 60000);
             
             let curr = new Date();
-            console.log(curr);
+            //console.log(curr);
             let firstday = new Date();
             firstday.setDate(curr.getDate() - curr.getDay());
             let lastday = new Date();
@@ -49,7 +49,7 @@
             document.getElementsByClassName('next')[0].onclick = () => {
                 firstday.setDate(firstday.getDate() + 7);
                 lastday.setDate(lastday.getDate() + 7);
-                console.log(firstday);
+                //console.log(firstday);
                 updateWeek();
                 getClasses();
             }
@@ -60,22 +60,21 @@
                 getClasses();
             }
 
-            /* FETCH CLASSROOM DATA */     
+            /* FETCH CLASS DATA */     
             function getClasses() {
                 Array.from(document.getElementsByClassName('block')).forEach(elem => {
                     elem.remove();
                 })
-                let url = 'https://study-spot-ms.herokuapp.com/';
-                url += 'course_meetings/building_room_id/' + localStorage.getItem('building_room_id') // + something informing of the week.
+                let url = 'https://www.study-spot.com/';
+                url += 'course_meetings/building_room_id/' + '<%- id %>' // + something informing of the week.
 
                 // Here we will use the date object to request data from a certain week.
                 fetch(url).then(response => response.json()).then(data => {
-                    console.log(data)
+                    //console.log(data)
                     data.forEach(course_meeting => {
                         course_meeting.days.forEach(day => {
-                            console.log(course_meeting)
+                            //console.log(course_meeting)
 
-                            
                             //calculate the time difference between start and end time of the course_meeting
                             let time_start = new Date();
                             let time_end = new Date();
@@ -84,10 +83,9 @@
                             time_start.setHours(value_start[0], value_start[1], value_start[2], 0)
                             time_end.setHours(value_end[0], value_end[1], value_end[2], 0)
 
-                            console.log(value_start)
-                            console.log(value_end)
-                            console.log((time_end - time_start) / 60000)
-                            
+                            //console.log(value_start)
+                            //console.log(value_end)
+                            //console.log((time_end - time_start) / 60000)
                             
                             let start = (parseInt(course_meeting.start_time.substring(0,2)) - 6) * 60 + (parseInt(course_meeting.start_time.substring(3,5)))
                             let length = (time_end - time_start) / 60000
@@ -99,6 +97,12 @@
                 .catch(err => console.error(err))
             }       
             getClasses();
+
+            /* FETCH STUDENT_EVENT DATA */     
+            function getStudentEvents() {
+                
+            }       
+            getStudentEvents();
             
             // BOOKING TOOL
 
@@ -379,15 +383,61 @@
             <input id="end" type="time">
             <label for="type">Type:</label>
             <select id="type">
-                <option value="Open study">Open study</option>
                 <option value="Open study">Quiet study</option>
+                <option value="Open study">Open study</option>
                 <option value="Open study" disabled>Coming Soon...</option>
             </select>
-            <div class="submit">
-                <input type="submit">
+            <div class="button">
+                <button type="button" onclick={onSubmit()}> Submit </button>
             </div>
             <i class="fa fa-close details-close"></i>
         </form>
+
+        <script>
+            const onSubmit = async () => {
+                /*
+                event = {
+                    'date': null,
+                    'start': null,
+                    'end': null,
+                    'type': null
+                }
+
+                event.date = document.getElementById('date').value;
+                event.start = document.getElementById('start').value;
+                event.end = document.getElementById('end').value;
+                event.type = document.getElementById('type').value;
+                */
+
+                /*
+                console.log('submitted');
+                console.log(document.getElementById('date').value)
+                console.log(new Date(document.getElementById('date').value.split('-')[0], document.getElementById('date').value.split('-')[1] - 1, document.getElementById('date').value.split('-')[2]));
+
+                alert(JSON.stringify({
+                    'date': document.getElementById('date').value,
+                    'start': document.getElementById('start').value,
+                    'end': document.getElementById('end').value,
+                    'type': document.getElementById('type').value,
+                    'building_room_id': '<%- id %>'
+                }));
+                */                
+                
+
+                let url = 'https://study-spot-ms.herokuapp.com/';
+                url += 'student_events';
+
+                await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
+                    'date': new Date(document.getElementById('date').value.split('-')[0], document.getElementById('date').value.split('-')[1] - 1, document.getElementById('date').value.split('-')[2]),
+                    'start': document.getElementById('start').value,
+                    'end': document.getElementById('end').value,
+                    'type': document.getElementById('type').value,
+                    'building_room_id': '<%- id %>'
+                }) }).then(data => console.log(data))
+
+                window.location.reload();
+            }
+        </script>
     </div>
     <div class="week">
         <div class="day"></div>
