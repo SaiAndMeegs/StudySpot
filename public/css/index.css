@@ -16,6 +16,12 @@
         padding: 3% 5% !important;
     }
 }
+@media (hover: hover) {
+    a:hover {
+        color:inherit
+    }
+
+}
 * {
     user-select: none;
     -webkit-touch-callout: none; /* iOS Safari */
@@ -40,9 +46,6 @@ a {
     text-decoration: none;
     cursor: pointer;
     display: block;
-}
-a:hover {
-    color:inherit
 }
 h2 {
     font-weight: 600 !important;
