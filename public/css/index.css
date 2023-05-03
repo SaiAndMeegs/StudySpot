@@ -86,15 +86,21 @@ h2 {
     float: right;
     font-weight: lighter;
     font-size: 20px;
-    max-width: 50%;
+    max-width: 50vw;
 }
 .nav-fill {
-    width: 1%;
+    width: 100%;
     padding: 3vh 2vw;
     position: relative;
+    display: inline-block;
     opacity: 0;
     pointer-events: none;
-    font-size: 20px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    margin: none;
+    align-items: center;
+    background: red;
 }
 nav {
     box-shadow: 0 10px 10px #00000010;
