@@ -6,6 +6,8 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 const axios = require('axios')
 const Pool = require('pg').Pool
+const bodyParser = require('body-parser');
+
 
 app.use(cors());
 
@@ -122,19 +124,22 @@ app.get('/course_meetings/id/:id', cors(), (req, res) => {
 
 })
 
-app.post('/student_events', (req, res) => {
+app.post('/student_events', bodyParser.json(), (req, res) => {
     console.log('backend student events');
 
     //res.status(200).send("hi"); 
-    
+    console.log(req.body);
+
     const values = [req.body.date, req.body.start, req.body.end, req.body.type]
     
+    
     pool.query("INSERT INTO student_event (date, start_time, end_time, study_type) VALUES ($1, $2, $3, $4)", values, (error, results) => {
-        if (err) throw err
-        results.status(200).send("")
+        if (error) throw error
+        res.status(200).send("")
   
         pool.end;
     })
+    
     
 
 })

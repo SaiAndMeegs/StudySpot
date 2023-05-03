@@ -405,8 +405,10 @@
                 */
 
                 //console.log(event)
-
+                /*
                 console.log('submitted');
+                console.log(document.getElementById('date').value)
+                console.log(new Date(document.getElementById('date').value.split('-')[0], document.getElementById('date').value.split('-')[1] - 1, document.getElementById('date').value.split('-')[2]));
 
                 alert(JSON.stringify({
                     'date': document.getElementById('date').value,
@@ -414,12 +416,14 @@
                     'end': document.getElementById('end').value,
                     'type': document.getElementById('type').value
                 }));
+                */
 
-                let url = 'https://www.study-spot.com/';
+                let url = 'http://localhost:5001/';
                 url += 'student_events';
-                
+
+
                 fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
-                    'date': document.getElementById('date').value,
+                    'date': new Date(document.getElementById('date').value.split('-')[0], document.getElementById('date').value.split('-')[1] - 1, document.getElementById('date').value.split('-')[2]),
                     'start': document.getElementById('start').value,
                     'end': document.getElementById('end').value,
                     'type': document.getElementById('type').value
