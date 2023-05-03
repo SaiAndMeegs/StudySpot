@@ -60,7 +60,7 @@
                 getClasses();
             }
 
-            /* FETCH CLASSROOM DATA */     
+            /* FETCH CLASS DATA */     
             function getClasses() {
                 Array.from(document.getElementsByClassName('block')).forEach(elem => {
                     elem.remove();
@@ -75,7 +75,6 @@
                         course_meeting.days.forEach(day => {
                             //console.log(course_meeting)
 
-                            
                             //calculate the time difference between start and end time of the course_meeting
                             let time_start = new Date();
                             let time_end = new Date();
@@ -98,6 +97,12 @@
                 .catch(err => console.error(err))
             }       
             getClasses();
+
+            /* FETCH STUDENT_EVENT DATA */     
+            function getStudentEvents() {
+                
+            }       
+            getStudentEvents();
             
             // BOOKING TOOL
 
@@ -405,7 +410,7 @@
                 */
 
                 //console.log(event)
-                /*
+                
                 console.log('submitted');
                 console.log(document.getElementById('date').value)
                 console.log(new Date(document.getElementById('date').value.split('-')[0], document.getElementById('date').value.split('-')[1] - 1, document.getElementById('date').value.split('-')[2]));
@@ -416,17 +421,17 @@
                     'end': document.getElementById('end').value,
                     'type': document.getElementById('type').value
                 }));
-                */
+                
 
-                let url = 'http://localhost:5001/';
+                let url = 'https://study-spot-ms.herokuapp.com/';
                 url += 'student_events';
-
 
                 fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
                     'date': new Date(document.getElementById('date').value.split('-')[0], document.getElementById('date').value.split('-')[1] - 1, document.getElementById('date').value.split('-')[2]),
                     'start': document.getElementById('start').value,
                     'end': document.getElementById('end').value,
-                    'type': document.getElementById('type').value
+                    'type': document.getElementById('type').value,
+                    'building_room_id': localStorage.getItem('building_room_id')
                 }) }).then(data => console.log(data))
 
                 console.log('submitted')
