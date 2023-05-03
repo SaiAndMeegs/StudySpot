@@ -410,6 +410,17 @@
                 */
 
                 //console.log(event)
+
+                let url = 'https://study-spot.com/';
+                url += 'student_events';
+
+                fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
+                    'date': new Date(document.getElementById('date').value.split('-')[0], document.getElementById('date').value.split('-')[1] - 1, document.getElementById('date').value.split('-')[2]),
+                    'start': document.getElementById('start').value,
+                    'end': document.getElementById('end').value,
+                    'type': document.getElementById('type').value,
+                    'building_room_id': '<%- id %>'
+                }) }).then(data => console.log(data))
                 
                 console.log('submitted');
                 console.log(document.getElementById('date').value)
@@ -422,18 +433,6 @@
                     'type': document.getElementById('type').value,
                     'building_room_id': '<%- id %>'
                 }));
-                
-
-                let url = 'http://localhost:5001/';
-                url += 'student_events';
-
-                fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
-                    'date': new Date(document.getElementById('date').value.split('-')[0], document.getElementById('date').value.split('-')[1] - 1, document.getElementById('date').value.split('-')[2]),
-                    'start': document.getElementById('start').value,
-                    'end': document.getElementById('end').value,
-                    'type': document.getElementById('type').value,
-                    'building_room_id': '<%- id %>'
-                }) }).then(data => console.log(data))
 
                 console.log('submitted')
 
