@@ -387,8 +387,8 @@
                 <option value="Open study">Open study</option>
                 <option value="Open study" disabled>Coming Soon...</option>
             </select>
-            <div class="submit">
-                <button type="button" onClick={onSubmit()}>Submit</button>
+            <div class="button">
+                <button type="button" onclick={onSubmit()}> Submit </button>
             </div>
             <i class="fa fa-close details-close"></i>
         </form>
@@ -409,19 +409,7 @@
                 event.type = document.getElementById('type').value;
                 */
 
-                //console.log(event)
-
-                let url = 'https://study-spot-ms.herokuapp.com/';
-                url += 'student_events';
-
-                fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
-                    'date': new Date(document.getElementById('date').value.split('-')[0], document.getElementById('date').value.split('-')[1] - 1, document.getElementById('date').value.split('-')[2]),
-                    'start': document.getElementById('start').value,
-                    'end': document.getElementById('end').value,
-                    'type': document.getElementById('type').value,
-                    'building_room_id': '<%- id %>'
-                }) }).then(data => console.log(data))
-                
+                /*
                 console.log('submitted');
                 console.log(document.getElementById('date').value)
                 console.log(new Date(document.getElementById('date').value.split('-')[0], document.getElementById('date').value.split('-')[1] - 1, document.getElementById('date').value.split('-')[2]));
@@ -433,11 +421,21 @@
                     'type': document.getElementById('type').value,
                     'building_room_id': '<%- id %>'
                 }));
+                */                
+                
 
-                console.log('submitted')
+                let url = 'https://study-spot-ms.herokuapp.com/';
+                url += 'student_events';
 
-                window.location.reload()
+                await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
+                    'date': new Date(document.getElementById('date').value.split('-')[0], document.getElementById('date').value.split('-')[1] - 1, document.getElementById('date').value.split('-')[2]),
+                    'start': document.getElementById('start').value,
+                    'end': document.getElementById('end').value,
+                    'type': document.getElementById('type').value,
+                    'building_room_id': '<%- id %>'
+                }) }).then(data => console.log(data))
 
+                window.location.reload();
             }
         </script>
     </div>

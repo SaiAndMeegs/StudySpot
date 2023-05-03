@@ -158,7 +158,6 @@ app.post('/student_events', bodyParser.json(), (req, res) => {
     
 })
 
-/*
 app.options('/student_events', bodyParser.json(), (req, res) => {
     
     console.log('backend student events');
@@ -176,6 +175,6 @@ app.options('/student_events', bodyParser.json(), (req, res) => {
         pool.end;
     }) 
 })
-*/
+
 
 
