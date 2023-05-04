@@ -21,6 +21,10 @@
         opacity: 0;
         position: absolute;
     }
+    .search-bar:focus {
+        box-shadow: 0px 0px 0 #aaa !important;
+        transform: translate(0px, 0px) !important;
+    }
 }
 @media (hover: hover) {
     a:hover {
