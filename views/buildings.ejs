@@ -32,8 +32,16 @@
             fetch(url).then(response => response.json()).then(data => {
                 let buildings = '';
                 let addresses = '';
-                data.forEach(building => {
-                    //console.log(building.building_address);
+                data.sort((a,b) => {
+                    // let ap = parseFloat(a.num_rooms_available) / parseFloat(a.num_rooms_total);
+                    // let bp = parseFloat(b.num_rooms_available) / parseFloat(b.num_rooms_total);
+                    // if(ap === bp) {
+                    return parseFloat(b.num_rooms_available) - parseFloat(a.num_rooms_available);
+                    // }
+                    // return bp - ap;
+                })
+                for(let i = 0; i < data.length; i++) {
+                    building = data[i];
                     if(building.building_address !== null) {
                         buildings += `${building.building_name} 
                         `;
@@ -44,7 +52,7 @@
                     let building_availability = building.num_rooms_with_class === building.num_rooms_total ? 0 : (building.num_rooms_available === 0 ? 1 : 2)
 
                     makeBuilding(building, building_availability)
-                })
+                }
                 //console.log(buildings)
                 //console.log(addresses)
                 toSearch =  Array.from(document.getElementsByClassName('cards')[0].children);
