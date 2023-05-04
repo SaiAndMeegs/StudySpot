@@ -24,9 +24,9 @@ client.query(`SET time zone 'America/Montreal';
             
             UPDATE building set num_rooms_with_class = (SELECT COUNT(*) FROM building_room WHERE building_room.building_id = building.building_id AND building_room.curr_availability = 0);
 
-            UPDATE building set num_rooms_with_bookings = (SELECT COUNT(*) FROM building_room WHERE building_room.building_id = building.building_id AND building_room.curr_availability = 1)
+            UPDATE building set num_rooms_with_bookings = (SELECT COUNT(*) FROM building_room WHERE building_room.building_id = building.building_id AND building_room.curr_availability = 1);
 
-
+            UPDATE building set num_rooms_with_bookings = (SELECT COUNT(*) FROM building_room WHERE building_room.building_id = building.building_id AND building_room.curr_availability = 1);
                     `, (err, res) => {
   if (err) throw err;
 
