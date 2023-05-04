@@ -82,16 +82,17 @@ h2 {
     top: 0;
 }
 .logo-text {
-    font-family: 'Space Mono', monospace;
+    /* font-family: 'Space Mono', monospace; */
+    font-weight: bold;
     font-size: 40px;
-    margin-left: 3vw;
+    margin-left: 2vw;
 }
 .logo {
     transform: translateY(120%);
     height: 90%;
     transition: all 400ms cubic-bezier(.47,1.64,.41,.8);
     -webkit-transition: all 400ms cubic-bezier(.47,1.64,.41,.8);
-    margin-left: 1.5vw;
+    margin-left: 2.5vw;
 }
 .title {
     float: right;
