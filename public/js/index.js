@@ -86,8 +86,8 @@ function makeTimeBlock(start, length, day, availability, description) {
                         }
                         if(parseInt(elem.dataset.transform) > parseInt(hov.dataset.transform)) {
                             let shift = `calc(${document.getElementsByClassName('day')[0].getBoundingClientRect().width}px - ${((wrapper.children.length) * 10) - parseInt(elem.dataset.transform)}px)`;
-                            console.log(shift);
-                            console.log(((wrapper.children.length - 1) * 10) + parseInt(elem.dataset.transform));
+                            //console.log(shift);
+                            //console.log(((wrapper.children.length - 1) * 10) + parseInt(elem.dataset.transform));
                             elem.style.transform = 'translateX(' + shift + ')';
                         }
                     }
@@ -138,12 +138,14 @@ function makeRoom(building_room, availability) {
         let temp_curr_time_until_next_event = building_room.curr_time_until_next_event.split(':');
         curr_time_until_next_event.setHours(temp_curr_time_until_next_event[0], temp_curr_time_until_next_event[1], temp_curr_time_until_next_event[2], 0)
 
-        let content = availability == 0 ? `Class in session.` : (temp_curr_time_until_next_event[0] === 0 && temp_curr_time_until_next_event[1] < 59 ? `${temp_curr_time_until_next_event[1]} until next class.` : `${avails[availability]} availability right now.`);
+        console.log(temp_curr_time_until_next_event[0])
+
+        let content = availability == 0 ? `Class in session.` : (parseInt(temp_curr_time_until_next_event[0]) === 0 && parseInt(temp_curr_time_until_next_event[1]) < 50 ? `${parseInt(temp_curr_time_until_next_event[1])} minutes until next class.` : `${avails[availability]} availability right now.`);
         let name = building_room.building_room_name;
         let lsi = name.lastIndexOf(' ');
         name = '<span class="mobile-invisible" style="margin-right: 0.25em">' + name.slice(0, lsi) + "</span>" + name.slice(lsi);
-        elem.innerHTML = temp_curr_time_until_next_event[0] === 0 && temp_curr_time_until_next_event[1] < 59 ? 
-        
+        elem.innerHTML = parseInt(temp_curr_time_until_next_event[0]) === 0 && parseInt(temp_curr_time_until_next_event[1]) < 50 ? 
+        //prob change this to light green
         `<div class="dot ${colors[0]}"></div>
         <p class="searchable">${name}</p>
         <p>${content}</p>`
@@ -220,7 +222,7 @@ function makePopup(string) {
 
 document.addEventListener('DOMContentLoaded', () => {
     let spot = document.getElementsByClassName('logo')[0];
-    console.log(spot);
+    //console.log(spot);
     setTimeout(() => {spot.style.transform = 'translateY(15%)'}, 400);
 
 })
