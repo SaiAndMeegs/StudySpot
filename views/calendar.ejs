@@ -12,8 +12,19 @@
     <script src='/js/index.js'></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            /* UPDATE TIME ON CALENDAR */
+
             let days = Array.from(document.getElementsByClassName('day'));
+            
+            let curr = new Date();
+
+            days[curr.getDay() % 7].classList.add('view-mobile');
+
+            let firstday = new Date();
+            firstday.setDate(curr.getDate() - curr.getDay());
+            let lastday = new Date();
+            lastday.setDate(curr.getDate() - curr.getDay()+6);
+
+            /* UPDATE TIME ON CALENDAR */
             let timeLine = document.getElementById('currentTime');
             function updateTime() {
                 let time = new Date();
@@ -21,18 +32,11 @@
                 timeLine.style.top = top + 'px';
                 for(i = 0; i < 7; i++) {
                     days[i].classList.remove('current');
-                    if(i === (time.getDay()) % 7) days[i].classList.add('current');
+                    if(time > firstday && time < lastday && i === (time.getDay()) % 7) days[i].classList.add('current');
                 }
             }
             updateTime();
             setInterval(updateTime, 60000);
-            
-            let curr = new Date();
-            //console.log(curr);
-            let firstday = new Date();
-            firstday.setDate(curr.getDate() - curr.getDay());
-            let lastday = new Date();
-            lastday.setDate(curr.getDate() - curr.getDay()+6);
             
             function updateWeek() {
                 let firstday_string = (firstday.getMonth() + 1) + '/' + firstday.getDate();
@@ -43,21 +47,43 @@
                 } else {
                     weekElement.innerHTML = `Week of ${firstday_string} - ${lastday_string}`;
                 }
+                updateTime();
             }
             updateWeek();
 
             document.getElementsByClassName('next')[0].onclick = () => {
-                firstday.setDate(firstday.getDate() + 7);
-                lastday.setDate(lastday.getDate() + 7);
-                //console.log(firstday);
-                updateWeek();
-                getClasses();
+                function getNextWeekData() {                    
+                    firstday.setDate(firstday.getDate() + 7);
+                    lastday.setDate(lastday.getDate() + 7);
+                    updateWeek();
+                    getClasses();
+                }
+                if(window.innerWidth < 600) {
+                    let viewedDay = document.getElementsByClassName('view-mobile')[0];
+                    let vdIndex = days.indexOf(viewedDay);
+                    viewedDay.classList.remove('view-mobile');
+                    days[(vdIndex + 1) % 7].classList.add('view-mobile');
+                    if(vdIndex === 6) {
+                        getNextWeekData();
+                    }
+                } else getNextWeekData();
             }
             document.getElementsByClassName('last')[0].onclick = () => {
-                firstday.setDate(firstday.getDate() - 7);
-                lastday.setDate(lastday.getDate() - 7);
-                updateWeek();
-                getClasses();
+                function getLastWeekData() {
+                    firstday.setDate(firstday.getDate() - 7);
+                    lastday.setDate(lastday.getDate() - 7);
+                    updateWeek();
+                    getClasses();
+                }
+                if(window.innerWidth < 600) {
+                    let viewedDay = document.getElementsByClassName('view-mobile')[0];
+                    let vdIndex = days.indexOf(viewedDay);
+                    viewedDay.classList.remove('view-mobile');
+                    days[(vdIndex + 6) % 7].classList.add('view-mobile');
+                    if(vdIndex === 0) {
+                        getLastWeekData();
+                    }
+                } else getLastWeekData();
             }
 
             /* FETCH CLASS DATA */     
@@ -141,7 +167,11 @@
             let cover = document.getElementsByClassName('c1')[0];
             document.getElementsByClassName('add')[0].onclick = () => {
                 cover.classList.remove('invisible');
-                makePopup('Click and drag on the calendar to select a time block.');
+                if(window.innerWidth < 600) {
+                    makePopup('Click, hold and drag to select a time block.');
+                } else {
+                    makePopup('Click and drag on the calendar to select a time block.');
+                }
                 startBookingFunctions();
             };
             cover.onclick = () => {

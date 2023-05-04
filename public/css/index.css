@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
 @media only screen and (max-width: 600px) {
 
@@ -71,8 +72,8 @@ h2 {
     top: 0;
 }
 .logo-text {
-    font-family: 'Pacifico', cursive;
-    font-size: 30px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 40px;
     margin-left: 3vw;
 }
 .logo {
