@@ -56,7 +56,7 @@
                     firstday.setDate(firstday.getDate() + 7);
                     lastday.setDate(lastday.getDate() + 7);
                     updateWeek();
-                    getClasses();
+                    getBlocks();
                 }
                 if(window.innerWidth < 600) {
                     let viewedDay = document.getElementsByClassName('view-mobile')[0];
@@ -73,7 +73,7 @@
                     firstday.setDate(firstday.getDate() - 7);
                     lastday.setDate(lastday.getDate() - 7);
                     updateWeek();
-                    getClasses();
+                    getBlocks();
                 }
                 if(window.innerWidth < 600) {
                     let viewedDay = document.getElementsByClassName('view-mobile')[0];
@@ -88,9 +88,6 @@
 
             /* FETCH CLASS DATA */     
             function getClasses() {
-                Array.from(document.getElementsByClassName('block')).forEach(elem => {
-                    elem.remove();
-                })
                 let url = 'https://www.study-spot.com/';
                 url += 'course_meetings/building_room_id/' + '<%- id %>' // + something informing of the week.
 
@@ -124,8 +121,7 @@
                     })
                 })
                 .catch(err => console.error(err))
-            }       
-            getClasses();
+            }
 
             /* FETCH STUDENT_EVENT DATA */     
             function getStudentEvents() {
@@ -135,8 +131,6 @@
                 let url = 'https://www.study-spot.com/';
                 url += 'student_events/' +'within_range/' + '<%- id %>/' + '\'' + firstday_string.toString() + '\''
                         + '/' + '\'' + lastday_string.toString() + '\'';
-                
-                //console.log(url)
 
                 // Here we will use the date object to request data from a certain week.
                 fetch(url).then(response => response.json()).then(data => {
@@ -164,9 +158,16 @@
                         //make a time block for each day that the course_meeting has
                 })
                 .catch(err => console.error(err))
-            }       
-            getStudentEvents();
+            }
             
+            function getBlocks() {
+                Array.from(document.getElementsByClassName('block')).forEach(elem => {
+                    elem.remove();
+                })
+                getStudentEvents();
+                getClasses();
+            }
+            getBlocks();
             // BOOKING TOOL
 
             let cover = document.getElementsByClassName('c1')[0];
@@ -284,6 +285,8 @@
                 }
 
                 let dayIndex = days.indexOf(day);
+                console.log(dayIndex);
+                console.log(firstday);
                 let loc = day.getBoundingClientRect();
                 let bLoc = newBlock.getBoundingClientRect();
                 let start = Math.round(bLoc.top - loc.top);
@@ -298,9 +301,12 @@
                 let dateElem = document.getElementById('date');
                 let selectedDate = new Date(firstday.valueOf());
                 selectedDate.setDate(selectedDate.getDate() + dayIndex);
-                dateElem.valueAsDate = selectedDate;
+                
+                let sdDay = ("0" + selectedDate.getDate()).slice(-2);
+                let sdMonth = ("0" + (selectedDate.getMonth() + 1)).slice(-2);
+                let sdDate = selectedDate.getFullYear()+"-"+(sdMonth)+"-"+(sdDay) ;
+                dateElem.value = sdDate;
                 blockDetails.classList.remove('invisible');
-                // cover2.classList.remove('invisible');
 
                 window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
             }
