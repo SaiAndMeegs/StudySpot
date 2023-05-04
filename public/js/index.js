@@ -47,7 +47,7 @@ function makeTimeBlock(start, length, day, availability, description) {
     elem.className = `block ${colors[availability]}`;
     elem.style.top = start + 'px';
     elem.style.height = length + 'px';
-    elem.innerHTML = timeString;
+    elem.innerHTML = description === null ? timeString :  description + '<br>' + timeString;
 
     let blocks = day.getElementsByClassName('block');
     for(let i = 0; i < blocks.length; i++) {
