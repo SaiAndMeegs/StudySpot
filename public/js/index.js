@@ -133,23 +133,36 @@ function makeRoom(building_room, availability) {
 
     avails = ['Low', 'Medium', 'High']
 
-    let curr_time_until_next_event = new Date();
-    let temp_curr_time_until_next_event = building_room.curr_time_until_next_event.split(':');
-    curr_time_until_next_event.setHours(temp_curr_time_until_next_event[0], temp_curr_time_until_next_event[1], temp_curr_time_until_next_event[2], 0)
+    if(building_room.curr_time_until_next_event !== null){
+        let curr_time_until_next_event = new Date();
+        let temp_curr_time_until_next_event = building_room.curr_time_until_next_event.split(':');
+        curr_time_until_next_event.setHours(temp_curr_time_until_next_event[0], temp_curr_time_until_next_event[1], temp_curr_time_until_next_event[2], 0)
 
-    let content = availability == 0 ? `Class in session.` : (temp_curr_time_until_next_event[0] === 0 && temp_curr_time_until_next_event[1] < 59 ? `${temp_curr_time_until_next_event[1]} until next class.` : `${avails[availability]} availability right now.`);
-    let name = building_room.building_room_name;
-    let lsi = name.lastIndexOf(' ');
-    name = '<span class="mobile-invisible" style="margin-right: 0.25em">' + name.slice(0, lsi) + "</span>" + name.slice(lsi);
-    elem.innerHTML = temp_curr_time_until_next_event[0] === 0 && temp_curr_time_until_next_event[1] < 59 ? 
-    
-    `<div class="dot ${colors[0]}"></div>
-    <p class="searchable">${name}</p>
-    <p>${content}</p>`
+        let content = availability == 0 ? `Class in session.` : (temp_curr_time_until_next_event[0] === 0 && temp_curr_time_until_next_event[1] < 59 ? `${temp_curr_time_until_next_event[1]} until next class.` : `${avails[availability]} availability right now.`);
+        let name = building_room.building_room_name;
+        let lsi = name.lastIndexOf(' ');
+        name = '<span class="mobile-invisible" style="margin-right: 0.25em">' + name.slice(0, lsi) + "</span>" + name.slice(lsi);
+        elem.innerHTML = temp_curr_time_until_next_event[0] === 0 && temp_curr_time_until_next_event[1] < 59 ? 
+        
+        `<div class="dot ${colors[0]}"></div>
+        <p class="searchable">${name}</p>
+        <p>${content}</p>`
 
-    : `<div class="dot ${colors[availability]}"></div>
-    <p class="searchable">${name}</p>
-    <p>${content}</p>`;
+        : `<div class="dot ${colors[availability]}"></div>
+        <p class="searchable">${name}</p>
+        <p>${content}</p>`;
+    }
+    else{
+        let content = availability == 0 ? `Class in session.` : `${avails[availability]} availability right now.`;
+        let name = building_room.building_room_name;
+        let lsi = name.lastIndexOf(' ');
+        name = '<span class="mobile-invisible" style="margin-right: 0.25em">' + name.slice(0, lsi) + "</span>" + name.slice(lsi);
+        elem.innerHTML = 
+        `<div class="dot ${colors[availability]}"></div>
+        <p class="searchable">${name}</p>
+        <p>${content}</p>`
+
+    }
 
     elem.href = '../../calendar/' + building_room.building_room_id + "/" + building_room.building_room_name;
     elem.onclick = () => localStorage.setItem('building_room_id', building_room.building_room_id)
