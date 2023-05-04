@@ -125,7 +125,7 @@ app.get('/course_meetings/id/:id', cors(), (req, res) => {
 })
 
 //student_event endpoints
-app.get('/student_events/within_range/:building_room_id:start_date/:end_date', cors(), (req, res) => {
+app.get('/student_events/within_range/:building_room_id/:start_date/:end_date', cors(), (req, res) => {
     let building_room_id = req.params.building_room_id;
     let start_date = req.params.start_date;
     let end_date = req.params.end_date;
@@ -134,7 +134,7 @@ app.get('/student_events/within_range/:building_room_id:start_date/:end_date', c
     console.log('end_date: ' + end_date)
 
 
-    pool.query(`SELECT * FROM student_event WHERE building_room_id` + building_room_id + ` AND DATE BETWEEN TO_DATE(` + start_date + `, 'YYYY.MM.DD') AND TO_DATE(` + end_date + `, 'YYYY.MM.DD')`, (err, result) => {        
+    pool.query(`SELECT * FROM student_event WHERE building_room_id = ` + building_room_id + ` AND DATE BETWEEN TO_DATE(` + start_date + `, 'YYYY.MM.DD') AND TO_DATE(` + end_date + `, 'YYYY.MM.DD')`, (err, result) => {        
         if (err) throw err
         res.status(200).json(result.rows)
   
