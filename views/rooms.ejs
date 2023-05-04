@@ -26,9 +26,10 @@
             function updateSearchResults(e) {
                 order(
                     toSearch.reduce((acc, val) => {
-                        let name = val.getElementsByClassName('searchable')[0].innerHTML.toLowerCase();
+                        let name = val.getElementsByClassName('searchable')[0].textContent.toLowerCase();
                         val.classList.remove('invisible');
                         let index = name.indexOf(searchBar.value.toLowerCase());
+                        console.log(name);
                         if(index === -1) {
                             val.classList.add('invisible');
                         } else {
@@ -47,8 +48,8 @@
                 let ad = a.getElementsByClassName('dot')[0].classList.contains('green')
                 let bd = b.getElementsByClassName('dot')[0].classList.contains('green')
                 if(ad === bd) {
-                    let at = a.getElementsByClassName('searchable')[0].innerHTML
-                    let bt = b.getElementsByClassName('searchable')[0].innerHTML
+                    let at = a.getElementsByClassName('searchable')[0].textContent;
+                    let bt = b.getElementsByClassName('searchable')[0].textContent;
                     return bt > at ? -1 : 1;
                 } else {
                     return ad ? -1 : 1;

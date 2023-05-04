@@ -6,7 +6,7 @@
         text-align: center !important;
     }
     .result { 
-        grid-template-columns: calc(2*(6px + 4vw)) 1fr !important;
+        grid-template-columns: calc(2*(6px + 4vw)) 1fr 1fr !important;
         text-align: center !important;
         background: #fff0 !important;
         border-bottom: 1px solid #eee; 

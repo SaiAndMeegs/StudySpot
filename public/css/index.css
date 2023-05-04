@@ -16,6 +16,11 @@
     body {
         padding: 3% 5% !important;
     }
+    .mobile-invisible {
+        pointer-events: none;
+        opacity: 0;
+        position: absolute;
+    }
 }
 @media (hover: hover) {
     a:hover {
@@ -194,13 +199,14 @@ hr {
 .invisible {
     pointer-events: none;
     opacity: 0;
+    position: absolute;
 }
 .rooms > .invisible {
     height: 0px !important;
 }
-.cards > .invisible {
-    position: absolute;   
-}
+/* .cards > .invisible {
+    position: absolute;
+} */
 .block-details.invisible {
     transform: translateY(20px);
 }
