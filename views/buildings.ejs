@@ -40,7 +40,10 @@
                         addresses += `${building.building_address} 
                         `;
                     }
-                    makeBuilding(building, 2)
+
+                    let building_availability = building.num_rooms_with_classes === building.num_rooms_total ? 0 : (building.num_rooms_available === 0 ? 1 : 2)
+
+                    makeBuilding(building, building_availability)
                 })
                 //console.log(buildings)
                 //console.log(addresses)
