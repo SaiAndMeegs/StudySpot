@@ -154,7 +154,8 @@
                             
                             let start = (parseInt(student_event.start_time.substring(0,2)) - 6) * 60 + (parseInt(student_event.start_time.substring(3,5)))
                             let length = (time_end - time_start) / 60000
-                            makeTimeBlock(start, length, day, 1, student_event.course_title);
+                            
+                            makeTimeBlock(start, length, new Date(student_event.date).toLocaleDateString('en-US',{ weekday: 'long'}), 1, student_event.study_type);
                         })
                         //make a time block for each day that the course_meeting has
                 })
