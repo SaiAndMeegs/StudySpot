@@ -18,7 +18,7 @@ function makeBuilding(building, availability, imageURL) {
     elem.href = '/rooms/' + building.building_id + "/" + building.building_name;
     elem.innerHTML = `<h2 class="searchable">${building.building_name}</h2>
     <p>${content}</p>`;
-    elem.style.backgroundImage = `url('${building.image_url}')`
+    elem.style.backgroundImage = `url('/images/${building.building_id}-min.jpeg')`
     elem.onclick = () => {localStorage.setItem('building_id', building.building_id)}
 
     cards.appendChild(elem);
