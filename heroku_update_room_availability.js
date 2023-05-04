@@ -18,7 +18,16 @@ client.query(`SET time zone 'America/Montreal';
                 (SELECT course.building_room_id FROM course_meeting course 
                     WHERE array_to_string(course.days, ',') LIKE '%' || TRIM(INITCAP(to_char(now(), 'day'))) || '%' AND
                     TO_TIMESTAMP(to_char(now(), 'HH24:MI:SS'), 'HH24:MI:SS') BETWEEN TO_TIMESTAMP(course.start_time, 'HH24:MI:SS') AND 
-                    TO_TIMESTAMP(course.end_time, 'HH24:MI:SS'))`, (err, res) => {
+                    TO_TIMESTAMP(course.end_time, 'HH24:MI:SS'));
+                    
+            UPDATE building set num_rooms_available = (SELECT COUNT(*) FROM building_room WHERE building_room.building_id = building.building_id AND building_room.curr_availability = 2);
+            
+            UPDATE building set num_rooms_with_class = (SELECT COUNT(*) FROM building_room WHERE building_room.building_id = building.building_id AND building_room.curr_availability = 0);
+
+            UPDATE building set num_rooms_with_bookings = (SELECT COUNT(*) FROM building_room WHERE building_room.building_id = building.building_id AND building_room.curr_availability = 1)
+
+
+                    `, (err, res) => {
   if (err) throw err;
 
   client.end();
