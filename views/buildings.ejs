@@ -19,9 +19,13 @@
                 toSearch.forEach(elem => {
                     let name = elem.getElementsByClassName('searchable')[0].innerHTML.toLowerCase();
                     elem.classList.remove('invisible');
-                    if(name.indexOf(e.target.value.toLowerCase()) !== 0) {
+                    let acronym = name.split(' ').reduce((acc, val) => {
+                        return acc + val.charAt(0);
+                    }, '')
+                    if(name.indexOf(e.target.value.toLowerCase()) !== 0 && acronym.indexOf(e.target.value.toLowerCase()) !== 0) {
                         elem.classList.add('invisible');
                     }
+                    
                 })
             });
             
