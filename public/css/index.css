@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 
 @media only screen and (max-width: 600px) {
 
@@ -81,7 +82,7 @@ h2 {
     top: 0;
 }
 .logo-text {
-    font-family: 'Patrick Hand', cursive;
+    font-family: 'Space Mono', monospace;
     font-size: 40px;
     margin-left: 3vw;
 }

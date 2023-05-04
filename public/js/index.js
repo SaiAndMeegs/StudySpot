@@ -56,7 +56,7 @@ function makeTimeBlock(start, length, day, availability, description) {
         let h = length;
         let bt = parseFloat(block.style.top);
         let bh = parseFloat(block.style.height);
-    
+        
         if((t <= bt && t + h > bt) || (t < bt + bh && t + h >= bt + bh)) {
             let wrapper;
             if(block.parentNode.className === 'block-bundle') {
@@ -77,8 +77,8 @@ function makeTimeBlock(start, length, day, availability, description) {
                 wrapper.appendChild(elem);
                 wrapper.addEventListener('mouseover', (e) => {
                     let hov = e.target;
-                    for(let i = 0; i < wrapper.children.length; i++) {
-                        let elem = wrapper.children[i];
+                    for(let j = 0; j < wrapper.children.length; j++) {
+                        let elem = wrapper.children[j];
                         elem.classList.remove('closed');
                         elem.style.transform = `translateX(${elem.dataset.transform}px)`
                         if(elem !== hov) {
