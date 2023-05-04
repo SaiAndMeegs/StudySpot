@@ -140,7 +140,7 @@ function makeRoom(building_room, availability) {
 
         console.log(temp_curr_time_until_next_event[0])
 
-        let content = availability == 0 ? `Class in session.` : (parseInt(temp_curr_time_until_next_event[0]) === 0 && parseInt(temp_curr_time_until_next_event[1]) < 59 ? `${parseInt(temp_curr_time_until_next_event[1])} minutes until next class.` : `${avails[availability]} availability right now.`);
+        let content = availability == 0 ? `Class in session.` : (parseInt(temp_curr_time_until_next_event[0]) === 0 && parseInt(temp_curr_time_until_next_event[1]) < 59 ? `Around ${parseInt(temp_curr_time_until_next_event[1])} minutes until next class.` : `${avails[availability]} availability right now.`);
         let name = building_room.building_room_name;
         let lsi = name.lastIndexOf(' ');
         name = '<span class="mobile-invisible" style="margin-right: 0.25em">' + name.slice(0, lsi) + "</span>" + name.slice(lsi);
