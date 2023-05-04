@@ -130,7 +130,7 @@
                 let lastday_string = lastday.getFullYear() + '.' + lastday.getMonth() + '.' + lastday.getDate();
 
                 let url = 'https://study-spot.com/';
-                url += 'student_events/' + '<%- id %>/' + firstday_string.toString()
+                url += 'student_events/' +'within_range/' + '<%- id %>/' + firstday_string.toString()
                         + '/' + lastday_string.toString();
                 
                 console.log(url)
