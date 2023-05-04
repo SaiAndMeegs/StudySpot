@@ -401,6 +401,9 @@
                     day.removeEventListener('mouseup', mUp);
                     day.removeEventListener('mouseleave', mLeave);
                     // TOUCH EVENTS
+                    day.removeEventListener('touchstart', tDown);
+                    day.removeEventListener('touchmove', tMove);
+                    day.removeEventListener('touchend', tUp);
 
                 })
             }
