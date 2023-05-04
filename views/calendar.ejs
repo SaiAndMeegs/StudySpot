@@ -199,15 +199,13 @@
             let center = 0;
             
             let setBounds = (day) => {
+                if(!day.classList.contains('day')) day = day.parentElement;
                 let loc = day.getBoundingClientRect();
                 bounds[0] = loc.top + window.scrollY;
                 bounds[1] = loc.top + loc.height + window.scrollY;
-                /* TODO: OPTIMIZE BY SELECTING FROM CURRENT DAY!!! */
                 Array.from(day.getElementsByClassName('block red')).forEach(block => {
-                    // if(block.parentElement.className === 'block-bundle') block = block.parentElement;
                     let bLoc = block.getBoundingClientRect();
                     let nbLoc = newBlock.getBoundingClientRect();
-                    // if(Math.abs(nbLoc.left - bLoc.left) < 1) {
                     if(bLoc.top + window.scrollY > center) {
                         if(bLoc.top + window.scrollY < bounds[1]) {
                             bounds[1] = bLoc.top + window.scrollY;
@@ -217,8 +215,7 @@
                             bounds[0] = bLoc.top + bLoc.height + window.scrollY;
                         }
                     }
-                    // }
-                }) 
+                })
             }
             let setPosition = (day, e) => {
                 let y;
@@ -285,8 +282,6 @@
                 }
 
                 let dayIndex = days.indexOf(day);
-                console.log(dayIndex);
-                console.log(firstday);
                 let loc = day.getBoundingClientRect();
                 let bLoc = newBlock.getBoundingClientRect();
                 let start = Math.round(bLoc.top - loc.top);
