@@ -1,6 +1,6 @@
 // The point of this for now will be to just write some basic methods I anticipate I'll need.
 
-colors = ['red', 'orange', 'green'];
+colors = ['red', 'orange', 'green', 'light-red'];
 
 /**
  * Create a building element
@@ -144,9 +144,9 @@ function makeRoom(building_room, availability) {
         let name = building_room.building_room_name;
         let lsi = name.lastIndexOf(' ');
         name = '<span class="mobile-invisible" style="margin-right: 0.25em">' + name.slice(0, lsi) + "</span>" + name.slice(lsi);
-        elem.innerHTML = parseInt(temp_curr_time_until_next_event[0]) === 0 && parseInt(temp_curr_time_until_next_event[1]) < 30 ? 
-        //prob change this to light green
-        `<div class="dot ${colors[0]}"></div>
+        elem.innerHTML = parseInt(temp_curr_time_until_next_event[0]) === 0 && parseInt(temp_curr_time_until_next_event[1]) < 30 && availability !== 0 ? 
+        //prob change this to light red
+        `<div class="dot ${colors[3]}"></div>
         <p class="searchable">${name}</p>
         <p>${content}</p>`
 

@@ -85,6 +85,9 @@
 .red{
     background: red;
 }
+.light-red{
+    background: rgb(255, 128, 128);
+}
 /* .result:nth-child(2n) {
     background: #ddd;
 } */
