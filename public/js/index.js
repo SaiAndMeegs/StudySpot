@@ -1,6 +1,6 @@
 // The point of this for now will be to just write some basic methods I anticipate I'll need.
 
-colors = ['red', 'orange', 'green'];
+colors = ['red', 'orange', 'green', 'Light Red'];
 
 /**
  * Create a building element
@@ -132,13 +132,25 @@ function makeRoom(building_room, availability) {
     elem.className = 'result';
 
     avails = ['Low', 'Medium', 'High']
-    let content = availability == 0 ? `Class in session.` : `${avails[availability]} availability right now.`;
+
+    let curr_time_until_next_event = new Date();
+    let temp_curr_time_until_next_event = building_room.curr_time_until_next_event.split(':');
+    curr_time_until_next_event.setHours(temp_curr_time_until_next_event[0], temp_curr_time_until_next_event[1], temp_curr_time_until_next_event[2], 0)
+
+    let content = availability == 0 ? `Class in session.` : (temp_curr_time_until_next_event[0] === 0 && temp_curr_time_until_next_event[1] < 45 ? `${temp_curr_time_until_next_event[1]} until next class.` : `${avails[availability]} availability right now.`);
     let name = building_room.building_room_name;
     let lsi = name.lastIndexOf(' ');
     name = '<span class="mobile-invisible" style="margin-right: 0.25em">' + name.slice(0, lsi) + "</span>" + name.slice(lsi);
-    elem.innerHTML = `<div class="dot ${colors[availability]}"></div>
+    elem.innerHTML = temp_curr_time_until_next_event[0] === 0 && temp_curr_time_until_next_event[1] < 45 ? 
+    
+    `<div class="dot ${colors[3]}"></div>
+    <p class="searchable">${name}</p>
+    <p>${content}</p>`
+
+    : `<div class="dot ${colors[availability]}"></div>
     <p class="searchable">${name}</p>
     <p>${content}</p>`;
+
     elem.href = '../../calendar/' + building_room.building_room_id + "/" + building_room.building_room_name;
     elem.onclick = () => localStorage.setItem('building_room_id', building_room.building_room_id)
     rooms.appendChild(elem);
