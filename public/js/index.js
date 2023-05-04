@@ -140,11 +140,11 @@ function makeRoom(building_room, availability) {
 
         console.log(temp_curr_time_until_next_event[0])
 
-        let content = availability == 0 ? `Class in session.` : (parseInt(temp_curr_time_until_next_event[0]) === 0 && parseInt(temp_curr_time_until_next_event[1]) < 50 ? `${parseInt(temp_curr_time_until_next_event[1])} minutes until next class.` : `${avails[availability]} availability right now.`);
+        let content = availability == 0 ? `Class in session.` : (parseInt(temp_curr_time_until_next_event[0]) === 0 && parseInt(temp_curr_time_until_next_event[1]) < 59 ? `${parseInt(temp_curr_time_until_next_event[1])} minutes until next class.` : `${avails[availability]} availability right now.`);
         let name = building_room.building_room_name;
         let lsi = name.lastIndexOf(' ');
         name = '<span class="mobile-invisible" style="margin-right: 0.25em">' + name.slice(0, lsi) + "</span>" + name.slice(lsi);
-        elem.innerHTML = parseInt(temp_curr_time_until_next_event[0]) === 0 && parseInt(temp_curr_time_until_next_event[1]) < 50 ? 
+        elem.innerHTML = parseInt(temp_curr_time_until_next_event[0]) === 0 && parseInt(temp_curr_time_until_next_event[1]) < 30 ? 
         //prob change this to light green
         `<div class="dot ${colors[0]}"></div>
         <p class="searchable">${name}</p>
