@@ -100,8 +100,8 @@
 
             /* FETCH STUDENT_EVENT DATA */     
             function getStudentEvents() {
-                let firstday_string = firstday.getFullYear() + ' ' + firstday.getMonth() + ' ' + firstday.getDate();
-                let lastday_string = lastday.getFullYear() + ' ' + lastday.getMonth() + ' ' + lastday.getDate();
+                let firstday_string = firstday.getFullYear() + '%' + firstday.getMonth() + '%' + firstday.getDate();
+                let lastday_string = lastday.getFullYear() + '%' + lastday.getMonth() + '%' + lastday.getDate();
 
                 let url = 'https://study-spot.com/';
                 url += 'student_events/' + 'range_of_days/' + '<%- id %>/' + firstday_string.toString()
