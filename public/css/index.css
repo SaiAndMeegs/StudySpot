@@ -41,12 +41,15 @@
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Edge, IE */
 }
+:root {
+    --website-bg: #fafafe;
+}
 body{
     position: relative;
     font-family: 'Poppins', sans-serif;
     padding: 3% 15%;
     margin: 0px;
-    background: #2a26eb05;
+    background: var(--website-bg);
     overflow-x: hidden;
 }
 a {

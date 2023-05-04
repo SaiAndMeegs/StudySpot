@@ -7,11 +7,12 @@
         margin: 80px 0px 80px 40px !important;
         background: repeating-linear-gradient(
             0deg,
-            #fff0 0px,
-            #fff0 59px,
+            var(--website-bg) 0px,
+            var(--website-bg) 59px,
             #ccc 59px,
             #ccc 60px
         ) !important;
+        border-radius: 5px;
     }
     .week::before {
         font-size: 10px;
