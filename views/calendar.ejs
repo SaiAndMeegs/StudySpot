@@ -115,6 +115,9 @@
                             
                             let start = (parseInt(course_meeting.start_time.substring(0,2)) - 6) * 60 + (parseInt(course_meeting.start_time.substring(3,5)))
                             let length = (time_end - time_start) / 60000
+                            
+                            //console.log(time_end - time_start);
+
                             makeTimeBlock(start, length, day, 0, course_meeting.course_title);
                         })
                         //make a time block for each day that the course_meeting has
@@ -133,11 +136,11 @@
                 url += 'student_events/' +'within_range/' + '<%- id %>/' + '\'' + firstday_string.toString() + '\''
                         + '/' + '\'' + lastday_string.toString() + '\'';
                 
-                console.log(url)
+                //console.log(url)
 
                 // Here we will use the date object to request data from a certain week.
                 fetch(url).then(response => response.json()).then(data => {
-                    console.log(data)
+                    //console.log(data)
                     data.forEach(student_event => {
                             //console.log(course_meeting)
                             //calculate the time difference between start and end time of the course_meeting
@@ -145,16 +148,17 @@
                             let time_end = new Date();
                             let value_start = student_event.start_time.split(':');
                             let value_end = student_event.end_time.split(':');
-                            time_start.setHours(value_start[0], value_start[1], value_start[2], 0)
-                            time_end.setHours(value_end[0], value_end[1], value_end[2], 0)
+
+                            time_start.setHours(value_start[0], value_start[1], '00', 0)
+                            time_end.setHours(value_end[0], value_end[1], '00', 0)
 
                             //console.log(value_start)
                             //console.log(value_end)
                             //console.log((time_end - time_start) / 60000)
                             
                             let start = (parseInt(student_event.start_time.substring(0,2)) - 6) * 60 + (parseInt(student_event.start_time.substring(3,5)))
-                            let length = (time_end - time_start) / 60000
-                            
+                            let length = ((time_end - time_start) / 60000)
+
                             makeTimeBlock(start, length, new Date(student_event.date).toLocaleDateString('en-US',{ weekday: 'long'}), 1, student_event.study_type);
                         })
                         //make a time block for each day that the course_meeting has
