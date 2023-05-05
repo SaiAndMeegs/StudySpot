@@ -13,7 +13,7 @@ function makeBuilding(building, availability, imageURL) {
     let elem = document.createElement('a');
     elem.className = `building ${colors[availability]}`;
     avails = ['Low', 'Medium', 'High']
-    let content = `${building.num_rooms_available}/${building.num_rooms_total} rooms available right now.`;
+    let content = building.num_rooms_available/building.num_rooms_total >= 0.5 ? 'High availability right now.' : (building.num_rooms_available >= 2 ? `Medium availability right now.` : (building.num_rooms_available > 0 ? `Low availability right now.` : `No availability right now.`))
     
     elem.href = '/rooms/' + building.building_id + "/" + building.building_name;
     elem.innerHTML = `<h2 class="searchable">${building.building_name}</h2>
