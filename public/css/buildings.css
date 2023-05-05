@@ -29,9 +29,9 @@
     /* flex: 0 1 auto; */
     /* margin: 1vw; */
     padding: 2% 10%;
-    filter: saturate(1.5);
+    /* filter: saturate(1.5); */
     /* border-radius: 10px; */
-    border-radius: 30px;
+    border-radius: 10px;
     transform: translate(0px, 0px);
     transition: transform .3s, box-shadow .3s;
     -webkit-transition: transform .3s, box-shadow .3s;
