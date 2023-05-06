@@ -5,31 +5,18 @@ const fs = require("fs/promises")
 async function start() {
     const browser = await puppeteer.launch()
   const page = await browser.newPage()
-  await page.goto("")
+  await page.goto("https://www.spire.umass.edu/psp/heproda/EMPLOYEE/SA/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?FolderPath=PORTAL_ROOT_OBJECT.CO_EMPLOYEE_SELF_SERVICE.HC_CLASS_SEARCH_GBL&IsFolder=false&IgnoreParamTempl=FolderPath,IsFolder")
 
-  const names = await page.evaluate(() => {
-    return Array.from(document.querySelectorAll(".info strong")).map(x => x.textContent)
-  })
-  await fs.writeFile("names.txt", names.join("\r\n"))
-
-  await page.click("#clickme")
-  const clickedData = await page.$eval("#data", el => el.textContent)
-  console.log(clickedData)
-
-  const photos = await page.$$eval("img", imgs => {
-    return imgs.map(x => x.src)
+  const course_title = await page.evaluate(() => {
+    const titlePods = document.getElementById("[id='win0divDERIVED_CLSRCH_SSR_EXPAND_COLLAP2$0']")
+    console.log(titlePods)
   })
 
-  await page.type("#ourfield", "blue")
-  await Promise.all([page.click("#ourform button"), page.waitForNavigation()])
-  const info = await page.$eval("#message", el => el.textContent)
+  //console.log(course_title)
 
-  console.log(info)
 
-  for (const photo of photos) {
-    const imagepage = await page.goto(photo)
-    await fs.writeFile(photo.split("/").pop(), await imagepage.buffer())
-  }
+
+  //await fs.writeFile("names.txt", names.join("\r\n"))
 
   await browser.close()
 
