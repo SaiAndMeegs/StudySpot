@@ -28,7 +28,10 @@
             let timeLine = document.getElementById('currentTime');
             function updateTime() {
                 let time = new Date();
-                let top = 60 * (time.getHours() - 6) + time.getMinutes();
+                let top = -1000;
+                if(time.getHours() > 6 && time.getHours() < 24) {
+                    top = 60 * (time.getHours() - 6) + time.getMinutes();
+                } 
                 timeLine.style.top = top + 'px';
                 for(i = 0; i < 7; i++) {
                     days[i].classList.remove('current');
