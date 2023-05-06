@@ -89,6 +89,13 @@
                 } else getLastWeekData();
             }
 
+            // DISABLE BOOKING IF LIMIT REACHED
+            if(parseCookie(document.cookie).bcount && parseInt(parseCookie(document.cookie).bcount) >= bookingLimit) {
+                let submit = document.getElementsByClassName('submit')[0];
+                submit.disabled = true;
+                submit.title = 'Daily booking limit met.';
+            }
+
             /* FETCH CLASS DATA */     
             function getClasses() {
                 let url = 'https://www.study-spot.com/';
@@ -465,7 +472,7 @@
                 <option value="Group study" disabled>Coming Soon...</option>
             </select>
             <div class="button">
-                <button type="button" onclick={onSubmit()}> Submit </button>
+                <button type="button" class="submit" onclick={onSubmit()}> Submit </button>
             </div>
             <i class="fa fa-close details-close"></i>
         </form>
@@ -500,19 +507,48 @@
                 }));
                 */                
                 
+                if(!parseCookie(document.cookie).bcount || parseInt(parseCookie(document.cookie).bcount < bookingLimit)) {
+                    
+                    let url = 'https://study-spot-ms.herokuapp.com/';
+                    url += 'student_events';
 
-                let url = 'https://study-spot-ms.herokuapp.com/';
-                url += 'student_events';
+                    let date = new Date(document.getElementById('date').value.split('-')[0], document.getElementById('date').value.split('-')[1] - 1, document.getElementById('date').value.split('-')[2]);
 
-                await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
-                    'date': new Date(document.getElementById('date').value.split('-')[0], document.getElementById('date').value.split('-')[1] - 1, document.getElementById('date').value.split('-')[2]),
-                    'start': document.getElementById('start').value,
-                    'end': document.getElementById('end').value,
-                    'type': document.getElementById('type').value,
-                    'building_room_id': '<%- id %>'
-                }) }).then(data => console.log(data))
+                    await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
+                        'date': date,
+                        'start': document.getElementById('start').value,
+                        'end': document.getElementById('end').value,
+                        'type': document.getElementById('type').value,
+                        'building_room_id': '<%- id %>'
+                    }) }).then(data => console.log(data))
 
-                window.location.reload();
+                    let end = document.getElementById('end').value;
+                    end = end.split(':');
+                    let milliseconds = 1000*((parseFloat(end[0])*60*60) + (parseFloat(end[1])*60))
+                    date.setTime(date.getTime() + milliseconds);
+                    date = date.toUTCString(); // for cookie expiration 
+
+                    document.cookie = 'bookings=; expires=Thu, 01 Jan 1970 00:00:01 GMT' ;
+                    if(parseCookie(document.cookie).bookings) {
+                        let bookings = parseCookie(document.cookie).bookings.split(',');
+                        bookings.push('<%- id %>');
+                        document.cookie = 'bookings=' + bookings;
+                    } else {
+                        document.cookie = 'bookings=<%- id %>';   
+                    }
+                    
+                    console.log(document.cookie);
+                    
+                    let tmrw = new Date();
+                    tmrw.setDate(tmrw.getDate() + 1);
+                    if(parseCookie(document.cookie).bcount) {
+                        document.cookie = 'bcount=' + parseInt(parseCookie(document.cookie).bcount) + 1 + '; expires=' + tmrw.toUTCString();
+                    } else {
+                        document.cookie = 'bcount=1; expires=' + tmrw.toUTCString();
+                    }
+
+                    // window.location.reload();
+                }
             }
         </script>
     </div>
