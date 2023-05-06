@@ -55,8 +55,10 @@
                     }
 
                     let building_availability = building.num_rooms_with_class === building.num_rooms_total ? 0 : (building.num_rooms_available === 0 ? 1 : 2)
-                    
-                    let favorite = parseCookie(document.cookie).favorites.split(',').includes(building.building_name);
+                    let favorite = false;
+                    if(parseCookie(document.cookie).favorites) {
+                        favorite = parseCookie(document.cookie).favorites.split(',').includes(building.building_name);
+                    }
                     
                     makeBuilding(building, building_availability, favorite);
                 }
