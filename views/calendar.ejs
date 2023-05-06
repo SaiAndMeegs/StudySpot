@@ -507,7 +507,7 @@
                     'end': document.getElementById('end').value,
                     'type': document.getElementById('type').value,
                     'building_room_id': '<%- id %>'
-                }) }).then(data =>  data.json()).then(value => console.log(value[0]))
+                }) }).then(data =>  data.json()).then(value => console.log(value[0].student_event_id))
 
                 //window.location.reload();
             }
