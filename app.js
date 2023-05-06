@@ -143,6 +143,17 @@ app.get('/student_events/within_range/:building_room_id/:start_date/:end_date', 
     })
 })
 
+app.get('/student_events/id/:student_event_id', cors(), (req, res) => {
+    let student_event_id = req.params.student_event_id;
+
+    pool.query(`SELECT * FROM student_event WHERE student_event_id=` + student_event_id, (err, result) => {        
+        if (err) throw err
+        res.status(200).json(result.rows)
+  
+        pool.end;
+    })
+})
+
 app.post('/student_events', bodyParser.json(), (req, res) => {
 
     console.log('backend student events');
@@ -151,7 +162,6 @@ app.post('/student_events', bodyParser.json(), (req, res) => {
     console.log(req.body);
 
     const values = [req.body.date, req.body.start, req.body.end, req.body.type, req.body.building_room_id]
-    
     
     pool.query("INSERT INTO student_event (date, start_time, end_time, study_type, building_room_id) VALUES ($1, $2, $3, $4, $5)", values, (error, results) => {
         if (error) throw error
