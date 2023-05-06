@@ -11,17 +11,6 @@
 
     <script src='/js/index.js'></script>
     <script>
-        const parseCookie = str => {
-            if(!str) return str;
-            return str
-            .split(';')
-            .map(v => v.split('='))
-            .reduce((acc, v) => {
-                acc[decodeURIComponent(v[0].trim())] = decodeURIComponent(v[1].trim());
-                return acc;
-            }, {});
-        }
-            
         document.addEventListener('DOMContentLoaded', () => {
             /* SEARCH FUNCTIONALITY */
             let searchBar = document.getElementsByClassName('search-bar')[0];
@@ -77,15 +66,17 @@
                         document.activeElement = null;
                         e.preventDefault();
                         let newString = star.parentElement.getElementsByClassName('searchable')[0].innerHTML;
-                        let favorites = parseCookie(document.cookie).favorites.split(',')
+                        let favorites = parseCookie(document.cookie).favorites;
                         if(star.classList.contains('favorite')) {
                             star.classList.remove('favorite');
-                            if(favorites.includes(newString)) {
+                            if(favorites && favorites.split(',').includes(newString)) {
+                                favorites = favorites.split(',');
                                 favorites.splice(favorites.indexOf(newString), 1);
                             }
                         } else {
                             star.classList.add('favorite');
                             if(favorites) {
+                                favorites = favorites.split(',');
                                 if(!favorites.includes(newString)) favorites.push(newString);
                             } else {
                                 favorites = newString;
