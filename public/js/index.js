@@ -219,21 +219,32 @@ function search(string, elements) {
     });
 }
 
-function makePopup(string) {
-    let oldP = document.getElementsByClassName('popup')
-    if(oldP.length) {
-        oldP[0].remove();
+function makePopup(string, preventableID) {
+    if(!preventableID || !parseCookie(document.cookie)['preventableID']) {
+        let oldP = document.getElementsByClassName('popup');
+        if(oldP.length) {
+            oldP[0].remove();
+        }
+        let popup = document.createElement('div');
+        popup.className = 'popup';
+        let loc = document.getElementsByTagName('nav')[0].getBoundingClientRect()
+        let top = loc.height + 20;
+        popup.innerHTML = string + '<i class="fa fa-close popup-close"></i>';
+        if(preventableID) {
+            let prevent = document.createElement('span');
+            prevent.classList.add('prevent');
+            prevent.innerHTML = "Don't show this again.";
+            prevent.addEventListener('click', () => {
+                document.cookie = preventableID + '=true';
+            })
+            popup.appendChild(prevent);
+        }
+        document.body.appendChild(popup);
+        popup.style.top = top + 'px';
+        popup.addEventListener('click', () => {
+            popup.remove();
+        })
     }
-    let popup = document.createElement('div');
-    popup.className = 'popup';
-    let loc = document.getElementsByTagName('nav')[0].getBoundingClientRect()
-    let top = loc.height + 20;
-    popup.innerHTML = string + '<i class="fa fa-close popup-close"></i>';
-    document.body.appendChild(popup);
-    popup.style.top = top + 'px';
-    popup.addEventListener('click', () => {
-        popup.remove();
-    })
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -242,3 +253,13 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {spot.style.transform = 'translateY(15%)'}, 400);
 
 })
+function parseCookie(str) {
+    if(!str) return str;
+    return str
+    .split(';')
+    .map(v => v.split('='))
+    .reduce((acc, v) => {
+        acc[decodeURIComponent(v[0].trim())] = decodeURIComponent(v[1].trim());
+        return acc;
+    }, {});
+}
