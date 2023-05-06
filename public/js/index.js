@@ -253,12 +253,6 @@ function makePopup(string, preventableID) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    let spot = document.getElementsByClassName('logo')[0];
-    //console.log(spot);
-    setTimeout(() => {spot.style.transform = 'translateY(15%)'}, 400);
-
-})
 function parseCookie(str) {
     if(!str) return str;
     return str
@@ -269,3 +263,9 @@ function parseCookie(str) {
         return acc;
     }, {});
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    let spot = document.getElementsByClassName('logo')[0];
+    //console.log(spot);
+    setTimeout(() => {spot.style.transform = 'translateY(15%)'}, 400);
+})
