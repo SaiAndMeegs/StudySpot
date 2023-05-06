@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="/css/buildings.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/gradient-bg.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <script src='/js/index.js'></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+
+            makePopup('In order to keep track of your room bookings and favorited buildings, we utilize cookies. Make sure you have cookies enabled to take advantage of these features.', 'cookies-disclaimer');
+
             /* SEARCH FUNCTIONALITY */
             let searchBar = document.getElementsByClassName('search-bar')[0];
             let toSearch = Array.from(document.getElementsByClassName('cards')[0].children);
@@ -25,7 +29,6 @@
                     if(name.indexOf(e.target.value.toLowerCase()) !== 0 && acronym.indexOf(e.target.value.toLowerCase()) !== 0) {
                         elem.classList.add('invisible');
                     }
-                    
                 })
             });
             
@@ -37,12 +40,14 @@
                 let buildings = '';
                 let addresses = '';
                 data.sort((a,b) => {
-                    // let ap = parseFloat(a.num_rooms_available) / parseFloat(a.num_rooms_total);
-                    // let bp = parseFloat(b.num_rooms_available) / parseFloat(b.num_rooms_total);
-                    // if(ap === bp) {
-                    return parseFloat(b.num_rooms_available) - parseFloat(a.num_rooms_available);
-                    // }
-                    // return bp - ap;
+                    let fa = true;
+                    let fb = true;
+                    if(parseCookie(document.cookie).favorites) {
+                        fa = parseCookie(document.cookie).favorites.split(',').includes(a.building_name);
+                        fb = parseCookie(document.cookie).favorites.split(',').includes(b.building_name);
+                    }
+                    if(fa === fb) return parseFloat(b.num_rooms_available) - parseFloat(a.num_rooms_available);
+                    else return fb ? 1 : -1;
                 })
                 for(let i = 0; i < data.length; i++) {
                     building = data[i];
@@ -54,14 +59,46 @@
                     }
 
                     let building_availability = building.num_rooms_with_class === building.num_rooms_total ? 0 : (building.num_rooms_available === 0 ? 1 : 2)
-
-                    makeBuilding(building, building_availability)
+                    let favorite = false;
+                    if(parseCookie(document.cookie).favorites) {
+                        favorite = parseCookie(document.cookie).favorites.split(',').includes(building.building_name);
+                    }
+                    
+                    makeBuilding(building, building_availability, favorite);
                 }
                 //console.log(buildings)
                 //console.log(addresses)
                 toSearch =  Array.from(document.getElementsByClassName('cards')[0].children);
+            }).then(() => {
+                // FAVORITING FUNCTIONALITY
+                Array.from(document.getElementsByClassName('star')).forEach(star => {
+                    star.onclick = (e) => {
+                        document.activeElement = null;
+                        e.preventDefault();
+                        let newString = star.parentElement.getElementsByClassName('searchable')[0].innerHTML;
+                        let favorites = parseCookie(document.cookie).favorites;
+                        if(star.classList.contains('favorite')) {
+                            star.classList.remove('favorite');
+                            if(favorites && favorites.split(',').includes(newString)) {
+                                favorites = favorites.split(',');
+                                favorites.splice(favorites.indexOf(newString), 1);
+                            }
+                        } else {
+                            star.classList.add('favorite');
+                            if(favorites) {
+                                favorites = favorites.split(',');
+                                if(!favorites.includes(newString)) favorites.push(newString);
+                            } else {
+                                favorites = newString;
+                            }
+                        }
+                        document.cookie = `favorites=${favorites}`
+                        console.log(document.cookie);
+                    }
+                })
             })
         })
+        
     </script>
 </head>
 <body>

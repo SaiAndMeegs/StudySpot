@@ -11,6 +11,17 @@
     .red:hover {
         box-shadow: inset 0 0 0 2px red, inset 0 0 0 1000px rgba(255,255,255,0.6), 8px 8px red;
     }
+    .building:hover > .star {
+        opacity: 100%;
+    }
+    .building > .star:hover .cls-1 {
+        fill-opacity: 100%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .building > .star {
+        opacity: 100% !important;
+    }
 }
 .cards {
     display: grid;
@@ -43,12 +54,47 @@
     box-sizing: border-box;         /* Opera/IE 8+ */
     overflow: hidden;
 }
+.building > .star {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    opacity: 0;
+    width: 24px;
+    transition: all .3s;
+}
+.building > .star.favorite {
+    opacity: 100%;
+    animation: pop .5s cubic-bezier(.47,1.64,.41,.8);
+}
+@keyframes pop {
+    from {
+        transform: scale(.5);
+    } to {
+        transform: scale(1);
+    }
+}
+.building > .star .cls-1, .building > .star .cls-2 {
+        fill: #fcd53f;
+        transition: all .2s;
+}
+.building > .star .cls-1 {
+    fill-opacity: 0%;
+}
+.building > .star.favorite .cls-1 {
+    fill-opacity: 100%;
+}
+/* .building:hover::before {
+    opacity: 1;
+}
+.building:hover::before:hover {
+    opacity: 1;
+} */
 /* .building > p {
     background: #fffb;
     padding: 10px;
     box-shadow: 0px 100px 0px 100px #fffb;
 } */
-.building:active {
+.building:active:has(.star:not(:active)) {
     transform: translate(0px, 0px) !important;
 }
 .green {
@@ -56,7 +102,7 @@
     /* outline: 2px solid green; */
     box-shadow: inset 0 0 0 2px green, inset 0 0 0 1000px rgba(255,255,255,0.75), 0px 0px green;
 }
-.green:active {
+.green:active:has(.star:not(:active)) {
     box-shadow: inset 0 0 0 2px green, inset 0 0 0 1000px rgba(255,255,255,0.6), 0px 0px green;
 }
 .orange {
@@ -64,7 +110,7 @@
     /* outline: 2px solid orange; */
     box-shadow: inset 0 0 0 2px orange, inset 0 0 0 1000px rgba(255,255,255,0.75), 0px 0px orange;
 }
-.orange:active {
+.orange:active:has(.star:not(:active)) {
     box-shadow: inset 0 0 0 2px orange, inset 0 0 0 1000px rgba(255,255,255,0.6), 0px 0px orange;
 }
 .red {
@@ -72,6 +118,6 @@
     /* outline: 2px solid red; */
     box-shadow: inset 0 0 0 2px red, inset 0 0 0 1000px rgba(255,255,255,0.75), 0px 0px red;
 }
-.red:active {
+.red:active:has(.star:not(:active)) {
     box-shadow: inset 0 0 0 2px red, inset 0 0 0 1000px rgba(255,255,255,0.6), 0px 0px red;
 }
