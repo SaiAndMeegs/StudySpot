@@ -36,8 +36,12 @@
                 let buildings = '';
                 let addresses = '';
                 data.sort((a,b) => {
-                    let fa = parseCookie(document.cookie).favorites.split(',').includes(a.building_name);
-                    let fb = parseCookie(document.cookie).favorites.split(',').includes(b.building_name);
+                    let fa = true;
+                    let fb = true;
+                    if(parseCookie(document.cookie).favorites) {
+                        fa = parseCookie(document.cookie).favorites.split(',').includes(a.building_name);
+                        fb = parseCookie(document.cookie).favorites.split(',').includes(b.building_name);
+                    }
                     if(fa === fb) return parseFloat(b.num_rooms_available) - parseFloat(a.num_rooms_available);
                     else return fb ? 1 : -1;
                 })
