@@ -64,7 +64,7 @@ function makeTimeBlock(start, length, day, availability, description) {
     elem.className = `block ${colors[availability]}`;
     elem.style.top = start + 'px';
     elem.style.height = length + 'px';
-    elem.innerHTML = description === null ? timeString :  description + '<br>' + timeString;
+    elem.innerHTML = description === null ? timeString :  `<strong>${description}</strong><br>${timeString}`;
 
     let blocks = day.getElementsByClassName('block');
     for(let i = 0; i < blocks.length; i++) {
@@ -254,12 +254,6 @@ function makePopup(string, preventableID) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    let spot = document.getElementsByClassName('logo')[0];
-    //console.log(spot);
-    setTimeout(() => {spot.style.transform = 'translateY(15%)'}, 400);
-
-})
 function parseCookie(str) {
     if(!str) return str;
     return str
@@ -270,3 +264,9 @@ function parseCookie(str) {
         return acc;
     }, {});
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    let spot = document.getElementsByClassName('logo')[0];
+    //console.log(spot);
+    setTimeout(() => {spot.style.transform = 'translateY(15%)'}, 400);
+})
