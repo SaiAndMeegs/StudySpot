@@ -11,6 +11,17 @@
 
     <script src='/js/index.js'></script>
     <script>
+        const parseCookie = str => {
+            if(!str) return str;
+            return str
+            .split(';')
+            .map(v => v.split('='))
+            .reduce((acc, v) => {
+                acc[decodeURIComponent(v[0].trim())] = decodeURIComponent(v[1].trim());
+                return acc;
+            }, {});
+        }
+            
         document.addEventListener('DOMContentLoaded', () => {
             /* SEARCH FUNCTIONALITY */
             let searchBar = document.getElementsByClassName('search-bar')[0];
@@ -25,7 +36,6 @@
                     if(name.indexOf(e.target.value.toLowerCase()) !== 0 && acronym.indexOf(e.target.value.toLowerCase()) !== 0) {
                         elem.classList.add('invisible');
                     }
-                    
                 })
             });
             
@@ -37,12 +47,10 @@
                 let buildings = '';
                 let addresses = '';
                 data.sort((a,b) => {
-                    // let ap = parseFloat(a.num_rooms_available) / parseFloat(a.num_rooms_total);
-                    // let bp = parseFloat(b.num_rooms_available) / parseFloat(b.num_rooms_total);
-                    // if(ap === bp) {
-                    return parseFloat(b.num_rooms_available) - parseFloat(a.num_rooms_available);
-                    // }
-                    // return bp - ap;
+                    let fa = parseCookie(document.cookie).favorites.split(',').includes(a.building_name);
+                    let fb = parseCookie(document.cookie).favorites.split(',').includes(b.building_name);
+                    if(fa === fb) return parseFloat(b.num_rooms_available) - parseFloat(a.num_rooms_available);
+                    else return fb ? 1 : -1;
                 })
                 for(let i = 0; i < data.length; i++) {
                     building = data[i];
@@ -54,12 +62,39 @@
                     }
 
                     let building_availability = building.num_rooms_with_class === building.num_rooms_total ? 0 : (building.num_rooms_available === 0 ? 1 : 2)
-
-                    makeBuilding(building, building_availability)
+                    
+                    let favorite = parseCookie(document.cookie).favorites.split(',').includes(building.building_name);
+                    
+                    makeBuilding(building, building_availability, favorite);
                 }
                 //console.log(buildings)
                 //console.log(addresses)
                 toSearch =  Array.from(document.getElementsByClassName('cards')[0].children);
+            }).then(() => {
+                // FAVORITING FUNCTIONALITY
+                Array.from(document.getElementsByClassName('star')).forEach(star => {
+                    star.onclick = (e) => {
+                        document.activeElement = null;
+                        e.preventDefault();
+                        let newString = star.parentElement.getElementsByClassName('searchable')[0].innerHTML;
+                        let favorites = parseCookie(document.cookie).favorites.split(',')
+                        if(star.classList.contains('favorite')) {
+                            star.classList.remove('favorite');
+                            if(favorites.includes(newString)) {
+                                favorites.splice(favorites.indexOf(newString), 1);
+                            }
+                        } else {
+                            star.classList.add('favorite');
+                            if(favorites) {
+                                if(!favorites.includes(newString)) favorites.push(newString);
+                            } else {
+                                favorites = newString;
+                            }
+                        }
+                        document.cookie = `favorites=${favorites}`
+                        console.log(document.cookie);
+                    }
+                })
             })
         })
     </script>
