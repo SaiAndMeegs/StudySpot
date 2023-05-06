@@ -227,6 +227,8 @@
 .cal-week {
     margin-right: 3vw;
     display: inline-block;
+    width: 160px;
+    white-space: nowrap;
 }
 .cb {
     margin: 2px;
