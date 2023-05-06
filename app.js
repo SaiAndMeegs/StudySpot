@@ -178,7 +178,7 @@ app.post('/student_events', bodyParser.json(), (req, res) => {
         if (error) throw error
         res.status(200).json(result.rows)
         pool.end;
-    })
+    }) 
     
     /*
     pool.query("SELECT * FROM student_event WHERE student_event_id = @@IDENTITY", (error, result) => {

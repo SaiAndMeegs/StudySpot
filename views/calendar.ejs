@@ -507,9 +507,9 @@
                     'end': document.getElementById('end').value,
                     'type': document.getElementById('type').value,
                     'building_room_id': '<%- id %>'
-                }) }).then(data => console.log(data))
+                }) }).then(data => console.log(data.json()))
 
-                window.location.reload();
+                //window.location.reload();
             }
         </script>
     </div>
