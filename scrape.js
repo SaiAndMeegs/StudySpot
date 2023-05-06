@@ -8,13 +8,11 @@ async function start() {
   await page.goto("https://www.spire.umass.edu/psp/heproda/EMPLOYEE/SA/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?FolderPath=PORTAL_ROOT_OBJECT.CO_EMPLOYEE_SELF_SERVICE.HC_CLASS_SEARCH_GBL&IsFolder=false&IgnoreParamTempl=FolderPath,IsFolder")
 
   const course_title = await page.evaluate(() => {
-    const titlePods = document.getElementById("[id='win0divDERIVED_CLSRCH_SSR_EXPAND_COLLAP2$0']")
-    console.log(titlePods)
+    const titlePods = document.getElementById('win0divDERIVED_CLSRCH_DESCR200$0')
+    return titlePods
   })
 
-  //console.log(course_title)
-
-
+  console.log(course_title)
 
   //await fs.writeFile("names.txt", names.join("\r\n"))
 
