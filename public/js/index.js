@@ -220,7 +220,7 @@ function search(string, elements) {
 }
 
 function makePopup(string, preventableID) {
-    if(!preventableID || !parseCookie(document.cookie)['preventableID']) {
+    if(!preventableID || !parseCookie(document.cookie)[preventableID]) {
         let oldP = document.getElementsByClassName('popup');
         if(oldP.length) {
             oldP[0].remove();
@@ -229,19 +229,25 @@ function makePopup(string, preventableID) {
         popup.className = 'popup';
         let loc = document.getElementsByTagName('nav')[0].getBoundingClientRect()
         let top = loc.height + 20;
-        popup.innerHTML = string + '<i class="fa fa-close popup-close"></i>';
+        popup.innerHTML = string;
         if(preventableID) {
             let prevent = document.createElement('span');
             prevent.classList.add('prevent');
             prevent.innerHTML = "Don't show this again.";
-            prevent.addEventListener('click', () => {
+            prevent.addEventListener('click', (e) => {
+                e.preventDefault();
                 document.cookie = preventableID + '=true';
+                popup.remove();
             })
+            popup.innerHTML += ' ';
             popup.appendChild(prevent);
         }
+        let close = document.createElement('i');
+        close.className = "fa fa-close popup-close";
+        popup.appendChild(close);
         document.body.appendChild(popup);
         popup.style.top = top + 'px';
-        popup.addEventListener('click', () => {
+        close.addEventListener('click', () => {
             popup.remove();
         })
     }

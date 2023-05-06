@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="/css/buildings.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/gradient-bg.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <script src='/js/index.js'></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+
+            makePopup('In order to keep track of your room bookings and favorited buildings, we utilize cookies. Make sure you have cookies enabled to take advantage of these features.', 'cookies-disclaimer');
+
             /* SEARCH FUNCTIONALITY */
             let searchBar = document.getElementsByClassName('search-bar')[0];
             let toSearch = Array.from(document.getElementsByClassName('cards')[0].children);
@@ -94,6 +98,7 @@
                 })
             })
         })
+        
     </script>
 </head>
 <body>
