@@ -269,12 +269,12 @@ function makePopup(string, preventableID) {
         let popup = document.createElement('div');
         popup.className = 'popup';
         let loc = document.getElementsByTagName('nav')[0].getBoundingClientRect()
-        let top = loc.height + 20;
+        let top = loc.height + 30;
         popup.innerHTML = string;
         if(preventableID) {
             let prevent = document.createElement('span');
             prevent.classList.add('prevent');
-            prevent.innerHTML = "Don't show this again.";
+            prevent.innerHTML = "<br><br>Don't show this again.";
             prevent.addEventListener('click', (e) => {
                 e.preventDefault();
                 document.cookie = preventableID + '=true';
