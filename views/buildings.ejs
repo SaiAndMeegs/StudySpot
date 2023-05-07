@@ -21,6 +21,7 @@
             let toSearch = Array.from(document.getElementsByClassName('cards')[0].children);
             searchBar.addEventListener('input', (e) => {
                 toSearch.forEach(elem => {
+                    if(elem.classList.contains('bookings')) return;
                     let name = elem.getElementsByClassName('searchable')[0].innerHTML.toLowerCase();
                     elem.classList.remove('invisible');
                     let acronym = name.split(' ').reduce((acc, val) => {
