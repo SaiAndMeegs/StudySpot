@@ -32,6 +32,28 @@
                 })
             });
             
+            // GET CURRENT BOOKINGS
+            /* <div class="booking">
+                <div>Herter Hall</div>
+                <div>Room 411</div>
+                <div>6:00PM to 7:30 pm</div>
+            </div> */
+
+            console.log(document.cookie);
+            if(parseCookie(document.cookie).bookings) {
+                let bookings = parseCookie(document.cookie).bookings.split(',');
+                bookings.forEach(booking => {
+                    let url = '/student_events/id/' + booking;
+                    fetch(url).then(response => response.json()).then(data => {
+                        if(new Date(data[0].date) > new Date()) {
+                            makeBooking(data[0]);
+                        } else {
+                            // Remove the booking from cookies.
+                        }
+                    })
+                })
+            }
+            
             /* FETCHING BUILDINGS */
             let url = 'https://www.study-spot.com/';
             url += 'backend-buildings/';
@@ -92,7 +114,7 @@
                                 favorites = newString;
                             }
                         }
-                        document.cookie = `favorites=${favorites}`
+                        document.cookie = `favorites=${favorites}; path=/`
                         console.log(document.cookie);
                     }
                 })
@@ -117,9 +139,8 @@
     <input class="search-bar" placeholder="Search buildings here"/>
     <hr>
     <div class="cards">
-        
+        <div class="building bookings" style='grid-row: 1/2'>Upcoming Bookings</div>
     </div>
-    
     <!-- Ybug code start (https://ybug.io) -->
     <script type='text/javascript'>
         (function() {

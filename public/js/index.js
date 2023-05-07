@@ -95,6 +95,7 @@ function makeTimeBlock(start, length, day, availability, description) {
                 wrapper.appendChild(elem);
                 wrapper.addEventListener('mouseover', (e) => {
                     let hov = e.target;
+                    if(!hov.classList.contains('block')) hov = hov.parentNode;
                     for(let j = 0; j < wrapper.children.length; j++) {
                         let elem = wrapper.children[j];
                         elem.classList.remove('closed');
@@ -136,6 +137,44 @@ function wrap(el, wrapper) {
     el.parentNode.insertBefore(wrapper, el);
     wrapper.appendChild(el);
 }
+
+function makeBooking(booking) {
+    let parent = document.getElementsByClassName('bookings')[0];
+    
+    let url = '/building_rooms/building_room_id/' + booking.building_room_id;
+    fetch(url).then(response => response.json()).then(room => {
+        room = room[0];
+        console.log(room);
+        let elem = document.createElement('a');
+        elem.className = 'booking';
+        elem.innerHTML = `<div>${room.building_room_name}</div>
+        <div>${booking.date.split('T')[0]}</div>
+        <div>${booking.start_time} - ${booking.end_time}</div>`
+        elem.href = '../calendar/' + room.building_room_id + "/" + room.building_room_name;
+        parent.appendChild(elem);
+        
+        // if(checkOverflow(parent)) {
+        console.log(parent.style.gridRow);
+        let gR = Math.ceil((parent.getElementsByClassName('booking').length + 1) / 2) + 1;
+        // let gR = parseInt(parent.style.gridRow.split('/')[1]) + 1;
+        parent.style.gridRow = '1 / ' + gR;
+        // } 
+    })
+}
+
+// function checkOverflow(el) {
+//    var curOverflow = el.style.overflow;
+
+//    if ( !curOverflow || curOverflow === "visible" )
+//       el.style.overflow = "hidden";
+
+//    var isOverflowing = el.clientWidth < el.scrollWidth 
+//       || el.clientHeight < el.scrollHeight;
+
+//    el.style.overflow = curOverflow;
+
+//    return isOverflowing;
+// }
 
 /**
  * Create a room element

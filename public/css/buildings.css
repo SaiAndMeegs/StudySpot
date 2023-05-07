@@ -17,6 +17,9 @@
     .building > .star:hover .cls-1 {
         fill-opacity: 100%;
     }
+    .booking:hover {
+        opacity: 100%;
+    }
 }
 @media only screen and (max-width: 600px) {
     .building > .star {
@@ -32,6 +35,49 @@
     /* grid-template-columns: repeat(3, 1fr); */
     grid-template-columns: repeat(auto-fill,minmax(min(100%, 250px),1fr));
     gap: 3vh 2vw;
+}
+.bookings {
+    /* padding: 0 !important;
+    border-radius: 0 !important; */
+    cursor: default !important;
+    background: #eee;
+    padding: 10px !important;
+    border-radius: 10px !important;
+    box-shadow: 0 0 0 2px inset #ccc;
+    text-align: center;
+}
+.bookings:empty {
+    height: 0px;
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+}
+.bookings:hover {
+    transform: translate(0, 0);
+}
+.booking {
+    background: #ffa50066;
+    padding: 10px 10px 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    font-size: 15px;
+    margin: 10px 0px;
+    opacity: 90%;
+    transition: all .3s;
+}
+.booking:before {
+    content: '';
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: orange;
+}
+.booking > *:nth-child(1) {
+    font-weight: bolder;
 }
 .building {
     /* font-size: 15px; */

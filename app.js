@@ -178,7 +178,7 @@ app.post('/student_events', bodyParser.json(), (req, res) => {
         if (error) throw error
         res.status(200).json(result.rows)
         pool.end;
-    })
+    }) 
     
     /*
     pool.query("SELECT * FROM student_event WHERE student_event_id = @@IDENTITY", (error, result) => {
@@ -190,6 +190,19 @@ app.post('/student_events', bodyParser.json(), (req, res) => {
     */
 
     
+})
+
+//building_room endpoints
+app.get('/building_rooms/building_room_id/:key', cors(), (req, res) => {
+    search_query = req.params.key;
+
+    pool.query("SELECT * FROM building_room WHERE building_room_id=" + search_query, (err, result) => {
+        if (err) throw err
+        res.status(200).json(result.rows)
+  
+        pool.end;
+    })
+
 })
 
 /*

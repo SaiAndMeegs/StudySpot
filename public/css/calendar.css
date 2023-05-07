@@ -50,7 +50,7 @@
         opacity: 1;
         z-index: 1000;
     }
-    button[type=button]:hover {
+    .submit:hover:not(:disabled) {
         box-shadow: 0px 4px 0px rgb(50, 190, 50);
         transform: translate(0px, -4px);
         /* box-shadow: 2px 2px 0px rgb(50, 190, 50);
@@ -351,7 +351,7 @@ input, select, button {
     justify-content: center;
     margin-top: 20px;
 }
-button[type=button] {
+.submit {
     background: rgb(97, 255, 97);
     box-shadow: 0px 0px 0px rgb(50, 190, 50);
     transform: translate(0px, 0px);
@@ -359,10 +359,15 @@ button[type=button] {
     -webkit-transition: all .2s;
 }
 
-button[type=button]:active {
+.submit:active {
     box-shadow: 0px 0px 0px rgb(50, 190, 50);
     transform: translate(0px, 0px);
+
 }
+.submit:disabled {
+    filter: saturate(.3);
+}
+
 .barrier {
     background-image: repeating-linear-gradient(
         45deg,
