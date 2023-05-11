@@ -457,7 +457,7 @@
         <div class="details">
             <p class="details-head">Create a block for this time</p>
             <p>By booking this block, you are letting other <strong>Study Spot</strong> users know that you will be here for the allotted time. Note that you will not have exclusive access to this room during this block.</p>
-            <p>Study Spot is in no way liable for what you do while in this classroom. We ask that you please be respectful of the room and those around you.</p>
+            <p><strong>Study Spot</strong> is in no way liable for what you do while in this classroom. We ask that you please be respectful of the room and those around you.</p>
         </div>
         <form>
             <label for="date">Date:</label>
@@ -469,8 +469,8 @@
             <label for="type">Type:</label>
             <select id="type">
                 <option value="Quiet study">Quiet study</option>
-                <option value="Open Study">Open study</option>
-                <option value="Group study">Group Study</option>
+                <option value="Open study">Open study</option>
+                <option value="Group study">Group study</option>
             </select>
             <div class="button">
                 <button type="button" class="submit" onclick={onSubmit()}> Submit </button>
@@ -521,7 +521,7 @@
                         'end': document.getElementById('end').value,
                         'type': document.getElementById('type').value,
                         'building_room_id': '<%- id %>'
-                    }) }).then(data =>  data.json()).then(value => {
+                    }) }).then(data => data.json()).then(value => {
                         let end = document.getElementById('end').value;
                         end = end.split(':');
                         let milliseconds = 1000*((parseFloat(end[0])*60*60) + (parseFloat(end[1])*60))
@@ -550,7 +550,8 @@
 
                     console.log(document.cookie);
 
-                    window.location.reload();
+
+                    window.location.reload().then(console.log('hi'));
                 } else {
                     console.log('heyyy');
                 }

@@ -1,0 +1,3251 @@
+[
+  {
+    "course_title": "ACCOUNTG     H321 Honors Colloquium for Introduction to Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01-COL(58079)",
+    "instructor_name": "Orhan Akisik",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "17:30",
+    "end_time": "18:20",
+    "building_room_name": "School of Management 237"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01-LEC(58001)",
+    "instructor_name": "Kerri Bohonowicz",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:45",
+    "building_room_name": "Mahar room 108"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01LL-LAB(58002)",
+    "instructor_name": "Staff",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "9:05",
+    "end_time": "9:55",
+    "building_room_name": "School of Management 122"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01LM-LAB(58003)",
+    "instructor_name": "Staff",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "10:10",
+    "end_time": "11:00",
+    "building_room_name": "School of Management 118"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01LN-LAB(58004)",
+    "instructor_name": "Staff",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "10:10",
+    "end_time": "11:00",
+    "building_room_name": "School of Management 120"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01LQ-LAB(58005)",
+    "instructor_name": "Staff",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:05",
+    "building_room_name": "Sch of Management G26"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01LR-LAB(58006)",
+    "instructor_name": "Staff",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "12:20",
+    "end_time": "13:10",
+    "building_room_name": "School of Management 120"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01LS-LAB(58007)",
+    "instructor_name": "Staff",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "13:25",
+    "end_time": "14:15",
+    "building_room_name": "School of Management 117"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01LU-LAB(58008)",
+    "instructor_name": "Staff",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "13:25",
+    "end_time": "14:15",
+    "building_room_name": "School of Management 120"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01LV-LAB(58009)",
+    "instructor_name": "Staff",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:20",
+    "building_room_name": "School of Management 120"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01LW-LAB(58010)",
+    "instructor_name": "Staff",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "17:30",
+    "end_time": "18:20",
+    "building_room_name": "Sch of Management G31"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01LX-LAB(58011)",
+    "instructor_name": "Staff",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "17:30",
+    "end_time": "18:20",
+    "building_room_name": "Sch of Management G26"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01LZ-LAB(58012)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "9:05",
+    "end_time": "9:55",
+    "building_room_name": "School of Management 122"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01MM-LAB(58013)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "9:05",
+    "end_time": "9:55",
+    "building_room_name": "School of Management 123"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01MN-LAB(58014)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "10:10",
+    "end_time": "11:00",
+    "building_room_name": "School of Management 126"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01MQ-LAB(58015)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "10:10",
+    "end_time": "11:00",
+    "building_room_name": "School of Management 118"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01MR-LAB(58016)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:05",
+    "building_room_name": "School of Management 117"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01MS-LAB(58017)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:05",
+    "building_room_name": "School of Management 123"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01MU-LAB(58018)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "12:20",
+    "end_time": "13:10",
+    "building_room_name": "Sch of Management G35"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01MV-LAB(58019)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "12:20",
+    "end_time": "13:10",
+    "building_room_name": "Sch of Management G31"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01MW-LAB(58036)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "13:25",
+    "end_time": "14:15",
+    "building_room_name": "School of Management 117"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01MX-LAB(58037)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "13:25",
+    "end_time": "14:15",
+    "building_room_name": "School of Management 126"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "02-LEC(58045)",
+    "instructor_name": "Timothy Mitchell",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "16:00",
+    "end_time": "17:15",
+    "building_room_name": "School of Management N135"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "03-LEC(58057)",
+    "instructor_name": "Kerri Bohonowicz",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "16:00",
+    "end_time": "17:15",
+    "building_room_name": "School of Management 137"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "03LL-LAB(58069)",
+    "instructor_name": "Staff",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "10:10",
+    "end_time": "11:00",
+    "building_room_name": "School of Management 117"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "03LM-LAB(58070)",
+    "instructor_name": "Staff",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "10:10",
+    "end_time": "11:00",
+    "building_room_name": "School of Management 124"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "03LN-LAB(58071)",
+    "instructor_name": "Staff",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:05",
+    "building_room_name": "School of Management 120"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "03LQ-LAB(58072)",
+    "instructor_name": "Staff",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:05",
+    "building_room_name": "Sch of Management G31"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "03LR-LAB(58073)",
+    "instructor_name": "Staff",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "12:20",
+    "end_time": "13:10",
+    "building_room_name": "School of Management 122"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "03LS-LAB(58074)",
+    "instructor_name": "Staff",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "12:20",
+    "end_time": "13:10",
+    "building_room_name": "Sch of Management G26"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "03LU-LAB(58075)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "10:10",
+    "end_time": "11:00",
+    "building_room_name": "School of Management 123"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "03LV-LAB(58076)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "10:10",
+    "end_time": "11:00",
+    "building_room_name": "School of Management 125"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "03LW-LAB(58077)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:05",
+    "building_room_name": "School of Management 125"
+  },
+  {
+    "course_title": "ACCOUNTG  221 Principles of Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "03LX-LAB(58078)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:05",
+    "building_room_name": "Sch of Management G31"
+  },
+  {
+    "course_title": "ACCOUNTG  222 Principles of Managerial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01LL-LAB(58047)",
+    "instructor_name": "Staff",
+    "days": [
+      "Monday",
+      "Wednesday",
+      "Friday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:05",
+    "building_room_name": "School of Management 119"
+  },
+  {
+    "course_title": "ACCOUNTG  222 Principles of Managerial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01LM-LAB(58048)",
+    "instructor_name": "Staff",
+    "days": [
+      "Monday",
+      "Wednesday",
+      "Friday"
+    ],
+    "start_time": "12:20",
+    "end_time": "13:10",
+    "building_room_name": "School of Management 118"
+  },
+  {
+    "course_title": "ACCOUNTG  222 Principles of Managerial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01LN-LAB(58049)",
+    "instructor_name": "Staff",
+    "days": [
+      "Monday",
+      "Wednesday",
+      "Friday"
+    ],
+    "start_time": "12:20",
+    "end_time": "13:10",
+    "building_room_name": "School of Management 124"
+  },
+  {
+    "course_title": "ACCOUNTG  222 Principles of Managerial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01LQ-LAB(58050)",
+    "instructor_name": "Staff",
+    "days": [
+      "Monday",
+      "Wednesday",
+      "Friday"
+    ],
+    "start_time": "13:25",
+    "end_time": "14:15",
+    "building_room_name": "School of Management 118"
+  },
+  {
+    "course_title": "ACCOUNTG  222 Principles of Managerial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01LR-LAB(58051)",
+    "instructor_name": "Staff",
+    "days": [
+      "Monday",
+      "Wednesday",
+      "Friday"
+    ],
+    "start_time": "13:25",
+    "end_time": "14:15",
+    "building_room_name": "School of Management 124"
+  },
+  {
+    "course_title": "ACCOUNTG  233 Financial and Managerial Accounting Principles",
+    "course_subject": "Accounting",
+    "course_spire_id": "01-LEC(58067)",
+    "instructor_name": "Staff",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:45",
+    "building_room_name": "School of Management 108"
+  },
+  {
+    "course_title": "ACCOUNTG  233 Financial and Managerial Accounting Principles",
+    "course_subject": "Accounting",
+    "course_spire_id": "02-LEC(58068)",
+    "instructor_name": "Orhan Akisik",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "16:00",
+    "end_time": "17:15",
+    "building_room_name": "School of Management 108"
+  },
+  {
+    "course_title": "ACCOUNTG  311 Accounting Information Systems",
+    "course_subject": "Accounting",
+    "course_spire_id": "01-LEC(58021)",
+    "instructor_name": "Graham Gal",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "11:30",
+    "end_time": "12:45",
+    "building_room_name": "Goodell Room 608 - TBL"
+  },
+  {
+    "course_title": "ACCOUNTG  311 Accounting Information Systems",
+    "course_subject": "Accounting",
+    "course_spire_id": "02-LEC(58052)",
+    "instructor_name": "Graham Gal",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "13:00",
+    "end_time": "14:15",
+    "building_room_name": "Goodell Room 608 - TBL"
+  },
+  {
+    "course_title": "ACCOUNTG  321 Intermediate Financial Accounting I",
+    "course_subject": "Accounting",
+    "course_spire_id": "01-LEC(58022)",
+    "instructor_name": "Orhan Akisik",
+    "days": [
+      "Monday",
+      "Wednesday",
+      "Friday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:05",
+    "building_room_name": "School of Management 124"
+  },
+  {
+    "course_title": "ACCOUNTG  321 Intermediate Financial Accounting I",
+    "course_subject": "Accounting",
+    "course_spire_id": "02-LEC(58041)",
+    "instructor_name": "Orhan Akisik",
+    "days": [
+      "Monday",
+      "Wednesday",
+      "Friday"
+    ],
+    "start_time": "12:20",
+    "end_time": "13:10",
+    "building_room_name": "School of Management N135"
+  },
+  {
+    "course_title": "ACCOUNTG  322 Intermediate Financial Accounting II",
+    "course_subject": "Accounting",
+    "course_spire_id": "01-LEC(58023)",
+    "instructor_name": "Timothy Mitchell",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "11:30",
+    "end_time": "12:45",
+    "building_room_name": "School of Management 117"
+  },
+  {
+    "course_title": "ACCOUNTG  322 Intermediate Financial Accounting II",
+    "course_subject": "Accounting",
+    "course_spire_id": "02-LEC(58024)",
+    "instructor_name": "Timothy Mitchell",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "13:00",
+    "end_time": "14:15",
+    "building_room_name": "School of Management 117"
+  },
+  {
+    "course_title": "ACCOUNTG  331 Cost Acctg",
+    "course_subject": "Accounting",
+    "course_spire_id": "01-LEC(58025)",
+    "instructor_name": "Orhan Akisik",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "8:30",
+    "end_time": "9:45",
+    "building_room_name": "School of Management N135"
+  },
+  {
+    "course_title": "ACCOUNTG  331 Cost Acctg",
+    "course_subject": "Accounting",
+    "course_spire_id": "02-LEC(58026)",
+    "instructor_name": "Orhan Akisik",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "11:30",
+    "end_time": "12:45",
+    "building_room_name": "School of Management 127"
+  },
+  {
+    "course_title": "ACCOUNTG  371 Individual Taxation",
+    "course_subject": "Accounting",
+    "course_spire_id": "01-LEC(58038)",
+    "instructor_name": "Sean Wandrei",
+    "days": [
+      "Monday",
+      "Wednesday",
+      "Friday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:05",
+    "building_room_name": "School of Management 106"
+  },
+  {
+    "course_title": "ACCOUNTG  371 Individual Taxation",
+    "course_subject": "Accounting",
+    "course_spire_id": "02-LEC(58044)",
+    "instructor_name": "Sean Wandrei",
+    "days": [
+      "Monday",
+      "Wednesday",
+      "Friday"
+    ],
+    "start_time": "12:20",
+    "end_time": "13:10",
+    "building_room_name": "School of Management 106"
+  },
+  {
+    "course_title": "ACCOUNTG  396 Independent Study",
+    "course_subject": "Accounting",
+    "course_spire_id": "01-IND(58031)",
+    "instructor_name": "Jennifer Roy",
+    "days": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "start_time": "1:00",
+    "end_time": "1:00",
+    "building_room_name": "TBA"
+  },
+  {
+    "course_title": "ACCOUNTG  396 Independent Study",
+    "course_subject": "Accounting",
+    "course_spire_id": "02-IND(58046)",
+    "instructor_name": "Staff",
+    "days": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "start_time": "0:00",
+    "end_time": "0:00",
+    "building_room_name": "TBA"
+  },
+  {
+    "course_title": "ACCOUNTG  398V Practicum",
+    "course_subject": "Accounting",
+    "course_spire_id": "01-PRA(58030)",
+    "instructor_name": "Catherine Lowry, Sean Wandrei, Jennifer Roy",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "16:00",
+    "end_time": "19:00",
+    "building_room_name": "Sch of Management G23"
+  },
+  {
+    "course_title": "ACCOUNTG  398V Practicum",
+    "course_subject": "Accounting",
+    "course_spire_id": "02-PRA(58039)",
+    "instructor_name": "Catherine Lowry, Sean Wandrei, Jennifer Roy",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "16:00",
+    "end_time": "19:00",
+    "building_room_name": "Sch of Management G23"
+  },
+  {
+    "course_title": "ACCOUNTG  423 Advanced Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01-LEC(58055)",
+    "instructor_name": "Yoon Ju Kang",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "10:00",
+    "end_time": "11:15",
+    "building_room_name": "School of Management 106"
+  },
+  {
+    "course_title": "ACCOUNTG  423 Advanced Financial Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "02-LEC(58056)",
+    "instructor_name": "Yoon Ju Kang",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "11:30",
+    "end_time": "12:45",
+    "building_room_name": "School of Management 106"
+  },
+  {
+    "course_title": "ACCOUNTG  441 Auditing",
+    "course_subject": "Accounting",
+    "course_spire_id": "01-LEC(58063)",
+    "instructor_name": "Sarah Thorrick",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "8:30",
+    "end_time": "9:45",
+    "building_room_name": "School of Management 123"
+  },
+  {
+    "course_title": "ACCOUNTG  441 Auditing",
+    "course_subject": "Accounting",
+    "course_spire_id": "02-LEC(58065)",
+    "instructor_name": "Sarah Thorrick",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "10:00",
+    "end_time": "11:15",
+    "building_room_name": "School of Management 123"
+  },
+  {
+    "course_title": "ACCOUNTG  472 Corporate Taxation",
+    "course_subject": "Accounting",
+    "course_spire_id": "01-LEC(58064)",
+    "instructor_name": "Jennifer Roy",
+    "days": [
+      "Monday",
+      "Wednesday",
+      "Friday"
+    ],
+    "start_time": "10:10",
+    "end_time": "11:00",
+    "building_room_name": "School of Management N135"
+  },
+  {
+    "course_title": "ACCOUNTG  482 International Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "01-LEC(69263)",
+    "instructor_name": "Elaine Wang",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "10:00",
+    "end_time": "11:15",
+    "building_room_name": "School of Management 126"
+  },
+  {
+    "course_title": "ACCOUNTG  482 International Accounting",
+    "course_subject": "Accounting",
+    "course_spire_id": "02-LEC(69264)",
+    "instructor_name": "Elaine Wang",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "11:30",
+    "end_time": "12:45",
+    "building_room_name": "School of Management 126"
+  },
+  {
+    "course_title": "ACCOUNTG  483 CPA Law",
+    "course_subject": "Accounting",
+    "course_spire_id": "01-LEC(58061)",
+    "instructor_name": "Frank Caruso",
+    "days": [
+      "Tuesday"
+    ],
+    "start_time": "18:30",
+    "end_time": "21:00",
+    "building_room_name": "School of Management 119"
+  },
+  {
+    "course_title": "ACCOUNTG  483 CPA Law",
+    "course_subject": "Accounting",
+    "course_spire_id": "03-LEC(58062)",
+    "instructor_name": "Frank Caruso",
+    "days": [
+      "Monday",
+      "Wednesday",
+      "Friday"
+    ],
+    "start_time": "14:30",
+    "end_time": "17:30",
+    "building_room_name": "School of Management 106"
+  },
+  {
+    "course_title": "ACCOUNTG  498S Practicum - SIPP",
+    "course_subject": "Accounting",
+    "course_spire_id": "01-PRA(58040)",
+    "instructor_name": "Pamela Trafford, Catherine Lowry",
+    "days": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "start_time": "1:00",
+    "end_time": "1:00",
+    "building_room_name": "TBA"
+  },
+  {
+    "course_title": "AEROSPAC  112 Air Force Heritage and Values II",
+    "course_subject": "Aerospace Studies",
+    "course_spire_id": "01-LEC(58086)",
+    "instructor_name": "Joseph Kraiem, Lucas Hall, Darrick Dwyer, Crystal Davis",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "8:30",
+    "end_time": "9:20",
+    "building_room_name": "Dickinson Hall room 216"
+  },
+  {
+    "course_title": "AEROSPAC  112 Air Force Heritage and Values II",
+    "course_subject": "Aerospace Studies",
+    "course_spire_id": "99LL-LAB(58087)",
+    "instructor_name": "Staff",
+    "days": [
+      "Tuesday"
+    ],
+    "start_time": "16:00",
+    "end_time": "18:00",
+    "building_room_name": "Dickinson Hall room 216"
+  },
+  {
+    "course_title": "AEROSPAC  191A Seminar- Advanced Physical Conditioning",
+    "course_subject": "Aerospace Studies",
+    "course_spire_id": "01-SEM(58081)",
+    "instructor_name": "Lucas Hall, Darrick Dwyer",
+    "days": [
+      "Tuesday"
+    ],
+    "start_time": "18:30",
+    "end_time": "19:30",
+    "building_room_name": "Dickinson Hall room 216"
+  },
+  {
+    "course_title": "AEROSPAC  224 Team & Leadership Fundamentals II",
+    "course_subject": "Aerospace Studies",
+    "course_spire_id": "01-LEC(58089)",
+    "instructor_name": "Lucas Hall, Darrick Dwyer, Joseph Kraiem, Crystal Davis",
+    "days": [
+      "Tuesday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:20",
+    "building_room_name": "Dickinson Hall room 216"
+  },
+  {
+    "course_title": "AEROSPAC  224 Team & Leadership Fundamentals II",
+    "course_subject": "Aerospace Studies",
+    "course_spire_id": "99LL-LAB(58082)",
+    "instructor_name": "Staff",
+    "days": [
+      "Tuesday"
+    ],
+    "start_time": "16:00",
+    "end_time": "18:00",
+    "building_room_name": "Dickinson Hall room 216"
+  },
+  {
+    "course_title": "AEROSPAC  336 Leading People and Effective Communication II",
+    "course_subject": "Aerospace Studies",
+    "course_spire_id": "01-LEC(58085)",
+    "instructor_name": "Lucas Hall, Darrick Dwyer, Joseph Kraiem, Crystal Davis",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "12:45",
+    "end_time": "15:45",
+    "building_room_name": "Dickinson Hall room 216"
+  },
+  {
+    "course_title": "AEROSPAC  336 Leading People and Effective Communication II",
+    "course_subject": "Aerospace Studies",
+    "course_spire_id": "99LL-LAB(58090)",
+    "instructor_name": "Staff",
+    "days": [
+      "Tuesday"
+    ],
+    "start_time": "16:00",
+    "end_time": "18:00",
+    "building_room_name": "Dickinson Hall room 214"
+  },
+  {
+    "course_title": "AEROSPAC  442 National Security Affairs and Preparation for Active Duty II",
+    "course_subject": "Aerospace Studies",
+    "course_spire_id": "01-LEC(58091)",
+    "instructor_name": "Lucas Hall, Darrick Dwyer, Joseph Kraiem, Crystal Davis",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "9:00",
+    "end_time": "12:00",
+    "building_room_name": "Dickinson Hall room 214"
+  },
+  {
+    "course_title": "AEROSPAC  442 National Security Affairs and Preparation for Active Duty II",
+    "course_subject": "Aerospace Studies",
+    "course_spire_id": "99LL-LAB(58083)",
+    "instructor_name": "Staff",
+    "days": [
+      "Tuesday"
+    ],
+    "start_time": "16:00",
+    "end_time": "18:00",
+    "building_room_name": "Dickinson Hall room 214"
+  },
+  {
+    "course_title": "AFROAM  101 Introduction to Black Studies",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01-LEC(58136)",
+    "instructor_name": "A-Yemisi Jimoh",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:45",
+    "building_room_name": "On-Line"
+  },
+  {
+    "course_title": "AFROAM  118 Survey of Afro-American Literature II",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01-LEC(58114)",
+    "instructor_name": "James Smethurst",
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:05",
+    "building_room_name": "Integ. Learning Center N101"
+  },
+  {
+    "course_title": "AFROAM  118 Survey of Afro-American Literature II",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01AA-DIS(58124)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:05",
+    "building_room_name": "New Africa House room 311"
+  },
+  {
+    "course_title": "AFROAM  118 Survey of Afro-American Literature II",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01AB-DIS(58125)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "12:20",
+    "end_time": "13:10",
+    "building_room_name": "New Africa House room 311"
+  },
+  {
+    "course_title": "AFROAM  133 African-American History, Civil War-1954",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01-LEC(58099)",
+    "instructor_name": "Toussaint Losier",
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:20",
+    "building_room_name": "Goessmann Lab. Add rm 64"
+  },
+  {
+    "course_title": "AFROAM  133 African-American History, Civil War-1954",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01AA-DIS(58116)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "13:25",
+    "end_time": "14:15",
+    "building_room_name": "New Africa House room 3"
+  },
+  {
+    "course_title": "AFROAM  133 African-American History, Civil War-1954",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01AB-DIS(58117)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:20",
+    "building_room_name": "New Africa House room 3"
+  },
+  {
+    "course_title": "AFROAM  133 African-American History, Civil War-1954",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01AC-DIS(58118)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "13:25",
+    "end_time": "14:15",
+    "building_room_name": "New Africa House Room 21"
+  },
+  {
+    "course_title": "AFROAM  133 African-American History, Civil War-1954",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01AD-DIS(58120)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:20",
+    "building_room_name": "New Africa House Room 21"
+  },
+  {
+    "course_title": "AFROAM  133 African-American History, Civil War-1954",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01AE-DIS(58121)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "13:25",
+    "end_time": "14:15",
+    "building_room_name": "New Africa House room 311"
+  },
+  {
+    "course_title": "AFROAM  133 African-American History, Civil War-1954",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01AF-DIS(58122)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:20",
+    "building_room_name": "New Africa House room 311"
+  },
+  {
+    "course_title": "AFROAM  151 Literature & Culture",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01-LEC(58126)",
+    "instructor_name": "Britt Rusert",
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "start_time": "10:10",
+    "end_time": "11:00",
+    "building_room_name": "Hasbrouck Lab Add room 124"
+  },
+  {
+    "course_title": "AFROAM  151 Literature & Culture",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01AA-DIS(58129)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "10:10",
+    "end_time": "11:00",
+    "building_room_name": "New Africa House room 3"
+  },
+  {
+    "course_title": "AFROAM  151 Literature & Culture",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01AB-DIS(58130)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:05",
+    "building_room_name": "New Africa House room 3"
+  },
+  {
+    "course_title": "AFROAM  151 Literature & Culture",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01AC-DIS(58131)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "10:10",
+    "end_time": "11:00",
+    "building_room_name": "New Africa House Room 21"
+  },
+  {
+    "course_title": "AFROAM  151 Literature & Culture",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01AD-DIS(58132)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:05",
+    "building_room_name": "New Africa House Room 21"
+  },
+  {
+    "course_title": "AFROAM  151 Literature & Culture",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "03-LEC(68987)",
+    "instructor_name": "Kymberly Newberry",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "13:00",
+    "end_time": "14:15",
+    "building_room_name": "Melville Room 130"
+  },
+  {
+    "course_title": "AFROAM  156 Rev Concepts in African-American Music",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01-LEC(67052)",
+    "instructor_name": "Bianki Torres",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "16:00",
+    "end_time": "17:15",
+    "building_room_name": "New Africa House room 311"
+  },
+  {
+    "course_title": "AFROAM  170 The Grassroots Experience in American Life and Culture I",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01-LEC(66408)",
+    "instructor_name": "Tatiana Rodriguez",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "11:30",
+    "end_time": "12:45",
+    "building_room_name": "New Africa House Room 21"
+  },
+  {
+    "course_title": "AFROAM  234 Literature of Harlem Renaissance",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01-LEC(66401)",
+    "instructor_name": "Steven Tracy",
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "start_time": "12:20",
+    "end_time": "13:10",
+    "building_room_name": "Integ. Learning Center S231"
+  },
+  {
+    "course_title": "AFROAM  265 The Blues Came Down Like Dark Night Showers of Rain",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01-LEC(69472)",
+    "instructor_name": "Steven Tracy",
+    "days": [
+      "Tuesday"
+    ],
+    "start_time": "13:00",
+    "end_time": "15:30",
+    "building_room_name": "New Africa House Room 401"
+  },
+  {
+    "course_title": "AFROAM  293C Seminar- Race, Sexuality, and the Law in Early America",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01-SEM(66411)",
+    "instructor_name": "Anne Kerth",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "10:00",
+    "end_time": "11:15",
+    "building_room_name": "New Africa House room 311"
+  },
+  {
+    "course_title": "AFROAM  293G Seminar- From Environmental Racism to Climate Justice",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01-SEM(66720)",
+    "instructor_name": "Toussaint Losier",
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:30",
+    "building_room_name": "New Africa House room 3"
+  },
+  {
+    "course_title": "AFROAM  293J Seminar- Black Women, Representation, and Power in Africa and the African Diaspora",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01-SEM(68622)",
+    "instructor_name": "Yolanda Covington-Ward",
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "start_time": "9:05",
+    "end_time": "10:20",
+    "building_room_name": "New Africa House room 3"
+  },
+  {
+    "course_title": "AFROAM  297A ST-Black Springfield:Revisited",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01-LEC(68844)",
+    "instructor_name": "Amilcar Shabazz",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "13:00",
+    "end_time": "14:15",
+    "building_room_name": "New Africa House room 3"
+  },
+  {
+    "course_title": "AFROAM  297D Special Topics- African American Image in Film",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01-LEC(68843)",
+    "instructor_name": "Christian Woods",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "11:30",
+    "end_time": "12:45",
+    "building_room_name": "New Africa House room 3"
+  },
+  {
+    "course_title": "AFROAM  326 Black Women in U.S. History",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01-LEC(66407)",
+    "instructor_name": "Traci Parker",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:45",
+    "building_room_name": "New Africa House room 311"
+  },
+  {
+    "course_title": "AFROAM  345 Southern Literature",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01-LEC(66406)",
+    "instructor_name": "James Smethurst",
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:45",
+    "building_room_name": "New Africa House Room 21"
+  },
+  {
+    "course_title": "AFROAM  591G Seminar- Black Ecologies",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01-SEM(66721)",
+    "instructor_name": "Britt Rusert",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "12:00",
+    "end_time": "14:30",
+    "building_room_name": "New Africa House room 302"
+  },
+  {
+    "course_title": "AFROAM  630 Critical Race Theories",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01-SEM(66413)",
+    "instructor_name": "A-Yemisi Jimoh",
+    "days": [
+      "Tuesday"
+    ],
+    "start_time": "16:00",
+    "end_time": "18:30",
+    "building_room_name": "On-Line"
+  },
+  {
+    "course_title": "AFROAM  691C S-Historiographical Methods in Afro-American Studies",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01-SEM(66414)",
+    "instructor_name": "Anne Kerth",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "13:00",
+    "end_time": "15:30",
+    "building_room_name": "New Africa House Room 401"
+  },
+  {
+    "course_title": "AFROAM  693G Seminar- Gender in the Civil Rights Movement",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01-SEM(66728)",
+    "instructor_name": "Traci Parker",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "16:00",
+    "end_time": "18:30",
+    "building_room_name": "New Africa House room 302"
+  },
+  {
+    "course_title": "AFROAM  693T Teaching Assistant Mentoring Seminar",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01-SEM(68852)",
+    "instructor_name": "Amilcar Shabazz",
+    "days": [
+      "Monday"
+    ],
+    "start_time": "9:00",
+    "end_time": "10:00",
+    "building_room_name": "New Africa House room 302"
+  },
+  {
+    "course_title": "AFROAM  696B Independent Study",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01-IND(67050)",
+    "instructor_name": "Staff",
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "start_time": "1:00",
+    "end_time": "1:00",
+    "building_room_name": "TBA"
+  },
+  {
+    "course_title": "AFROAM  702 Major Works in Afro-American Studies II",
+    "course_subject": "Afro-American Studies",
+    "course_spire_id": "01-SEM(58108)",
+    "instructor_name": "A-Yemisi Jimoh, Toussaint Losier, Anne Kerth, Britt Rusert, Amilcar Shabazz, James Smethurst, Yolanda Covington-Ward, Traci Parker",
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "start_time": "16:00",
+    "end_time": "18:30",
+    "building_room_name": "New Africa House room 302"
+  },
+  {
+    "course_title": "ANIMLSCI  103 Intro Animal Mgmt",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58147)",
+    "instructor_name": "Katie Beltaire",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "11:30",
+    "end_time": "12:45",
+    "building_room_name": "Bartlett Hall room 65"
+  },
+  {
+    "course_title": "ANIMLSCI  103 Intro Animal Mgmt",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01LL-LAB(58148)",
+    "instructor_name": "Staff",
+    "days": [
+      "Tuesday"
+    ],
+    "start_time": "13:25",
+    "end_time": "16:30",
+    "building_room_name": "Ag. Engin. Bldg Annex B rm 150"
+  },
+  {
+    "course_title": "ANIMLSCI  103 Intro Animal Mgmt",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01LM-LAB(58149)",
+    "instructor_name": "Staff",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "13:25",
+    "end_time": "16:30",
+    "building_room_name": "Ag. Engin. Bldg Annex B rm 150"
+  },
+  {
+    "course_title": "ANIMLSCI  103 Intro Animal Mgmt",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01LN-LAB(58150)",
+    "instructor_name": "Staff",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "13:25",
+    "end_time": "16:30",
+    "building_room_name": "Ag. Engin. Bldg Annex B rm 150"
+  },
+  {
+    "course_title": "ANIMLSCI  103 Intro Animal Mgmt",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01LQ-LAB(58151)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "13:25",
+    "end_time": "16:30",
+    "building_room_name": "Ag. Engin. Bldg Annex B rm 150"
+  },
+  {
+    "course_title": "ANIMLSCI  103 Intro Animal Mgmt",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01LR-LAB(58238)",
+    "instructor_name": "Staff",
+    "days": [
+      "Monday"
+    ],
+    "start_time": "13:25",
+    "end_time": "16:30",
+    "building_room_name": "Ag. Engin. Bldg Annex B rm 150"
+  },
+  {
+    "course_title": "ANIMLSCI  115 Large Animal Clinical Nursing",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58223)",
+    "instructor_name": "Amy Rubin, Amanda Golembeski",
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "start_time": "8:00",
+    "end_time": "9:15",
+    "building_room_name": "Ag. Engin. Bldg Annex B rm 150"
+  },
+  {
+    "course_title": "ANIMLSCI  115L Large Animal Clinical Nursing Lab",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LAB(58224)",
+    "instructor_name": "Amy Rubin, Amanda Golembeski",
+    "days": [
+      "Monday"
+    ],
+    "start_time": "10:10",
+    "end_time": "12:05",
+    "building_room_name": "Hadley Farm Ed Center Rm 101"
+  },
+  {
+    "course_title": "ANIMLSCI  115L Large Animal Clinical Nursing Lab",
+    "course_subject": "Animal Science",
+    "course_spire_id": "02-LAB(68899)",
+    "instructor_name": "Amy Rubin, Amanda Golembeski",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "10:10",
+    "end_time": "12:05",
+    "building_room_name": "Hadley Farm Ed Center Rm 101"
+  },
+  {
+    "course_title": "ANIMLSCI  197F Special Topics- Veterinary Clinical Nursing I",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58256)",
+    "instructor_name": "Amanda Golembeski, Amy Rubin",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "8:00",
+    "end_time": "9:15",
+    "building_room_name": "Ag. Engin. Bldg Annex B rm 150"
+  },
+  {
+    "course_title": "ANIMLSCI  197FL Special Topics- Veterinary Clinical Nursing 1 Lab",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LAB(58257)",
+    "instructor_name": "Amanda Golembeski, Amy Rubin",
+    "days": [
+      "Tuesday"
+    ],
+    "start_time": "9:30",
+    "end_time": "11:15",
+    "building_room_name": "Ag. Engin. Bldg Annex B rm 140"
+  },
+  {
+    "course_title": "ANIMLSCI  197FL Special Topics- Veterinary Clinical Nursing 1 Lab",
+    "course_subject": "Animal Science",
+    "course_spire_id": "02-LAB(58258)",
+    "instructor_name": "Amanda Golembeski, Amy Rubin",
+    "days": [
+      "Tuesday"
+    ],
+    "start_time": "13:00",
+    "end_time": "14:50",
+    "building_room_name": "Ag. Engin. Bldg Annex B rm 140"
+  },
+  {
+    "course_title": "ANIMLSCI  251 Dorset Sheep Management II",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58180)",
+    "instructor_name": "Alice Newth",
+    "days": [
+      "Tuesday"
+    ],
+    "start_time": "16:00",
+    "end_time": "18:00",
+    "building_room_name": "Lederle Grad Res Tower Rm 143"
+  },
+  {
+    "course_title": "ANIMLSCI  252 Belted Galloway Management II",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58178)",
+    "instructor_name": "Katie Beltaire",
+    "days": [
+      "Monday"
+    ],
+    "start_time": "16:00",
+    "end_time": "18:00",
+    "building_room_name": "Off Campus Deerfield"
+  },
+  {
+    "course_title": "ANIMLSCI  253 Boer Goat Management II",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58179)",
+    "instructor_name": "Meghan Gennings",
+    "days": [
+      "Monday"
+    ],
+    "start_time": "16:00",
+    "end_time": "18:00",
+    "building_room_name": "Hasbrouck Laboratory room 137"
+  },
+  {
+    "course_title": "ANIMLSCI  254 Poultry Management II",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58185)",
+    "instructor_name": "Helene Cousin",
+    "days": [
+      "Tuesday"
+    ],
+    "start_time": "16:00",
+    "end_time": "18:00",
+    "building_room_name": "Hasbrouck Laboratory room 230"
+  },
+  {
+    "course_title": "ANIMLSCI  256 Equine Management II",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58214)",
+    "instructor_name": "Stacy Casilio",
+    "days": [
+      "Monday"
+    ],
+    "start_time": "16:00",
+    "end_time": "18:00",
+    "building_room_name": "Hadley Farm Lawrence Arena 103"
+  },
+  {
+    "course_title": "ANIMLSCI  285 Cellular and Molecular Biology",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58174)",
+    "instructor_name": "Janice Telfer",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "13:00",
+    "end_time": "14:15",
+    "building_room_name": "Goessmann Lab. Add rm 64"
+  },
+  {
+    "course_title": "ANIMLSCI  297D ST-Dairy Calf Management",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LAB(58188)",
+    "instructor_name": "Mark Huyler",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "16:30",
+    "end_time": "18:30",
+    "building_room_name": "Off Campus Hadley"
+  },
+  {
+    "course_title": "ANIMLSCI  297L ST-Livestock Classic",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58175)",
+    "instructor_name": "Meghan Gennings",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "17:30",
+    "end_time": "18:45",
+    "building_room_name": "Integrated Sciences Bldg 221"
+  },
+  {
+    "course_title": "ANIMLSCI  302 Development and Training of the Horse",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(69011)",
+    "instructor_name": "Mara Keith-Hunter",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "13:00",
+    "end_time": "14:15",
+    "building_room_name": "Hadley Farm Ed Center Rm 101"
+  },
+  {
+    "course_title": "ANIMLSCI  320 Animal Business Management",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58193)",
+    "instructor_name": "Susan Marston",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "10:00",
+    "end_time": "11:15",
+    "building_room_name": "Hasbrouck Laboratory room 228"
+  },
+  {
+    "course_title": "ANIMLSCI  332 Basic Animal Nutrition & Feeding",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58182)",
+    "instructor_name": "Mark Huyler",
+    "days": [
+      "Monday",
+      "Wednesday",
+      "Friday"
+    ],
+    "start_time": "10:10",
+    "end_time": "11:00",
+    "building_room_name": "Hasbrouck Lab Add room 126"
+  },
+  {
+    "course_title": "ANIMLSCI  332 Basic Animal Nutrition & Feeding",
+    "course_subject": "Animal Science",
+    "course_spire_id": "99LL-LAB(58210)",
+    "instructor_name": "Staff",
+    "days": [
+      "Monday"
+    ],
+    "start_time": "14:30",
+    "end_time": "16:30",
+    "building_room_name": "Ag. Engin. Bldg Annex B rm 140"
+  },
+  {
+    "course_title": "ANIMLSCI  332 Basic Animal Nutrition & Feeding",
+    "course_subject": "Animal Science",
+    "course_spire_id": "99LM-LAB(58211)",
+    "instructor_name": "Staff",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "14:30",
+    "end_time": "16:30",
+    "building_room_name": "Ag. Engin. Bldg Annex B rm 140"
+  },
+  {
+    "course_title": "ANIMLSCI  332 Basic Animal Nutrition & Feeding",
+    "course_subject": "Animal Science",
+    "course_spire_id": "99LN-LAB(58212)",
+    "instructor_name": "Staff",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "14:30",
+    "end_time": "16:30",
+    "building_room_name": "Ag. Engin. Bldg Annex B rm 140"
+  },
+  {
+    "course_title": "ANIMLSCI  366 Veterinary Microbiology Lab",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LAB(58192)",
+    "instructor_name": "Klaus Becker",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "11:15",
+    "end_time": "14:00",
+    "building_room_name": "Integrated Sci Bldg 364"
+  },
+  {
+    "course_title": "ANIMLSCI  366 Veterinary Microbiology Lab",
+    "course_subject": "Animal Science",
+    "course_spire_id": "02-LAB(58225)",
+    "instructor_name": "Alioune Gueye",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "13:25",
+    "end_time": "16:25",
+    "building_room_name": "Integrated Sci Bldg 364"
+  },
+  {
+    "course_title": "ANIMLSCI  382 Small Animal Nursing",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58236)",
+    "instructor_name": "Nuno Carreiro",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "10:00",
+    "end_time": "11:15",
+    "building_room_name": "Morrill 1 Room N345"
+  },
+  {
+    "course_title": "ANIMLSCI  385 Biotechnology Laboratory",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LAB(68788)",
+    "instructor_name": "Klaus Becker",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "8:00",
+    "end_time": "11:00",
+    "building_room_name": "Integrated Sciences Bldg 368"
+  },
+  {
+    "course_title": "ANIMLSCI  385 Biotechnology Laboratory",
+    "course_subject": "Animal Science",
+    "course_spire_id": "02-LAB(68789)",
+    "instructor_name": "Klaus Becker",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "8:30",
+    "end_time": "11:30",
+    "building_room_name": "Integrated Sciences Bldg 368"
+  },
+  {
+    "course_title": "ANIMLSCI  385 Biotechnology Laboratory",
+    "course_subject": "Animal Science",
+    "course_spire_id": "03-LAB(69398)",
+    "instructor_name": "Klaus Becker",
+    "days": [
+      "Monday"
+    ],
+    "start_time": "8:00",
+    "end_time": "11:00",
+    "building_room_name": "Integrated Sciences Bldg 368"
+  },
+  {
+    "course_title": "ANIMLSCI  392A Seminar - Careers in Animal Science",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-SEM(58176)",
+    "instructor_name": "Susan Marston",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:45",
+    "building_room_name": "Lederle Grad Res Ctr rm A301"
+  },
+  {
+    "course_title": "ANIMLSCI  397K Special Topics- Vet Micro Essential Skills",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58219)",
+    "instructor_name": "Alioune Gueye",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:05",
+    "building_room_name": "Integrated Sciences Bldg 427R"
+  },
+  {
+    "course_title": "ANIMLSCI  397N Special Topics- Exotic Animal Medicine",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58221)",
+    "instructor_name": "Daniel Young",
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "start_time": "17:30",
+    "end_time": "18:45",
+    "building_room_name": "Vet Tech@MI Classroom 102"
+  },
+  {
+    "course_title": "ANIMLSCI  397N Special Topics- Exotic Animal Medicine",
+    "course_subject": "Animal Science",
+    "course_spire_id": "02-LEC(58247)",
+    "instructor_name": "Daniel Young",
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "start_time": "17:30",
+    "end_time": "18:45",
+    "building_room_name": "Integrated Sciences Bldg 427R"
+  },
+  {
+    "course_title": "ANIMLSCI  397T Special Topics- Sea Turtle Preservation in Costa Rica",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58226)",
+    "instructor_name": "Alioune Gueye",
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "start_time": "16:00",
+    "end_time": "17:15",
+    "building_room_name": "Sch of Design@MountIda Rm 105"
+  },
+  {
+    "course_title": "ANIMLSCI  397T Special Topics- Sea Turtle Preservation in Costa Rica",
+    "course_subject": "Animal Science",
+    "course_spire_id": "02-LEC(68765)",
+    "instructor_name": "Alioune Gueye",
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "start_time": "16:00",
+    "end_time": "17:15",
+    "building_room_name": "Integrated Sciences Bldg 427R"
+  },
+  {
+    "course_title": "ANIMLSCI  398V Practicum- Community Veterinary Clinic",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-PRA(58261)",
+    "instructor_name": "Annmarie Morawiak",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "9:00",
+    "end_time": "13:00",
+    "building_room_name": "Mount Ida Classroom"
+  },
+  {
+    "course_title": "ANIMLSCI  421 Wildlife Reproduction",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58201)",
+    "instructor_name": "Carlos Gradil",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "8:30",
+    "end_time": "9:45",
+    "building_room_name": "Integ. Learning Center N101"
+  },
+  {
+    "course_title": "ANIMLSCI  425 Veterinary Parasitology",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58227)",
+    "instructor_name": "Jennifer Herndon",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "11:30",
+    "end_time": "12:45",
+    "building_room_name": "Vet Tech@MI Classroom 102"
+  },
+  {
+    "course_title": "ANIMLSCI  425 Veterinary Parasitology",
+    "course_subject": "Animal Science",
+    "course_spire_id": "02-LEC(69434)",
+    "instructor_name": "Jennifer Herndon",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "11:30",
+    "end_time": "12:45",
+    "building_room_name": "Integrated Sciences Bldg 427R"
+  },
+  {
+    "course_title": "ANIMLSCI  425L Veterinary Parasitology Lab",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LAB(58228)",
+    "instructor_name": "Tracy Blais",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "13:00",
+    "end_time": "14:50",
+    "building_room_name": "Vet Tech@MI Microscopy Rm 121"
+  },
+  {
+    "course_title": "ANIMLSCI  425L Veterinary Parasitology Lab",
+    "course_subject": "Animal Science",
+    "course_spire_id": "02-LAB(58270)",
+    "instructor_name": "Tracy Blais",
+    "days": [
+      "Tuesday"
+    ],
+    "start_time": "13:00",
+    "end_time": "14:50",
+    "building_room_name": "Vet Tech@MI Microscopy Rm 121"
+  },
+  {
+    "course_title": "ANIMLSCI  445A Equine Reproduction",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LAB(58189)",
+    "instructor_name": "Carlos Gradil",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "8:00",
+    "end_time": "8:50",
+    "building_room_name": "Stockbridge Hall room 301"
+  },
+  {
+    "course_title": "ANIMLSCI  454 Dairy Herd Mgt",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58191)",
+    "instructor_name": "Mark Huyler",
+    "days": [
+      "Monday",
+      "Wednesday",
+      "Friday"
+    ],
+    "start_time": "8:00",
+    "end_time": "8:50",
+    "building_room_name": "Morrill Sci. Ctr. (I) rm N338"
+  },
+  {
+    "course_title": "ANIMLSCI  454 Dairy Herd Mgt",
+    "course_subject": "Animal Science",
+    "course_spire_id": "99LL-LAB(58196)",
+    "instructor_name": "Staff",
+    "days": [
+      "Tuesday"
+    ],
+    "start_time": "14:30",
+    "end_time": "16:30",
+    "building_room_name": "Morrill Sci. Ctr. (I) rm N338"
+  },
+  {
+    "course_title": "ANIMLSCI  456 Research Animal Management II",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58195)",
+    "instructor_name": "Nuno Carreiro",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "12:20",
+    "end_time": "13:10",
+    "building_room_name": "Integrated Sciences Bldg 427L"
+  },
+  {
+    "course_title": "ANIMLSCI  456 Research Animal Management II",
+    "course_subject": "Animal Science",
+    "course_spire_id": "99LL-LAB(58200)",
+    "instructor_name": "Staff",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "13:00",
+    "end_time": "15:45",
+    "building_room_name": "Integrated Sciences Bldg 363A"
+  },
+  {
+    "course_title": "ANIMLSCI  465 Veterinary Diagnostic Imaging",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58229)",
+    "instructor_name": "Daniel Young",
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "start_time": "13:25",
+    "end_time": "14:15",
+    "building_room_name": "Vet Tech@MI Classroom 102"
+  },
+  {
+    "course_title": "ANIMLSCI  465L Veterinary Diagnostic Imaging Lab",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LAB(58230)",
+    "instructor_name": "Annmarie Morawiak",
+    "days": [
+      "Tuesday"
+    ],
+    "start_time": "8:30",
+    "end_time": "10:20",
+    "building_room_name": "Vet Tech @MIC Teaching lab 125"
+  },
+  {
+    "course_title": "ANIMLSCI  465L Veterinary Diagnostic Imaging Lab",
+    "course_subject": "Animal Science",
+    "course_spire_id": "02-LAB(58253)",
+    "instructor_name": "Annmarie Morawiak",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "8:30",
+    "end_time": "10:20",
+    "building_room_name": "Vet Tech @MIC Teaching lab 125"
+  },
+  {
+    "course_title": "ANIMLSCI  475 Veterinary Pathology",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58250)",
+    "instructor_name": "Alioune Gueye",
+    "days": [
+      "Monday",
+      "Wednesday",
+      "Friday"
+    ],
+    "start_time": "12:20",
+    "end_time": "13:10",
+    "building_room_name": "Sch of Design@MountIda Rm 105"
+  },
+  {
+    "course_title": "ANIMLSCI  475 Veterinary Pathology",
+    "course_subject": "Animal Science",
+    "course_spire_id": "02-LEC(58251)",
+    "instructor_name": "Alioune Gueye",
+    "days": [
+      "Monday",
+      "Wednesday",
+      "Friday"
+    ],
+    "start_time": "12:20",
+    "end_time": "13:10",
+    "building_room_name": "Integrated Sciences Bldg 427R"
+  },
+  {
+    "course_title": "ANIMLSCI  485 Small Animal Anesthesia & Surgery",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58231)",
+    "instructor_name": "Daniel Young",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "15:30",
+    "end_time": "16:45",
+    "building_room_name": "Vet Tech@MI Classroom 102"
+  },
+  {
+    "course_title": "ANIMLSCI  485L Small Animal Anesthesia & Surgery Lab",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LAB(58232)",
+    "instructor_name": "Annmarie Morawiak, Daniel Young",
+    "days": [
+      "Monday"
+    ],
+    "start_time": "8:00",
+    "end_time": "12:00",
+    "building_room_name": "Vet Tech @MIC Teaching lab 125"
+  },
+  {
+    "course_title": "ANIMLSCI  485L Small Animal Anesthesia & Surgery Lab",
+    "course_subject": "Animal Science",
+    "course_spire_id": "02-LAB(58235)",
+    "instructor_name": "Annmarie Morawiak, Daniel Young",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "8:00",
+    "end_time": "12:00",
+    "building_room_name": "Vet Tech @MIC Teaching lab 125"
+  },
+  {
+    "course_title": "ANIMLSCI  487 Fundamental Vertebrate Embryology",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58217)",
+    "instructor_name": "Dominique Alfandari, Helene Cousin, Ankit Pandey",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "8:30",
+    "end_time": "11:15",
+    "building_room_name": "Integrated Sci Bldg 364"
+  },
+  {
+    "course_title": "ANIMLSCI  492V S- Senior Veterinary Technology Seminar",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-SEM(58252)",
+    "instructor_name": "Tracy Blais",
+    "days": [
+      "Monday"
+    ],
+    "start_time": "17:30",
+    "end_time": "18:30",
+    "building_room_name": "On-Line"
+  },
+  {
+    "course_title": "ANIMLSCI  494GI Good Intentions",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58186)",
+    "instructor_name": "Susan Marston",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "11:30",
+    "end_time": "12:45",
+    "building_room_name": "Integ. Learning Center N101"
+  },
+  {
+    "course_title": "ANIMLSCI  497N Small Animal Emergency and Critical Care",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58254)",
+    "instructor_name": "Annmarie Morawiak",
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:45",
+    "building_room_name": "Vet Tech@MI Classroom 102"
+  },
+  {
+    "course_title": "ANIMLSCI  497N Small Animal Emergency and Critical Care",
+    "course_subject": "Animal Science",
+    "course_spire_id": "02-LEC(58255)",
+    "instructor_name": "Annmarie Morawiak",
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:45",
+    "building_room_name": "Integrated Sciences Bldg 427R"
+  },
+  {
+    "course_title": "ANIMLSCI  497P Special Topics- VTNE Preparatory Course",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58263)",
+    "instructor_name": "Jennifer Herndon",
+    "days": [
+      "Tuesday"
+    ],
+    "start_time": "17:30",
+    "end_time": "18:45",
+    "building_room_name": "On-Line"
+  },
+  {
+    "course_title": "ANIMLSCI  521 Physiol Of Reprod",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58194)",
+    "instructor_name": "Rafael Fissore, Carlos Gradil, Wei Cui",
+    "days": [
+      "Monday",
+      "Wednesday",
+      "Friday"
+    ],
+    "start_time": "9:05",
+    "end_time": "9:55",
+    "building_room_name": "Integ. Learning Center S211"
+  },
+  {
+    "course_title": "ANIMLSCI  521 Physiol Of Reprod",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01LL-LAB(58197)",
+    "instructor_name": "Staff",
+    "days": [
+      "Tuesday"
+    ],
+    "start_time": "8:30",
+    "end_time": "10:30",
+    "building_room_name": "Integrated Sciences Bldg 368"
+  },
+  {
+    "course_title": "ANIMLSCI  521 Physiol Of Reprod",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01LM-LAB(58198)",
+    "instructor_name": "Staff",
+    "days": [
+      "Tuesday"
+    ],
+    "start_time": "11:30",
+    "end_time": "13:25",
+    "building_room_name": "Integrated Sciences Bldg 368"
+  },
+  {
+    "course_title": "ANIMLSCI  521 Physiol Of Reprod",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01LN-LAB(58199)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "11:15",
+    "end_time": "13:10",
+    "building_room_name": "Integrated Sciences Bldg 368"
+  },
+  {
+    "course_title": "ANIMLSCI  521 Physiol Of Reprod",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01LQ-LAB(58246)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "11:15",
+    "end_time": "13:10",
+    "building_room_name": "Integrated Sci Bldg 364"
+  },
+  {
+    "course_title": "ANIMLSCI  572 Molecular Immunology",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-LEC(58171)",
+    "instructor_name": "Barbara Osborne, Leonid Pobezinsky",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:45",
+    "building_room_name": "Integrated Sciences Bldg 221"
+  },
+  {
+    "course_title": "ANIMLSCI  792 Seminar in Animal Biotechnology and Biomedical Sciences",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-SEM(58160)",
+    "instructor_name": "Staff",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "16:00",
+    "end_time": "17:15",
+    "building_room_name": "Integrated Sciences Bldg 221"
+  },
+  {
+    "course_title": "ANIMLSCI  794A Sem-J Club Immunology",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-SEM(58161)",
+    "instructor_name": "Alissa Rothchild",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "12:20",
+    "end_time": "13:25",
+    "building_room_name": "Integrated Sciences Bldg 427L"
+  },
+  {
+    "course_title": "ANIMLSCI  795A Journal Club in Cells, Genes and Development",
+    "course_subject": "Animal Science",
+    "course_spire_id": "01-SEM(58162)",
+    "instructor_name": "Jesse Mager",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "12:20",
+    "end_time": "13:25",
+    "building_room_name": "Integrated Sciences Bldg 427L"
+  },
+  {
+    "course_title": "ANTHRO  101 Biology, Culture and the Human Experience",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(58376)",
+    "instructor_name": "Sarah Reedy",
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "start_time": "9:05",
+    "end_time": "9:55",
+    "building_room_name": "Herter Hall room 227"
+  },
+  {
+    "course_title": "ANTHRO  101 Biology, Culture and the Human Experience",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AA-DIS(58377)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "9:05",
+    "end_time": "9:55",
+    "building_room_name": "Dickinson Hall room 216"
+  },
+  {
+    "course_title": "ANTHRO  101 Biology, Culture and the Human Experience",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AB-DIS(58378)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "10:10",
+    "end_time": "11:00",
+    "building_room_name": "Dickinson Hall room 216"
+  },
+  {
+    "course_title": "ANTHRO  101 Biology, Culture and the Human Experience",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AC-DIS(58379)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:05",
+    "building_room_name": "Machmer Hall room E-10"
+  },
+  {
+    "course_title": "ANTHRO  101 Biology, Culture and the Human Experience",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AD-DIS(58380)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "12:20",
+    "end_time": "13:10",
+    "building_room_name": "Dickinson Hall room 216"
+  },
+  {
+    "course_title": "ANTHRO  101 Biology, Culture and the Human Experience",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AE-DIS(58381)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "13:25",
+    "end_time": "14:15",
+    "building_room_name": "Dickinson Hall room 216"
+  },
+  {
+    "course_title": "ANTHRO  101 Biology, Culture and the Human Experience",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AF-DIS(58382)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:20",
+    "building_room_name": "Dickinson Hall room 216"
+  },
+  {
+    "course_title": "ANTHRO  102 Introduction to Archaeology: Humans Past and Present",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(58310)",
+    "instructor_name": "Patricia Mangan",
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:05",
+    "building_room_name": "Morrill Sci Ctr (1)  Room N375"
+  },
+  {
+    "course_title": "ANTHRO  102 Introduction to Archaeology: Humans Past and Present",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AA-DIS(58311)",
+    "instructor_name": "Staff",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "10:00",
+    "end_time": "10:50",
+    "building_room_name": "Machmer Hall room E-16"
+  },
+  {
+    "course_title": "ANTHRO  102 Introduction to Archaeology: Humans Past and Present",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AB-DIS(58312)",
+    "instructor_name": "Staff",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "11:30",
+    "end_time": "12:20",
+    "building_room_name": "Machmer Hall room E-16"
+  },
+  {
+    "course_title": "ANTHRO  102 Introduction to Archaeology: Humans Past and Present",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AC-DIS(58313)",
+    "instructor_name": "Staff",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "13:00",
+    "end_time": "13:50",
+    "building_room_name": "Machmer Hall room E-16"
+  },
+  {
+    "course_title": "ANTHRO  102 Introduction to Archaeology: Humans Past and Present",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AD-DIS(58314)",
+    "instructor_name": "Staff",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:20",
+    "building_room_name": "Machmer Hall room E-16"
+  },
+  {
+    "course_title": "ANTHRO  102 Introduction to Archaeology: Humans Past and Present",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AE-DIS(58315)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "9:05",
+    "end_time": "9:55",
+    "building_room_name": "Machmer Hall room E-16"
+  },
+  {
+    "course_title": "ANTHRO  102 Introduction to Archaeology: Humans Past and Present",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AF-DIS(58316)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "10:10",
+    "end_time": "11:00",
+    "building_room_name": "Machmer Hall room E-16"
+  },
+  {
+    "course_title": "ANTHRO  102 Introduction to Archaeology: Humans Past and Present",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AG-DIS(58317)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:05",
+    "building_room_name": "Machmer Hall room E-16"
+  },
+  {
+    "course_title": "ANTHRO  102 Introduction to Archaeology: Humans Past and Present",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AJ-DIS(58318)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "12:20",
+    "end_time": "13:10",
+    "building_room_name": "Machmer Hall room E-16"
+  },
+  {
+    "course_title": "ANTHRO  102 Introduction to Archaeology: Humans Past and Present",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AK-DIS(58319)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "13:25",
+    "end_time": "14:15",
+    "building_room_name": "Machmer Hall room E-16"
+  },
+  {
+    "course_title": "ANTHRO  103 Human Origins and Variation",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(58272)",
+    "instructor_name": "Todd Disotell",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "8:30",
+    "end_time": "9:20",
+    "building_room_name": "Morrill Sci Ctr (1)  Room N375"
+  },
+  {
+    "course_title": "ANTHRO  103 Human Origins and Variation",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AA-DIS(58273)",
+    "instructor_name": "Staff",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "11:30",
+    "end_time": "12:20",
+    "building_room_name": "Machmer Hall room W-17"
+  },
+  {
+    "course_title": "ANTHRO  103 Human Origins and Variation",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AB-DIS(58274)",
+    "instructor_name": "Staff",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "13:00",
+    "end_time": "13:50",
+    "building_room_name": "Machmer Hall room W-17"
+  },
+  {
+    "course_title": "ANTHRO  103 Human Origins and Variation",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AC-DIS(58275)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:20",
+    "building_room_name": "Machmer Hall room W-17"
+  },
+  {
+    "course_title": "ANTHRO  103 Human Origins and Variation",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AD-DIS(58276)",
+    "instructor_name": "Staff",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:20",
+    "building_room_name": "Machmer Hall room W-17"
+  },
+  {
+    "course_title": "ANTHRO  103 Human Origins and Variation",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AE-DIS(58277)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "9:05",
+    "end_time": "9:55",
+    "building_room_name": "Machmer Hall room W-17"
+  },
+  {
+    "course_title": "ANTHRO  103 Human Origins and Variation",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AF-DIS(58278)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "10:10",
+    "end_time": "11:00",
+    "building_room_name": "Machmer Hall room W-17"
+  },
+  {
+    "course_title": "ANTHRO  103 Human Origins and Variation",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AG-DIS(58298)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:05",
+    "building_room_name": "Machmer Hall room W-17"
+  },
+  {
+    "course_title": "ANTHRO  103 Human Origins and Variation",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AK-DIS(58300)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "13:25",
+    "end_time": "14:15",
+    "building_room_name": "Machmer Hall room W-17"
+  },
+  {
+    "course_title": "ANTHRO  103 Human Origins and Variation",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01BA-DIS(58399)",
+    "instructor_name": "Staff",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "16:00",
+    "end_time": "16:50",
+    "building_room_name": "Machmer Hall room W-17"
+  },
+  {
+    "course_title": "ANTHRO  104 Culture, Society and People",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(58320)",
+    "instructor_name": "Nicholas Caverly",
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "start_time": "10:10",
+    "end_time": "11:00",
+    "building_room_name": "School of Management 137"
+  },
+  {
+    "course_title": "ANTHRO  104 Culture, Society and People",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AA-DIS(58321)",
+    "instructor_name": "Staff",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:20",
+    "building_room_name": "Herter Hall room 211"
+  },
+  {
+    "course_title": "ANTHRO  104 Culture, Society and People",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AB-DIS(58322)",
+    "instructor_name": "Staff",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "16:00",
+    "end_time": "16:50",
+    "building_room_name": "Herter Hall room 211"
+  },
+  {
+    "course_title": "ANTHRO  104 Culture, Society and People",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AC-DIS(58323)",
+    "instructor_name": "Staff",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "17:30",
+    "end_time": "18:20",
+    "building_room_name": "Herter Hall room 211"
+  },
+  {
+    "course_title": "ANTHRO  104 Culture, Society and People",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AD-DIS(58324)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "9:05",
+    "end_time": "9:55",
+    "building_room_name": "Machmer Hall room E-33"
+  },
+  {
+    "course_title": "ANTHRO  104 Culture, Society and People",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AE-DIS(58325)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "10:10",
+    "end_time": "11:00",
+    "building_room_name": "Machmer Hall room E-33"
+  },
+  {
+    "course_title": "ANTHRO  104 Culture, Society and People",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AF-DIS(58326)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:05",
+    "building_room_name": "Machmer Hall room E-33"
+  },
+  {
+    "course_title": "ANTHRO  104 Culture, Society and People",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AG-DIS(58327)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "12:20",
+    "end_time": "13:10",
+    "building_room_name": "Machmer Hall room E-33"
+  },
+  {
+    "course_title": "ANTHRO  104 Culture, Society and People",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AJ-DIS(58328)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "13:25",
+    "end_time": "14:15",
+    "building_room_name": "Machmer Hall room E-33"
+  },
+  {
+    "course_title": "ANTHRO  104 Culture, Society and People",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AK-DIS(58329)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:20",
+    "building_room_name": "Machmer Hall room E-33"
+  },
+  {
+    "course_title": "ANTHRO  104 Culture, Society and People",
+    "course_subject": "Anthropology",
+    "course_spire_id": "02-LEC(58352)",
+    "instructor_name": "Meredith Degyansky",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "11:30",
+    "end_time": "12:45",
+    "building_room_name": "Pierpont House room 101"
+  },
+  {
+    "course_title": "ANTHRO  104H Culture, Society and People",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(68982)",
+    "instructor_name": "Amanda Johnson",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "13:00",
+    "end_time": "14:15",
+    "building_room_name": "Elm Room 226"
+  },
+  {
+    "course_title": "ANTHRO  150 Ancient Civilizations",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(58353)",
+    "instructor_name": "Kay Mattena",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "11:30",
+    "end_time": "12:45",
+    "building_room_name": "Mary Lyon House rm 119 (loung)"
+  },
+  {
+    "course_title": "ANTHRO  150 Ancient Civilizations",
+    "course_subject": "Anthropology",
+    "course_spire_id": "02-LEC(68909)",
+    "instructor_name": "Maxine Oland",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "8:55",
+    "end_time": "9:45",
+    "building_room_name": "Herter Hall room 227"
+  },
+  {
+    "course_title": "ANTHRO  150 Ancient Civilizations",
+    "course_subject": "Anthropology",
+    "course_spire_id": "02AA-DIS(68910)",
+    "instructor_name": "Staff",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "16:00",
+    "end_time": "16:50",
+    "building_room_name": "Machmer Hall room E-16"
+  },
+  {
+    "course_title": "ANTHRO  150 Ancient Civilizations",
+    "course_subject": "Anthropology",
+    "course_spire_id": "02AB-DIS(68911)",
+    "instructor_name": "Staff",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "17:30",
+    "end_time": "18:20",
+    "building_room_name": "Machmer Hall room E-16"
+  },
+  {
+    "course_title": "ANTHRO  150 Ancient Civilizations",
+    "course_subject": "Anthropology",
+    "course_spire_id": "02AC-DIS(68912)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "8:00",
+    "end_time": "8:50",
+    "building_room_name": "Machmer Hall room E-16"
+  },
+  {
+    "course_title": "ANTHRO  150 Ancient Civilizations",
+    "course_subject": "Anthropology",
+    "course_spire_id": "02AD-DIS(68913)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "9:05",
+    "end_time": "9:55",
+    "building_room_name": "Machmer Hall room W-11"
+  },
+  {
+    "course_title": "ANTHRO  150 Ancient Civilizations",
+    "course_subject": "Anthropology",
+    "course_spire_id": "02AE-DIS(68914)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "13:25",
+    "end_time": "14:15",
+    "building_room_name": "Machmer Hall room W-11"
+  },
+  {
+    "course_title": "ANTHRO  150 Ancient Civilizations",
+    "course_subject": "Anthropology",
+    "course_spire_id": "02AF-DIS(68915)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:20",
+    "building_room_name": "Machmer Hall room E-16"
+  },
+  {
+    "course_title": "ANTHRO  210 Economies & Cultures",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(66932)",
+    "instructor_name": "Boone Shear",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "11:30",
+    "end_time": "12:45",
+    "building_room_name": "Integ. Learning Center S131"
+  },
+  {
+    "course_title": "ANTHRO  216 Anatomy of the Human Body",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(58370)",
+    "instructor_name": "Brigitte Holt",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "10:00",
+    "end_time": "11:15",
+    "building_room_name": "Machmer Hall room W-25"
+  },
+  {
+    "course_title": "ANTHRO  216 Anatomy of the Human Body",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01LL-LAB(58383)",
+    "instructor_name": "Staff",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "14:30",
+    "end_time": "16:30",
+    "building_room_name": "Machmer Hall room E-14"
+  },
+  {
+    "course_title": "ANTHRO  216 Anatomy of the Human Body",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01LM-LAB(58384)",
+    "instructor_name": "Staff",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "13:00",
+    "end_time": "15:00",
+    "building_room_name": "Machmer Hall room E-14"
+  },
+  {
+    "course_title": "ANTHRO  216 Anatomy of the Human Body",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01LN-LAB(58385)",
+    "instructor_name": "Staff",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "15:30",
+    "end_time": "17:30",
+    "building_room_name": "Machmer Hall room E-14"
+  },
+  {
+    "course_title": "ANTHRO  269 North American Archaeology",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(58372)",
+    "instructor_name": "Johanna Pacyga",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:45",
+    "building_room_name": "South College Room W245"
+  },
+  {
+    "course_title": "ANTHRO  281 Statistics in Anthropology Using R",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(58282)",
+    "instructor_name": "Jason Kamilar",
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:20",
+    "building_room_name": "Integ. Learning Center N 111"
+  },
+  {
+    "course_title": "ANTHRO  281 Statistics in Anthropology Using R",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AA-DIS(58387)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "9:05",
+    "end_time": "9:55",
+    "building_room_name": "Library Tower room 1667"
+  },
+  {
+    "course_title": "ANTHRO  281 Statistics in Anthropology Using R",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AB-DIS(58388)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "10:10",
+    "end_time": "11:00",
+    "building_room_name": "Library Tower room 1667"
+  },
+  {
+    "course_title": "ANTHRO  281 Statistics in Anthropology Using R",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01AC-DIS(58389)",
+    "instructor_name": "Staff",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:05",
+    "building_room_name": "Library Tower room 1667"
+  },
+  {
+    "course_title": "ANTHRO  297M ST-Disease, Famine, & Warfare: Intro to Human Adaptability",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(66388)",
+    "instructor_name": "Ventura Perez",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "11:30",
+    "end_time": "12:45",
+    "building_room_name": "Machmer Hall room W-25"
+  },
+  {
+    "course_title": "ANTHRO  315 Case Studies in Global Health: Biosocial Perspectives",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(66394)",
+    "instructor_name": "Felicity Aulino",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "13:00",
+    "end_time": "14:15",
+    "building_room_name": "Machmer Hall room E-10"
+  },
+  {
+    "course_title": "ANTHRO  326 Historical Archaeology",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(68522)",
+    "instructor_name": "Johanna Pacyga",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "11:30",
+    "end_time": "12:45",
+    "building_room_name": "Machmer E-24"
+  },
+  {
+    "course_title": "ANTHRO  360 Methods in Linguistic Anthropology",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(66386)",
+    "instructor_name": "Lynnette Arnold",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "13:00",
+    "end_time": "14:15",
+    "building_room_name": "Hasbrouck Laboratory room 137"
+  },
+  {
+    "course_title": "ANTHRO  364 Problems in Anthropology I",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(58305)",
+    "instructor_name": "Amanda Johnson",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "10:00",
+    "end_time": "11:15",
+    "building_room_name": "Machmer E-24"
+  },
+  {
+    "course_title": "ANTHRO  372 Human Biological Variation",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(58356)",
+    "instructor_name": "Todd Disotell",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:45",
+    "building_room_name": "Machmer Hall room E-10"
+  },
+  {
+    "course_title": "ANTHRO  380 Grassroots Community Organizing",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-SEM(58303)",
+    "instructor_name": "Jennifer Sandler",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "16:00",
+    "end_time": "19:00",
+    "building_room_name": "Machmer Hall room E-33"
+  },
+  {
+    "course_title": "ANTHRO  397L ST-Leadership & Activism",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(58304)",
+    "instructor_name": "Jennifer Sandler",
+    "days": [
+      "Monday"
+    ],
+    "start_time": "14:30",
+    "end_time": "17:15",
+    "building_room_name": "Machmer Hall Room 317"
+  },
+  {
+    "course_title": "ANTHRO  490STA Archaeology of Colonialism",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(69073)",
+    "instructor_name": "Maxine Oland",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "13:00",
+    "end_time": "14:15",
+    "building_room_name": "Machmer E-24"
+  },
+  {
+    "course_title": "ANTHRO  494RI Special Topics- Religion Evolution",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(66356)",
+    "instructor_name": "Lynnette Sievert",
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "start_time": "14:30",
+    "end_time": "15:45",
+    "building_room_name": "Machmer Hall room E-10"
+  },
+  {
+    "course_title": "ANTHRO  499D Honors Thesis Seminar - Conquest by Law: The Use of Law to Subjugate and Marginalize in the U.S.",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-SEM(58346)",
+    "instructor_name": "Kathleen Brown-Perez",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "10:00",
+    "end_time": "11:15",
+    "building_room_name": "Elm Room 210"
+  },
+  {
+    "course_title": "ANTHRO  597CC Special Topics- Community, Commons and Communism",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-SEM(66389)",
+    "instructor_name": "Boone Shear",
+    "days": [
+      "Tuesday"
+    ],
+    "start_time": "14:30",
+    "end_time": "17:15",
+    "building_room_name": "Machmer E-24"
+  },
+  {
+    "course_title": "ANTHRO  597CM Special Topics- Community Based Methods",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-SEM(69707)",
+    "instructor_name": "Jennifer Sandler",
+    "days": [
+      "Friday"
+    ],
+    "start_time": "14:30",
+    "end_time": "16:00",
+    "building_room_name": "Machmer E-24"
+  },
+  {
+    "course_title": "ANTHRO  641 Theory and Method in  Social  Anthropology I",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(66390)",
+    "instructor_name": "Nicholas Caverly",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "14:30",
+    "end_time": "17:15",
+    "building_room_name": "Machmer E-24"
+  },
+  {
+    "course_title": "ANTHRO  643 Thry&Meth Phys Anth",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(66391)",
+    "instructor_name": "Brigitte Holt",
+    "days": [
+      "Wednesday"
+    ],
+    "start_time": "14:30",
+    "end_time": "17:15",
+    "building_room_name": "Machmer Hall room W-17"
+  },
+  {
+    "course_title": "ANTHRO  653 Indigenous Research: Theories and Methods",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(66393)",
+    "instructor_name": "Sonya Atalay",
+    "days": [
+      "Monday"
+    ],
+    "start_time": "14:30",
+    "end_time": "17:15",
+    "building_room_name": "Machmer E-24"
+  },
+  {
+    "course_title": "ANTHRO  697AC Special Topics- Archaeology of Colonialism",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-SEM(68989)",
+    "instructor_name": "Maxine Oland",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "13:00",
+    "end_time": "14:15",
+    "building_room_name": "Machmer E-24"
+  },
+  {
+    "course_title": "ANTHRO  804 Research in Cultural Anthropology",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(58291)",
+    "instructor_name": "Staff",
+    "days": [
+      "Thursday"
+    ],
+    "start_time": "0:00",
+    "end_time": "0:00",
+    "building_room_name": "TBA"
+  },
+  {
+    "course_title": "ANTHRO  805 Res In Ling Anthro",
+    "course_subject": "Anthropology",
+    "course_spire_id": "01-LEC(58292)",
+    "instructor_name": "Lynnette Arnold",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "13:00",
+    "end_time": "14:15",
+    "building_room_name": "Hasbrouck Laboratory room 137"
+  },
+  {
+    "course_title": "ARABIC  102 Elementary Four-Skilled Arabic II",
+    "course_subject": "Arabic",
+    "course_spire_id": "01-LEC(58425)",
+    "instructor_name": "Syonara Tomoum",
+    "days": [
+      "Monday",
+      "Wednesday",
+      "Friday"
+    ],
+    "start_time": "11:15",
+    "end_time": "12:05",
+    "building_room_name": "Herter Hall room 212"
+  },
+  {
+    "course_title": "ARABIC  146 Elementary Arabic II",
+    "course_subject": "Arabic",
+    "course_spire_id": "01-LEC(66745)",
+    "instructor_name": "Tayeb El-Hibri",
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "start_time": "11:30",
+    "end_time": "12:45",
+    "building_room_name": "Herter Hall room 114"
+  },
+  {
+    "course_title": "ARABIC  202 Intermediate Four-Skilled Arabic II",
+    "course_subject": "Arabic",
+    "course_spire_id": "01-LEC(58426)",
+    "instructor_name": "Syonara Tomoum",
+    "days": [
+      "Monday",
+      "Wednesday",
+      "Friday"
+    ],
+    "start_time": "10:10",
+    "end_time": "11:00",
+    "building_room_name": "Herter Hall room 112"
+  }
+]
