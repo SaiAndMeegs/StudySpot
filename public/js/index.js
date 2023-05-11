@@ -1,7 +1,7 @@
 // The point of this for now will be to just write some basic methods I anticipate I'll need.
 
 colors = ['red', 'orange', 'green', 'light-red'];
-const bookingLimit = 2;
+const bookingLimit = 30;
 
 function getStar(favorite) {
     return `<?xml version="1.0" encoding="UTF-8"?>

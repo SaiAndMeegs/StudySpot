@@ -14,13 +14,14 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
-            makePopup('<strong>Study Spot</strong> helps you find available classrooms on the UMass Amherst campus.<br><br>To keep track of your room bookings and favorited buildings, we utilize cookies. Make sure you have cookies enabled to take advantage of these features.', 'cookies-disclaimer');
+            makePopup('NOTE: Class data is currently being updated. Stay tuned for updated fully accurate room availability by Friday, May 12th. <br><br>StudySpot helps you find available classrooms in the UMass Amherst campus.<br><br>To keep track of your room bookings and favorited buildings, we utilize cookies. Make sure you have cookies enabled to take advantage of these features.', 'cookies-disclaimer');
 
             /* SEARCH FUNCTIONALITY */
             let searchBar = document.getElementsByClassName('search-bar')[0];
             let toSearch = Array.from(document.getElementsByClassName('cards')[0].children);
             searchBar.addEventListener('input', (e) => {
                 toSearch.forEach(elem => {
+                    if(elem.classList.contains('bookings')) return;
                     let name = elem.getElementsByClassName('searchable')[0].innerHTML.toLowerCase();
                     elem.classList.remove('invisible');
                     let acronym = name.split(' ').reduce((acc, val) => {
@@ -139,7 +140,7 @@
     <input class="search-bar" placeholder="Search buildings here"/>
     <hr>
     <div class="cards">
-        <div class="building bookings" style='grid-row: 1/2'>Upcoming Bookings</div>
+        <div class="building bookings" style='grid-row: 1/2'></div>
     </div>
     <!-- Ybug code start (https://ybug.io) -->
     <script type='text/javascript'>
