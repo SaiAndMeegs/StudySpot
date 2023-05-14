@@ -269,7 +269,7 @@ footer {
     background-color: transparent;
     color: black;
     text-align: left;
-    margin-top: 4rem;
+    /* margin-top: auto; */
 }
 
 footer p{
