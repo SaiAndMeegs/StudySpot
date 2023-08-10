@@ -1,64 +1,63 @@
 // Imports
 const express = require("express");
-const cors = require('cors');
-const fs = require('fs');
+const cors = require("cors");
+const fs = require("fs");
 const app = express();
 const PORT = process.env.PORT || 5001;
-const axios = require('axios')
-const Pool = require('pg').Pool
-const bodyParser = require('body-parser');
-
+const axios = require("axios");
+const Pool = require("pg").Pool;
+const bodyParser = require("body-parser");
 
 app.use(cors());
 
 const pool = new Pool({
-    user: "kiyeotntjhtpfw",
-    host: "ec2-34-202-127-5.compute-1.amazonaws.com",
-    database: "d6h3vnqcknj7pb",
-    password: "447b8c3b79b1f866e436495cafcc983b50bd0b76ba695eca6c851c4243d0ea99",
-    port: 5432,
-    ssl: {
-        rejectUnauthorized: false
-      }
-})
+  user: "uninnarxncoxfn",
+  host: "ec2-54-86-180-157.compute-1.amazonaws.com",
+  database: "d2vb6iepcgsneh",
+  password: "85f6238ecca2e73be5373cb225054809de9293c9b79559e2e9194d33d21fc5a8",
+  port: 5432,
+  ssl: {
+    rejectUnauthorized: false,
+  },
+});
 
 // Static Files
-app.use(express.static('public'))
-app.use('/css', express.static(__dirname + 'public/css'))
-app.use('/js', express.static(__dirname + 'public/js'))
-app.use('/images', express.static(__dirname + 'public/images'))
+app.use(express.static("public"));
+app.use("/css", express.static(__dirname + "public/css"));
+app.use("/js", express.static(__dirname + "public/js"));
+app.use("/images", express.static(__dirname + "public/images"));
 
 //  Listen
 app.listen(PORT, () => {
-    console.log(`Listening on port ${PORT}`)
-})
+  console.log(`Listening on port ${PORT}`);
+});
 
 // Set Views
-app.set('views', './views')
-app.set('view engine', 'ejs')
+app.set("views", "./views");
+app.set("view engine", "ejs");
 
-app.get('', (req, res) => {
-    //res.sendFile(__dirname + '/views/index.html')
-    res.render('buildings')
-    //res.render('Rooms')
-})
+app.get("", (req, res) => {
+  //res.sendFile(__dirname + '/views/index.html')
+  res.render("buildings");
+  //res.render('Rooms')
+});
 
-app.get('/rooms/', (req, res) => {
-    res.render('rooms')
-})
+app.get("/rooms/", (req, res) => {
+  res.render("rooms");
+});
 
-app.get('/rooms/:id/:name', (req, res) => {
-    //console.log('rooms')
-    res.render('rooms', {id: req.params.id, name: req.params.name})
-})
+app.get("/rooms/:id/:name", (req, res) => {
+  //console.log('rooms')
+  res.render("rooms", { id: req.params.id, name: req.params.name });
+});
 
-app.get('/buildings/', (req, res) => {
-    res.render('buildings')
-})
+app.get("/buildings/", (req, res) => {
+  res.render("buildings");
+});
 
-app.get('/calendar/:id/:name', (req, res) => {
-    res.render('calendar', {id: req.params.id, name: req.params.name})
-})
+app.get("/calendar/:id/:name", (req, res) => {
+  res.render("calendar", { id: req.params.id, name: req.params.name });
+});
 
 // Endpoints
 
@@ -67,16 +66,14 @@ app.get('/calendar/:id/:name', (req, res) => {
 //every user has connection object in the pool
 
 //buildings endpoints
-app.get('/backend-buildings/', cors(), (req, res) => {
+app.get("/backend-buildings/", cors(), (req, res) => {
+  pool.query("SELECT * FROM building", (err, result) => {
+    if (err) throw err;
+    res.status(200).json(result.rows);
 
-    pool.query("SELECT * FROM building", (err, result) => {
-        if (err) throw err
-        res.status(200).json(result.rows)
-  
-        pool.end;
-    })
-
-})
+    pool.end;
+  });
+});
 
 /*
 app.get('/building_image/:search', cors(), (req, res) => {
@@ -87,100 +84,129 @@ app.get('/building_image/:search', cors(), (req, res) => {
 */
 
 //building_rooms endpoints
-app.get('/building_rooms/:key', cors(), (req, res) => {
+app.get("/building_rooms/:key", cors(), (req, res) => {
+  search_query = req.params.key;
 
-    search_query = req.params.key;
+  pool.query(
+    "SELECT * FROM building_room WHERE building_id=" + search_query,
+    (err, result) => {
+      if (err) throw err;
+      res.status(200).json(result.rows);
 
-    pool.query("SELECT * FROM building_room WHERE building_id=" + search_query, (err, result) => {
-        if (err) throw err
-        res.status(200).json(result.rows)
-  
-        pool.end;
-    })
-
-})
+      pool.end;
+    }
+  );
+});
 
 //course_meetings endpoints
-app.get('/course_meetings/building_room_id/:key', cors(), (req, res) => {
-    search_query = req.params.key;
+app.get("/course_meetings/building_room_id/:key", cors(), (req, res) => {
+  search_query = req.params.key;
 
-    pool.query("SELECT * FROM course_meeting WHERE building_room_id=" + search_query, (err, result) => {
-        if (err) throw err
-        res.status(200).json(result.rows)
-  
-        pool.end;
-    })
+  pool.query(
+    "SELECT * FROM course_meeting WHERE building_room_id=" + search_query,
+    (err, result) => {
+      if (err) throw err;
+      res.status(200).json(result.rows);
 
-})
+      pool.end;
+    }
+  );
+});
 
-app.get('/course_meetings/id/:id', cors(), (req, res) => {
-    id = req.params.id;
+app.get("/course_meetings/id/:id", cors(), (req, res) => {
+  id = req.params.id;
 
-    pool.query("SELECT * FROM course_meeting WHERE id=" + id, (err, result) => {
-        if (err) throw err
-        res.status(200).json(result.rows)
-  
-        pool.end;
-    })
+  pool.query("SELECT * FROM course_meeting WHERE id=" + id, (err, result) => {
+    if (err) throw err;
+    res.status(200).json(result.rows);
 
-})
+    pool.end;
+  });
+});
 
 //student_event endpoints
-app.get('/student_events/within_range/:building_room_id/:start_date/:end_date', cors(), (req, res) => {
+app.get(
+  "/student_events/within_range/:building_room_id/:start_date/:end_date",
+  cors(),
+  (req, res) => {
     let building_room_id = req.params.building_room_id;
     let start_date = req.params.start_date;
     let end_date = req.params.end_date;
 
-    console.log('start_date: ' + start_date)
-    console.log('end_date: ' + end_date)
+    console.log("start_date: " + start_date);
+    console.log("end_date: " + end_date);
 
+    pool.query(
+      `SELECT * FROM student_event WHERE building_room_id = ` +
+        building_room_id +
+        ` AND DATE BETWEEN TO_DATE(` +
+        start_date +
+        `, 'YYYY.MM.DD') AND TO_DATE(` +
+        end_date +
+        `, 'YYYY.MM.DD')`,
+      (err, result) => {
+        if (err) throw err;
+        res.status(200).json(result.rows);
 
-    pool.query(`SELECT * FROM student_event WHERE building_room_id = ` + building_room_id + ` AND DATE BETWEEN TO_DATE(` + start_date + `, 'YYYY.MM.DD') AND TO_DATE(` + end_date + `, 'YYYY.MM.DD')`, (err, result) => {        
-        if (err) throw err
-        res.status(200).json(result.rows)
-  
         pool.end;
-    })
-})
+      }
+    );
+  }
+);
 
-app.get('/student_events/id/:student_event_id', cors(), (req, res) => {
-    let student_event_id = req.params.student_event_id;
+app.get("/student_events/id/:student_event_id", cors(), (req, res) => {
+  let student_event_id = req.params.student_event_id;
 
-    pool.query(`SELECT * FROM student_event WHERE student_event_id=` + student_event_id, (err, result) => {        
-        if (err) throw err
-        res.status(200).json(result.rows)
-  
-        pool.end;
-    })
-})
+  pool.query(
+    `SELECT * FROM student_event WHERE student_event_id=` + student_event_id,
+    (err, result) => {
+      if (err) throw err;
+      res.status(200).json(result.rows);
 
-app.get('/student_events/id/:student_event_id', cors(), (req, res) => {
-    let student_event_id = req.params.student_event_id;
+      pool.end;
+    }
+  );
+});
 
-    pool.query(`SELECT * FROM student_event WHERE student_event_id=` + student_event_id, (err, result) => {        
-        if (err) throw err
-        res.status(200).json(result.rows)
-  
-        pool.end;
-    })
-})
+app.get("/student_events/id/:student_event_id", cors(), (req, res) => {
+  let student_event_id = req.params.student_event_id;
 
-app.post('/student_events', bodyParser.json(), (req, res) => {
+  pool.query(
+    `SELECT * FROM student_event WHERE student_event_id=` + student_event_id,
+    (err, result) => {
+      if (err) throw err;
+      res.status(200).json(result.rows);
 
-    console.log('backend student events');
+      pool.end;
+    }
+  );
+});
 
-    //res.status(200).send("hi"); 
-    console.log(req.body);
+app.post("/student_events", bodyParser.json(), (req, res) => {
+  console.log("backend student events");
 
-    const values = [req.body.date, req.body.start, req.body.end, req.body.type, req.body.building_room_id]
-    
-    pool.query("INSERT INTO student_event (date, start_time, end_time, study_type, building_room_id) VALUES ($1, $2, $3, $4, $5) RETURNING student_event_id", values, (error, result) => {
-        if (error) throw error
-        res.status(200).json(result.rows)
-        pool.end;
-    }) 
-    
-    /*
+  //res.status(200).send("hi");
+  console.log(req.body);
+
+  const values = [
+    req.body.date,
+    req.body.start,
+    req.body.end,
+    req.body.type,
+    req.body.building_room_id,
+  ];
+
+  pool.query(
+    "INSERT INTO student_event (date, start_time, end_time, study_type, building_room_id) VALUES ($1, $2, $3, $4, $5) RETURNING student_event_id",
+    values,
+    (error, result) => {
+      if (error) throw error;
+      res.status(200).json(result.rows);
+      pool.end;
+    }
+  );
+
+  /*
     pool.query("SELECT * FROM student_event WHERE student_event_id = @@IDENTITY", (error, result) => {
         if (error) throw error
         res.status(200).send(result.rows)
@@ -188,22 +214,22 @@ app.post('/student_events', bodyParser.json(), (req, res) => {
         pool.end;
     })
     */
-
-    
-})
+});
 
 //building_room endpoints
-app.get('/building_rooms/building_room_id/:key', cors(), (req, res) => {
-    search_query = req.params.key;
+app.get("/building_rooms/building_room_id/:key", cors(), (req, res) => {
+  search_query = req.params.key;
 
-    pool.query("SELECT * FROM building_room WHERE building_room_id=" + search_query, (err, result) => {
-        if (err) throw err
-        res.status(200).json(result.rows)
-  
-        pool.end;
-    })
+  pool.query(
+    "SELECT * FROM building_room WHERE building_room_id=" + search_query,
+    (err, result) => {
+      if (err) throw err;
+      res.status(200).json(result.rows);
 
-})
+      pool.end;
+    }
+  );
+});
 
 /*
 app.options('/student_events', bodyParser.json(), (req, res) => {
@@ -224,6 +250,3 @@ app.options('/student_events', bodyParser.json(), (req, res) => {
     }) 
 })
 */
-
-
-
